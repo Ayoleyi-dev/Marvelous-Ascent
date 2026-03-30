@@ -1,0 +1,53 @@
+/* ─── FORM STATUS MESSAGES ──────────────────────────────────────────────────
+   Driven by data-state attribute set in script.js.
+   No inline styles — all visual states live here.
+   ────────────────────────────────────────────────────────────────────────── */
+
+.form-message {
+  /* Layout */
+  display: block;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+
+  /* Typography */
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+
+  /* Default / idle — invisible but takes no space when empty */
+  min-height: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Empty message = visually hidden */
+.form-message:empty {
+  padding: 0;
+  border-color: transparent;
+  opacity: 0;
+}
+
+/* Sending / pending state */
+.form-message[data-state="pending"] {
+  color: var(--text-dim);
+  border-left-color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.07);
+  opacity: 1;
+}
+
+/* Success state — Cyber Green */
+.form-message[data-state="success"] {
+  color: var(--green);
+  border-left-color: var(--green);
+  background: var(--green-dim);
+  opacity: 1;
+}
+
+/* Error state — Electric Orange */
+.form-message[data-state="error"] {
+  color: var(--orange);
+  border-left-color: var(--orange);
+  background: var(--orange-dim);
+  opacity: 1;
+}
