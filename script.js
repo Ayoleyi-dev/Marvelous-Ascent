@@ -8,8 +8,8 @@
  */
 
 // ─── REPLACE THESE WITH YOUR ACTUAL ZAPIER WEBHOOK URLs ──────────────────────
-const CONTACT_WEBHOOK_URL   = 'YOUR_ZAPIER_WEBHOOK_URL_A';
-const SUBSCRIBE_WEBHOOK_URL = 'YOUR_ZAPIER_WEBHOOK_URL_B';
+const CONTACT_WEBHOOK_URL   = 'https://hook.eu1.make.com/5f8wrs6km9trssp355wh6xhiu544qnyz';
+const SUBSCRIBE_WEBHOOK_URL = 'https://hook.eu1.make.com/9dwcriyxkyo8e27i8dg9cgzd3a4lfgac';
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Timeout in ms before we give up and show a network error (15s suits 3G)
