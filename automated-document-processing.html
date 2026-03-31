@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marvelous Ascent — Automated Document Processing & OCR. Custom AI bots that extract structured data from PDFs, invoices, and handwritten documents.">
+  <title>Automated Document Processing (OCR) | Marvelous Ascent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Existing global design system -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Page-specific components -->
+  <link rel="stylesheet" href="doc-processing.css">
+</head>
+<body>
+
+  <!-- Decorative background layers (matches index.html) -->
+  <div class="bg-grid"       aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--tl" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--br" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER  (identical structure to index.html)
+  ══════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Marvelous Ascent — home">
+        <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html#services"    class="nav-link">Services</a>
+        <a href="index.html#roi"         class="nav-link">ROI</a>
+        <a href="index.html#work"        class="nav-link">Our Work</a>
+        <a href="index.html#contact"     class="nav-link nav-link--cta">Contact Us <span aria-hidden="true">→</span></a>
+      </nav>
+
+      <button class="hamburger" id="hamburger"
+        aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
+      <a href="index.html#services"   class="mobile-nav__link">Services</a>
+      <a href="index.html#roi"        class="mobile-nav__link">ROI Calculator</a>
+      <a href="index.html#work"       class="mobile-nav__link">Our Work</a>
+      <a href="index.html#contact"    class="mobile-nav__link mobile-nav__link--cta">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════
+         § 1 — HERO + BRAND MATCHER
+    ══════════════════════════════════════════════ -->
+    <section class="dp-hero" id="hero">
+      <div class="container dp-hero__inner">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb reveal-up" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true"> / </span>
+          <a href="index.html#services">Services</a>
+          <span aria-hidden="true"> / </span>
+          <span aria-current="page">Document Processing</span>
+        </nav>
+
+        <div class="dp-hero__content">
+          <div class="dp-hero__left">
+            <div class="section-kicker reveal-up" style="--d:.04s">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Automated Document Processing &amp; OCR
+            </div>
+
+            <h1 class="dp-hero__headline reveal-up" style="--d:.08s">
+              Stop Typing.<br><span class="grad-text">Start Scaling.</span>
+            </h1>
+
+            <p class="dp-hero__sub reveal-up" style="--d:.14s">
+              <span class="dynamic-name">Your business</span> processes documents manually — costing you time, money, and accuracy. Our custom AI extraction bots read anything: PDFs, scanned invoices, handwritten forms. They output clean, structured data, automatically, every time.
+            </p>
+
+            <!-- Dynamic name input (matches index.html pattern) -->
+            <div class="name-input-wrap reveal-up" style="--d:.20s">
+              <label for="business-name-input" class="name-label">
+                <span aria-hidden="true">⚙</span> Personalise this page
+              </label>
+              <div class="name-field">
+                <span class="name-field__prefix" aria-hidden="true">$</span>
+                <input
+                  type="text"
+                  id="business-name-input"
+                  class="name-input"
+                  placeholder="Enter your company name to initialize..."
+                  autocomplete="organization"
+                  spellcheck="false"
+                  maxlength="60"
+                >
+                <span class="name-field__cursor" aria-hidden="true" id="name-cursor">█</span>
+              </div>
+            </div>
+
+            <div class="dp-hero__ctas reveal-up" style="--d:.26s">
+              <a href="#poc-upload" class="btn btn--primary">Get Free Proof of Concept →</a>
+              <a href="#simulator"  class="btn btn--ghost js-smooth">See the Bot Work ↓</a>
+            </div>
+          </div>
+
+          <!-- Brand color picker panel -->
+          <div class="brand-matcher reveal-up" style="--d:.22s" id="brand-matcher">
+            <div class="brand-matcher__header">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span class="brand-matcher__label">Brand Configurator</span>
+              <span class="brand-matcher__badge">LIVE</span>
+            </div>
+
+            <p class="brand-matcher__sub">
+              Preview how our dashboards match your brand identity. Pick your primary accent colour — it updates the entire page in real time.
+            </p>
+
+            <div class="color-picker-wrap">
+              <label for="brand-color-input" class="color-picker-label">
+                Primary Accent Colour
+              </label>
+              <div class="color-picker-row">
+                <div class="color-swatch-preview" id="color-swatch-preview" aria-hidden="true"></div>
+                <input
+                  type="color"
+                  id="brand-color-input"
+                  class="color-picker"
+                  value="#00FF66"
+                  aria-label="Pick your brand accent colour"
+                  title="Pick your brand colour"
+                >
+                <span class="color-hex-display" id="color-hex-display">#00FF66</span>
+                <button class="color-reset-btn" id="color-reset-btn" aria-label="Reset to default Cyber Green">
+                  Reset
+                </button>
+              </div>
+            </div>
+
+            <!-- Preset brand swatches -->
+            <div class="color-presets">
+              <span class="color-presets__label">Quick presets:</span>
+              <div class="color-presets__swatches" role="group" aria-label="Colour presets">
+                <button class="preset-swatch" data-color="#00FF66" style="background:#00FF66" aria-label="Cyber Green (default)" title="Cyber Green"></button>
+                <button class="preset-swatch" data-color="#3B82F6" style="background:#3B82F6" aria-label="Electric Blue"         title="Electric Blue"></button>
+                <button class="preset-swatch" data-color="#A855F7" style="background:#A855F7" aria-label="Violet"                title="Violet"></button>
+                <button class="preset-swatch" data-color="#F59E0B" style="background:#F59E0B" aria-label="Amber"                 title="Amber"></button>
+                <button class="preset-swatch" data-color="#EC4899" style="background:#EC4899" aria-label="Rose"                  title="Rose"></button>
+                <button class="preset-swatch" data-color="#06B6D4" style="background:#06B6D4" aria-label="Cyan"                  title="Cyan"></button>
+              </div>
+            </div>
+
+            <!-- Live preview strip -->
+            <div class="brand-preview-strip" aria-hidden="true">
+              <div class="preview-item preview-item--dot"></div>
+              <div class="preview-item preview-item--bar preview-item--bar-40"></div>
+              <div class="preview-item preview-item--bar preview-item--bar-65"></div>
+              <div class="preview-item preview-item--bar preview-item--bar-80"></div>
+              <div class="preview-item preview-item--bar preview-item--bar-50"></div>
+              <div class="preview-item preview-item--tag">TAG</div>
+            </div>
+
+            <p class="brand-matcher__note">
+              This is a visual preview only. Your actual brand assets are used in all delivered dashboards.
+            </p>
+          </div>
+        </div><!-- /dp-hero__content -->
+
+        <!-- Hero stats strip -->
+        <dl class="dp-hero__stats reveal-up" style="--d:.32s">
+          <div class="stat">
+            <dt class="stat__label">Extraction Accuracy</dt>
+            <dd class="stat__val" data-count="99.4" data-suffix="%">0%</dd>
+          </div>
+          <div class="stat__sep" aria-hidden="true"></div>
+          <div class="stat">
+            <dt class="stat__label">Avg. Time Saved / Doc</dt>
+            <dd class="stat__val" data-count="94" data-suffix="%">0%</dd>
+          </div>
+          <div class="stat__sep" aria-hidden="true"></div>
+          <div class="stat">
+            <dt class="stat__label">Documents Processed</dt>
+            <dd class="stat__val" data-count="2.4" data-suffix="M+">0M+</dd>
+          </div>
+          <div class="stat__sep" aria-hidden="true"></div>
+          <div class="stat">
+            <dt class="stat__label">Avg. Deploy Time</dt>
+            <dd class="stat__val" data-count="72" data-suffix="h">0h</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section><!-- /dp-hero -->
+
+
+    <!-- ══════════════════════════════════════════════
+         § 2 — INTERACTIVE DATA SIMULATOR
+    ══════════════════════════════════════════════ -->
+    <section class="simulator-section" id="simulator">
+      <div class="container">
+
+        <div class="section-kicker reveal-up">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Live Simulation
+        </div>
+        <h2 class="section-heading reveal-up" style="--d:.08s">
+          Watch the <span class="grad-text">Bot Work.</span>
+        </h2>
+        <p class="section-sub reveal-up" style="--d:.14s">
+          Select an industry, inspect the raw messy input, then fire the extraction engine. This is running client-side to protect your data — the real bot handles documents 40× larger.
+        </p>
+
+        <!-- Simulator layout -->
+        <div class="simulator reveal-up" style="--d:.20s">
+
+          <!-- ── LEFT: Input panel ───────────────────────────── -->
+          <div class="sim-panel sim-panel--input">
+            <div class="sim-panel__header">
+              <div class="sim-panel__dots" aria-hidden="true">
+                <span class="sdot sdot--r"></span>
+                <span class="sdot sdot--y"></span>
+                <span class="sdot sdot--g"></span>
+              </div>
+              <span class="sim-panel__title">raw_input.log</span>
+              <span class="sim-panel__badge sim-panel__badge--warn">UNSTRUCTURED</span>
+            </div>
+
+            <!-- Industry selector -->
+            <div class="sim-select-wrap">
+              <label for="industry-select" class="sim-select-label">
+                Select document type:
+              </label>
+              <div class="sim-select-field">
+                <select id="industry-select" class="sim-select" aria-label="Select industry document type">
+                  <option value="healthcare">Healthcare Intake Form</option>
+                  <option value="ecommerce">Messy E-commerce CSV</option>
+                  <option value="legal">Legal Contract / Invoice</option>
+                </select>
+                <span class="sim-select-arrow" aria-hidden="true">▾</span>
+              </div>
+            </div>
+
+            <!-- Raw text display terminal -->
+            <div class="sim-raw-terminal" id="sim-raw-terminal" aria-label="Raw unstructured document input" aria-live="polite">
+              <div class="sim-raw-terminal__inner" id="sim-raw-content">
+                <!-- Populated by JS on load -->
+              </div>
+            </div>
+
+            <div class="sim-input-meta">
+              <span class="meta-pill meta-pill--warn" id="sim-char-count">Calculating...</span>
+              <span class="meta-pill">Raw / Unstructured</span>
+              <span class="meta-pill">OCR Ready</span>
+            </div>
+          </div>
+
+          <!-- ── CENTRE: Action column ───────────────────────── -->
+          <div class="sim-action-col">
+            <div class="sim-flow-line sim-flow-line--top" aria-hidden="true"></div>
+
+            <button class="sim-run-btn" id="sim-run-btn" aria-live="polite" aria-label="Run AI extraction on raw document">
+              <span class="sim-run-btn__icon" aria-hidden="true" id="sim-btn-icon">
+                <!-- AI brain SVG -->
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M14 3v3M14 22v3M3 14h3M22 14h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M6.2 6.2l2.1 2.1M19.7 19.7l2.1 2.1M6.2 21.8l2.1-2.1M19.7 8.3l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span id="sim-btn-text">Run AI Extraction</span>
+            </button>
+
+            <div class="sim-flow-line sim-flow-line--bot" aria-hidden="true"></div>
+
+            <!-- Confidence meter (shown after run) -->
+            <div class="sim-confidence" id="sim-confidence" aria-hidden="true">
+              <span class="sim-confidence__label">Confidence</span>
+              <div class="sim-confidence__bar-wrap">
+                <div class="sim-confidence__bar" id="sim-conf-bar"></div>
+              </div>
+              <span class="sim-confidence__pct" id="sim-conf-pct">0%</span>
+            </div>
+          </div>
+
+          <!-- ── RIGHT: Output panel ──────────────────────────── -->
+          <div class="sim-panel sim-panel--output">
+            <div class="sim-panel__header">
+              <div class="sim-panel__dots" aria-hidden="true">
+                <span class="sdot sdot--r"></span>
+                <span class="sdot sdot--y"></span>
+                <span class="sdot sdot--g"></span>
+              </div>
+              <span class="sim-panel__title">structured_output.json</span>
+              <span class="sim-panel__badge sim-panel__badge--ok" id="output-badge">AWAITING INPUT</span>
+            </div>
+
+            <!-- Output area — JS populates this -->
+            <div class="sim-output-area" id="sim-output-area" aria-live="polite" aria-label="Extracted structured data output">
+              <div class="sim-output-empty" id="sim-output-empty">
+                <div class="sim-output-empty__icon" aria-hidden="true">
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="6" y="8" width="24" height="28" rx="3" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 3"/>
+                    <path d="M12 16h12M12 22h8M12 28h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 2"/>
+                    <circle cx="34" cy="34" r="7" fill="#0F172A" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M31 34l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <p class="sim-output-empty__title">Output will appear here</p>
+                <p class="sim-output-empty__hint">Click <strong>Run AI Extraction</strong> to process the raw document on the left.</p>
+              </div>
+            </div>
+
+            <div class="sim-output-meta" id="sim-output-meta" style="display:none">
+              <span class="meta-pill meta-pill--ok" id="meta-fields">— fields</span>
+              <span class="meta-pill meta-pill--ok" id="meta-time">—ms</span>
+              <span class="meta-pill meta-pill--ok">DB Ready</span>
+            </div>
+          </div>
+
+        </div><!-- /simulator -->
+
+        <!-- Processing overlay — shown during loading state -->
+        <div class="sim-processing-overlay" id="sim-processing-overlay" aria-hidden="true">
+          <div class="sim-processing-inner">
+            <div class="sim-spinner" aria-hidden="true">
+              <div class="spinner-ring"></div>
+              <div class="spinner-ring spinner-ring--2"></div>
+            </div>
+            <p class="sim-processing-title">AI Engine Running</p>
+            <div class="sim-processing-steps" id="sim-steps">
+              <div class="proc-step" id="step-1">
+                <span class="proc-step__dot"></span>
+                <span>Parsing document structure</span>
+                <span class="proc-step__status" id="s1-status">...</span>
+              </div>
+              <div class="proc-step" id="step-2">
+                <span class="proc-step__dot"></span>
+                <span>Running OCR pass</span>
+                <span class="proc-step__status" id="s2-status">—</span>
+              </div>
+              <div class="proc-step" id="step-3">
+                <span class="proc-step__dot"></span>
+                <span>Extracting &amp; normalising fields</span>
+                <span class="proc-step__status" id="s3-status">—</span>
+              </div>
+              <div class="proc-step" id="step-4">
+                <span class="proc-step__dot"></span>
+                <span>Validating against schema</span>
+                <span class="proc-step__status" id="s4-status">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /simulator -->
+
+
+    <!-- ══════════════════════════════════════════════
+         § 3 — TECH ARSENAL (VALUE PROPS)
+    ══════════════════════════════════════════════ -->
+    <section class="arsenal-section" id="arsenal">
+      <div class="container">
+
+        <div class="section-kicker reveal-up">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Under the Hood
+        </div>
+        <h2 class="section-heading reveal-up" style="--d:.08s">
+          The Tech <span class="grad-text">Arsenal.</span>
+        </h2>
+        <p class="section-sub reveal-up" style="--d:.14s">
+          Three integrated capability layers that make <span class="dynamic-name">your business</span> untouchable — from legacy ERP to cutting-edge AI.
+        </p>
+
+        <div class="arsenal-grid">
+
+          <!-- Card 1 — Legacy Integration -->
+          <div class="arsenal-card reveal-up" style="--d:0s">
+            <div class="arsenal-card__num" aria-hidden="true">01</div>
+            <div class="arsenal-card__icon-wrap">
+              <div class="arsenal-card__icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                  <rect x="2" y="6" width="26" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 12h4M8 16h2M16 12h6M16 16h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M11 6V4M19 6V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <circle cx="24" cy="23" r="5" fill="#0F172A" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M22 23l1.5 1.5L26 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="arsenal-card__title">Legacy Integration via RPA</h3>
+            <p class="arsenal-card__desc">
+              Most document workflows live inside decade-old ERP systems with no API. Our Robotic Process Automation layer acts as a human operator — navigating UIs, copy-pasting data, and submitting forms — without touching your existing infrastructure or requiring a single line change from your IT team.
+            </p>
+            <ul class="arsenal-card__points">
+              <li>SAP, Oracle, QuickBooks, Sage compatible</li>
+              <li>Works with any desktop or web app</li>
+              <li>No vendor cooperation required</li>
+            </ul>
+          </div>
+
+          <!-- Card 2 — Enterprise AI OCR -->
+          <div class="arsenal-card arsenal-card--featured reveal-up" style="--d:.1s">
+            <div class="arsenal-card__num" aria-hidden="true">02</div>
+            <div class="arsenal-card__accuracy-badge" aria-label="99.4% extraction accuracy">99.4%</div>
+            <div class="arsenal-card__icon-wrap">
+              <div class="arsenal-card__icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                  <path d="M4 10V6a2 2 0 012-2h4M20 4h4a2 2 0 012 2v4M26 20v4a2 2 0 01-2 2h-4M10 26H6a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <rect x="10" y="10" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M13 15l1.5 1.5L17 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="arsenal-card__title">Enterprise AI — 99.4% Accurate OCR</h3>
+            <p class="arsenal-card__desc">
+              Our multi-model OCR stack combines layout-aware transformers with domain-specific fine-tuning. It handles handwritten text, degraded scans, rotated pages, multi-column layouts, and mixed-language documents — outputting structured JSON your databases can ingest immediately, with a per-field confidence score.
+            </p>
+            <ul class="arsenal-card__points">
+              <li>Handwriting, stamps &amp; mixed-media support</li>
+              <li>Per-field confidence scoring</li>
+              <li>Domain fine-tuning (medical, legal, finance)</li>
+            </ul>
+          </div>
+
+          <!-- Card 3 — Cloud Pipelines -->
+          <div class="arsenal-card reveal-up" style="--d:.2s">
+            <div class="arsenal-card__num" aria-hidden="true">03</div>
+            <div class="arsenal-card__icon-wrap">
+              <div class="arsenal-card__icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                  <circle cx="6"  cy="15" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="24" cy="8"  r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="24" cy="22" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M9.5 13.5L20.5 9.5M9.5 16.5L20.5 20.5" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
+                  <circle cx="15" cy="15" r="2" fill="currentColor" opacity=".4"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="arsenal-card__title">Invisible Cloud Pipelines</h3>
+            <p class="arsenal-card__desc">
+              Every extraction feeds into a serverless orchestration layer that routes clean data wherever you need it — your database, your CRM, your BI dashboard, or any REST API. No manual transfers. No human bottlenecks. Documents arrive in one end; structured records appear in the other, in under 8 seconds.
+            </p>
+            <ul class="arsenal-card__points">
+              <li>Webhook + REST API output</li>
+              <li>Salesforce, HubSpot, Airtable connectors</li>
+              <li>Sub-8 second end-to-end latency</li>
+            </ul>
+          </div>
+
+        </div><!-- /arsenal-grid -->
+      </div>
+    </section><!-- /arsenal -->
+
+
+    <!-- ══════════════════════════════════════════════
+         § 4 — BANK-GRADE SECURITY BANNER
+    ══════════════════════════════════════════════ -->
+    <section class="security-banner" id="security" aria-label="Security and compliance information">
+      <div class="container">
+        <div class="security-inner reveal-up">
+
+          <div class="security-badge" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <path d="M18 3L6 8v10c0 7.18 5.16 13.9 12 15.93C24.84 31.9 30 25.18 30 18V8L18 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M13 18l3.5 3.5L23 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="security-content">
+            <h2 class="security-heading">Bank-Grade Security. Zero Compromise.</h2>
+            <p class="security-sub">
+              <span class="dynamic-name">Your business</span> data is processed inside an isolated, ephemeral compute environment. Documents are never stored after processing — they are destroyed the moment extraction completes.
+            </p>
+          </div>
+
+          <div class="security-pillars">
+            <div class="sec-pillar">
+              <div class="sec-pillar__icon" aria-hidden="true">🔐</div>
+              <div class="sec-pillar__content">
+                <span class="sec-pillar__title">AES-256 Encryption</span>
+                <span class="sec-pillar__detail">In transit &amp; at rest — military-grade</span>
+              </div>
+            </div>
+            <div class="sec-divider" aria-hidden="true"></div>
+            <div class="sec-pillar">
+              <div class="sec-pillar__icon" aria-hidden="true">🗑</div>
+              <div class="sec-pillar__content">
+                <span class="sec-pillar__title">Zero Data Retention</span>
+                <span class="sec-pillar__detail">Raw documents deleted immediately post-extraction</span>
+              </div>
+            </div>
+            <div class="sec-divider" aria-hidden="true"></div>
+            <div class="sec-pillar">
+              <div class="sec-pillar__icon" aria-hidden="true">📋</div>
+              <div class="sec-pillar__content">
+                <span class="sec-pillar__title">NDPR &amp; GDPR Compliant</span>
+                <span class="sec-pillar__detail">Full B2B privacy compliance — documented on request</span>
+              </div>
+            </div>
+            <div class="sec-divider" aria-hidden="true"></div>
+            <div class="sec-pillar">
+              <div class="sec-pillar__icon" aria-hidden="true">🏢</div>
+              <div class="sec-pillar__content">
+                <span class="sec-pillar__title">Private Cloud Isolation</span>
+                <span class="sec-pillar__detail">Your data never touches shared multi-tenant infrastructure</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /security -->
+
+
+    <!-- ══════════════════════════════════════════════
+         § 5 — PROOF OF CONCEPT UPSELL / CTA
+    ══════════════════════════════════════════════ -->
+    <section class="poc-section" id="poc-upload">
+      <div class="container poc-inner">
+
+        <div class="poc-left reveal-up">
+          <div class="section-kicker">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Free Proof of Concept
+          </div>
+          <h2 class="section-heading" style="--d:.06s">
+            Let Us Prove It<br>With <span class="grad-text">Your Data.</span>
+          </h2>
+          <p class="poc-left__desc">
+            Upload one sample document — a PDF, CSV, or scanned image. We will run our full extraction pipeline on it and email <span class="dynamic-name">your business</span> a custom Power BI dashboard link within <strong>24 hours</strong>, completely free. No credit card. No commitment.
+          </p>
+
+          <ul class="poc-guarantees">
+            <li>
+              <span class="poc-guarantee__icon" aria-hidden="true">✓</span>
+              <div>
+                <strong>Real extraction, not a demo</strong>
+                <span>We process your actual document with production AI</span>
+              </div>
+            </li>
+            <li>
+              <span class="poc-guarantee__icon" aria-hidden="true">✓</span>
+              <div>
+                <strong>Custom Power BI dashboard</strong>
+                <span>Built around your specific fields and KPIs</span>
+              </div>
+            </li>
+            <li>
+              <span class="poc-guarantee__icon" aria-hidden="true">✓</span>
+              <div>
+                <strong>Delivered within 24 hours</strong>
+                <span>To your inbox — no meeting required</span>
+              </div>
+            </li>
+            <li>
+              <span class="poc-guarantee__icon" aria-hidden="true">✓</span>
+              <div>
+                <strong>Document deleted after processing</strong>
+                <span>Zero retention. See our security promise above.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="poc-right reveal-up" style="--d:.12s">
+          <div class="poc-form-card">
+            <div class="poc-form-card__header">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Upload Your Sample Document
+            </div>
+
+            <form id="poc-upload-form" class="poc-form" novalidate enctype="multipart/form-data">
+
+              <div class="field">
+                <label for="poc-name">Your Name</label>
+                <input type="text" id="poc-name" name="name"
+                  placeholder="Full name" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="poc-email">Business Email</label>
+                <input type="email" id="poc-email" name="email"
+                  placeholder="you@company.com" autocomplete="email" required>
+              </div>
+
+              <div class="field">
+                <label for="poc-company">Company Name</label>
+                <input type="text" id="poc-company" name="company"
+                  placeholder="Your company" autocomplete="organization">
+              </div>
+
+              <div class="field">
+                <label for="poc-doctype">Document Type</label>
+                <div class="sim-select-field">
+                  <select id="poc-doctype" name="document_type" class="sim-select" required>
+                    <option value="">Select document type...</option>
+                    <option value="invoice">Invoice / Bill</option>
+                    <option value="intake">Patient / Client Intake Form</option>
+                    <option value="contract">Contract / Agreement</option>
+                    <option value="report">Financial Report</option>
+                    <option value="csv">Data CSV / Spreadsheet</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="sim-select-arrow" aria-hidden="true">▾</span>
+                </div>
+              </div>
+
+              <!-- File upload dropzone -->
+              <div class="field">
+                <label for="poc-file">Sample Document</label>
+                <div class="file-dropzone" id="file-dropzone" role="button" tabindex="0"
+                  aria-label="Upload document — click or drag and drop">
+                  <input
+                    type="file"
+                    id="poc-file"
+                    name="document"
+                    class="file-input"
+                    accept=".pdf,.csv,.png,.jpg,.jpeg,.tiff,.webp"
+                    aria-label="Choose document file to upload"
+                    required
+                  >
+                  <div class="file-dropzone__ui" id="file-dropzone-ui">
+                    <div class="file-dropzone__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M6 20v4a2 2 0 002 2h16a2 2 0 002-2v-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M16 6v14M10 12l6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <p class="file-dropzone__primary">Drop file here or <span class="file-dropzone__browse">browse</span></p>
+                    <p class="file-dropzone__hint">PDF, CSV, PNG, JPG · Max 20 MB</p>
+                  </div>
+                  <div class="file-dropzone__selected" id="file-selected" style="display:none">
+                    <span class="file-selected__icon" aria-hidden="true">📄</span>
+                    <span class="file-selected__name" id="file-selected-name"></span>
+                    <span class="file-selected__size" id="file-selected-size"></span>
+                    <button type="button" class="file-selected__remove" id="file-remove" aria-label="Remove selected file">✕</button>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full poc-submit-btn" id="poc-submit">
+                <span id="poc-btn-text">Send My Document for Free Extraction →</span>
+              </button>
+
+              <p class="poc-form__disclaimer">
+                🔒 Submitted via encrypted connection. Document deleted immediately after processing. We will never share your data.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /poc-upload -->
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo" aria-label="Marvelous Ascent — home">
+        <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
+      </a>
+      <p class="footer-copy">© 2026 Marvelous Ascent. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Toast notification (matches index.html) -->
+  <div class="success-toast" id="success-toast"
+    role="status" aria-live="polite" aria-atomic="true">
+    <span class="success-toast__icon" aria-hidden="true">✓</span>
+    <span class="success-toast__msg"  id="toast-msg">Done!</span>
+    <button class="success-toast__close" id="toast-close" aria-label="Dismiss">✕</button>
+  </div>
+
+  <script src="doc-processing.js" defer></script>
+</body>
+</html>
