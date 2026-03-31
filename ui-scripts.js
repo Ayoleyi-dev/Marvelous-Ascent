@@ -495,9 +495,8 @@
     SUBSCRIBE_WEBHOOK,
     '✓ You\'re subscribed! Check your inbox for a welcome email.'
   );
-})(); 
 
-/* ═══════════════════════════════════════════════════════════
+  /* ═══════════════════════════════════════════════════════════
      DUAL COLOR PICKER LOGIC (Primary & Secondary)
   ═══════════════════════════════════════════════════════════ */
   var primaryPicker = document.getElementById('primary-color-input');
@@ -505,25 +504,41 @@
   var root = document.documentElement;
 
   function hexToRgb(hex) {
-    var r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+    var r = parseInt(hex.slice(1, 3), 16),
+        g = parseInt(hex.slice(3, 5), 16),
+        b = parseInt(hex.slice(5, 7), 16);
     return r + ',' + g + ',' + b;
   }
 
-  if (primaryPicker && secondaryPicker) {
-    primaryPicker.addEventListener('input', function() {
-      var hex = this.value;
-      var rgb = hexToRgb(hex);
-      root.style.setProperty('--green', hex);
-      root.style.setProperty('--green-10', 'rgba(' + rgb + ', 0.10)');
-      root.style.setProperty('--green-18', 'rgba(' + rgb + ', 0.18)');
-      root.style.setProperty('--green-glow', 'rgba(' + rgb + ', 0.24)');
-      root.style.setProperty('--border', 'rgba(' + rgb + ', 0.17)');
-    });
-
-    secondaryPicker.addEventListener('input', function() {
-      var hex = this.value;
-      var rgb = hexToRgb(hex);
-      root.style.setProperty('--orange', hex);
-      root.style.setProperty('--orange-12', 'rgba(' + rgb + ', 0.12)');
-    });
+  function updatePrimary(hex) {
+    if (!hex) return;
+    var rgb = hexToRgb(hex);
+    root.style.setProperty('--green', hex);
+    root.style.setProperty('--green-10', 'rgba(' + rgb + ', 0.10)');
+    root.style.setProperty('--green-18', 'rgba(' + rgb + ', 0.18)');
+    root.style.setProperty('--green-glow', 'rgba(' + rgb + ', 0.24)');
+    root.style.setProperty('--border', 'rgba(' + rgb + ', 0.17)');
   }
+
+  function updateSecondary(hex) {
+    if (!hex) return;
+    var rgb = hexToRgb(hex);
+    root.style.setProperty('--orange', hex);
+    root.style.setProperty('--orange-12', 'rgba(' + rgb + ', 0.12)');
+  }
+
+  // Listen for both live drags (input) and final selections (change)
+  if (primaryPicker) {
+    primaryPicker.addEventListener('input', function() { updatePrimary(this.value); });
+    primaryPicker.addEventListener('change', function() { updatePrimary(this.value); });
+  }
+
+  if (secondaryPicker) {
+    secondaryPicker.addEventListener('input', function() { updateSecondary(this.value); });
+    secondaryPicker.addEventListener('change', function() { updateSecondary(this.value); });
+  }
+
+})(); // <-- THIS SHOULD BE THE VERY LAST LINE IN YOUR FILE
+
+
+
