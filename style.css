@@ -1036,3 +1036,13 @@ textarea:focus {
 .mock-bar { width: 100%; background: linear-gradient(180deg, var(--green) 0%, transparent 100%); border-radius: 4px; transform-origin: bottom; animation: barGrow 1.5s var(--ease) both; }
 .mock-chart-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(12, 21, 37, 0.7); backdrop-filter: blur(4px); font-size: 13px; color: var(--green); font-weight: 500; }
 @keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* Dual Customizer Styles */
+.hero-customizer { margin-bottom: 28px; }
+.customizer-panel { display: flex; flex-wrap: wrap; gap: 12px; background: rgba(13, 23, 42, .90); border: 1px solid var(--border-dim); padding: 6px; border-radius: var(--r-lg); max-width: 580px; }
+.customizer-panel .name-field { flex: 1; min-width: 200px; border: none; background: transparent; }
+.color-controls { display: flex; gap: 8px; padding-right: 8px; }
+.color-wrap { display: flex; align-items: center; gap: 6px; background: var(--bg-card-alt); padding: 4px 10px 4px 4px; border-radius: var(--r); border: 1px solid var(--border-dim); font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.dual-picker { -webkit-appearance: none; appearance: none; width: 28px; height: 28px; border: none; background: transparent; cursor: pointer; padding: 0; }
+.dual-picker::-webkit-color-swatch-wrapper { padding: 0; border-radius: 4px; }
+.dual-picker::-webkit-color-swatch { border: none; border-radius: 4px; }
