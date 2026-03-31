@@ -76,22 +76,23 @@
           </p>
 
           <!-- Dynamic name input -->
-          <div class="name-input-wrap reveal-up" style="--d:.22s">
-            <label for="business-name-input" class="name-label">
-              <span aria-hidden="true">⚙</span> Personalise this page
-            </label>
-            <div class="name-field">
-              <span class="name-field__prefix" aria-hidden="true">$</span>
-              <input
-                type="text"
-                id="business-name-input"
-                class="name-input"
-                placeholder="Enter your company name to initialize..."
-                autocomplete="organization"
-                spellcheck="false"
-                maxlength="60"
-              >
-              <span class="name-field__cursor" aria-hidden="true" id="name-cursor">█</span>
+         <div class="hero-customizer reveal-up" style="--d:.22s">
+            <label class="name-label"><span aria-hidden="true">⚙</span> Personalise this page</label>
+            <div class="customizer-panel">
+              <div class="name-field">
+                <span class="name-field__prefix" aria-hidden="true">$</span>
+                <input type="text" id="business-name-input" class="name-input" placeholder="Enter company name..." autocomplete="organization" spellcheck="false" maxlength="60">
+              </div>
+              <div class="color-controls">
+                <div class="color-wrap" title="Primary Accent">
+                  <input type="color" id="primary-color-input" class="dual-picker" value="#00FF66">
+                  <span>Primary</span>
+                </div>
+                <div class="color-wrap" title="Secondary Accent (Buttons)">
+                  <input type="color" id="secondary-color-input" class="dual-picker" value="#FF6B00">
+                  <span>Secondary</span>
+                </div>
+              </div>
             </div>
           </div>
 
