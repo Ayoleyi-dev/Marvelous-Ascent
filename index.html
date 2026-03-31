@@ -3,211 +3,566 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Marvelous Ascent — Automated lead generation, custom BI dashboards, and web & social automation for B2B businesses.">
-  <title>Marvelous Ascent | Data & Automation Agency</title>
+  <meta name="description" content="Marvelous Ascent — B2B data, web, and marketing automation agency. Automated lead gen, custom BI dashboards, and high-converting web infrastructure.">
+  <title>Marvelous Ascent | Data &amp; Automation Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="form-message.css">
 </head>
 <body>
 
-  <!-- ░░ GRID OVERLAY ░░ -->
-  <div class="grid-overlay" aria-hidden="true"></div>
+  <!-- Decorative layers -->
+  <div class="bg-grid"     aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--tl" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--br" aria-hidden="true"></div>
 
-  <!-- ░░ HEADER ░░ -->
-  <header class="site-header">
+  <!-- ══════════════════════════════════
+       HEADER
+  ══════════════════════════════════ -->
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Marvelous Ascent Home">
+
+      <a href="#" class="logo" aria-label="Marvelous Ascent — home">
         <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
-        <span class="logo-text">Marvelous Ascent</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
       </a>
-      <nav>
-        <a href="#contact" class="nav-contact">Contact Us <span class="nav-arrow">→</span></a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#services"   class="nav-link">Services</a>
+        <a href="#roi"        class="nav-link">ROI</a>
+        <a href="#work"       class="nav-link">Our Work</a>
+        <a href="#contact"    class="nav-link nav-link--cta">Contact Us <span aria-hidden="true">→</span></a>
       </nav>
+
+      <button class="hamburger" id="hamburger"
+        aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
+      <a href="#services"  class="mobile-nav__link">Services</a>
+      <a href="#roi"       class="mobile-nav__link">ROI Calculator</a>
+      <a href="#work"      class="mobile-nav__link">Our Work</a>
+      <a href="#newsletter" class="mobile-nav__link">Newsletter</a>
+      <a href="#contact"   class="mobile-nav__link mobile-nav__link--cta">Contact Us</a>
+    </nav>
   </header>
 
   <main>
 
-    <!-- ░░ HERO ░░ -->
-    <section class="hero" id="home">
-      <div class="container hero-inner">
-        <div class="hero-eyebrow"><span class="dot"></span> B2B Data &amp; Automation Agency</div>
-        <h1 class="hero-headline">Scale Your Business<br>with <em>Data</em> &amp; <em>Automation.</em></h1>
-        <p class="hero-sub">We build automated lead generation systems, custom data dashboards, and high-converting web infrastructure.</p>
-        <div class="hero-cta-group">
-          <a href="#contact" class="btn btn-primary">Work With Us</a>
-          <a href="#services" class="btn btn-ghost">Our Services ↓</a>
-        </div>
-        <div class="hero-stats" aria-label="Agency statistics">
-          <div class="stat"><span class="stat-num">3×</span><span class="stat-label">Avg. Lead Volume Increase</span></div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat"><span class="stat-num">48h</span><span class="stat-label">Dashboard Deployment</span></div>
-          <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Automated Workflows</span></div>
-        </div>
-      </div>
-      <!-- Decorative terminal window -->
-      <div class="hero-terminal" aria-hidden="true">
-        <div class="term-bar"><span></span><span></span><span></span></div>
-        <div class="term-body">
-          <p><span class="t-green">$</span> init lead_pipeline --target B2B</p>
-          <p><span class="t-dim">▸ Scanning data sources...</span></p>
-          <p><span class="t-dim">▸ Building automation nodes...</span></p>
-          <p><span class="t-green">✓</span> Pipeline live. <span class="t-orange">ROI: +340%</span></p>
-          <p class="t-cursor">█</p>
-        </div>
-      </div>
-    </section>
+    <!-- ══════════════════════════════════
+         § 1 — HERO
+    ══════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
 
-    <!-- ░░ SERVICES ░░ -->
-    <section class="services" id="services">
+        <div class="hero__content">
+
+          <div class="hero__eyebrow reveal-up">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            B2B Data &amp; Automation Agency
+          </div>
+
+          <h1 class="hero__headline reveal-up" style="--d:.08s">
+            Scale Your Business<br>
+            with <em class="grad-text">Data</em> &amp; <em class="grad-text">Automation.</em>
+          </h1>
+
+          <p class="hero__sub reveal-up" style="--d:.16s">
+            We give <span class="dynamic-name">your business</span> an unfair competitive edge —
+            automating every bottleneck between you and predictable, scalable revenue.
+          </p>
+
+          <!-- Dynamic name input -->
+          <div class="name-input-wrap reveal-up" style="--d:.22s">
+            <label for="business-name-input" class="name-label">
+              <span aria-hidden="true">⚙</span> Personalise this page
+            </label>
+            <div class="name-field">
+              <span class="name-field__prefix" aria-hidden="true">$</span>
+              <input
+                type="text"
+                id="business-name-input"
+                class="name-input"
+                placeholder="Enter your company name to initialize..."
+                autocomplete="organization"
+                spellcheck="false"
+                maxlength="60"
+              >
+              <span class="name-field__cursor" aria-hidden="true" id="name-cursor">█</span>
+            </div>
+          </div>
+
+          <div class="hero__ctas reveal-up" style="--d:.30s">
+            <a href="#contact"  class="btn btn--primary">Work With Us</a>
+            <a href="#services" class="btn btn--ghost js-smooth">Our Services ↓</a>
+          </div>
+
+          <dl class="hero__stats reveal-up" style="--d:.38s">
+            <div class="stat">
+              <dt class="stat__label">Avg. Lead Increase</dt>
+              <dd class="stat__val" data-count="3"   data-suffix="×">0×</dd>
+            </div>
+            <div class="stat__sep" aria-hidden="true"></div>
+            <div class="stat">
+              <dt class="stat__label">Dashboard Deploy</dt>
+              <dd class="stat__val" data-count="48"  data-suffix="h">0h</dd>
+            </div>
+            <div class="stat__sep" aria-hidden="true"></div>
+            <div class="stat">
+              <dt class="stat__label">Automated Flows</dt>
+              <dd class="stat__val" data-count="100" data-suffix="%">0%</dd>
+            </div>
+          </dl>
+        </div><!-- /hero__content -->
+
+        <!-- Terminal widget — desktop only -->
+        <aside class="hero__terminal reveal-up" style="--d:.44s" aria-hidden="true">
+          <div class="term__bar">
+            <span class="term__dot term__dot--r"></span>
+            <span class="term__dot term__dot--y"></span>
+            <span class="term__dot term__dot--g"></span>
+            <span class="term__bar-title">pipeline_init.sh</span>
+          </div>
+          <div class="term__body">
+            <p><span class="tc-g">$</span> init pipeline --client <span class="tc-o" id="term-name">YOUR_COMPANY</span></p>
+            <p class="tc-d">▸ Scanning lead sources<span class="type-dots"></span></p>
+            <p class="tc-d">▸ Mapping automation nodes<span class="type-dots"></span></p>
+            <p class="tc-d">▸ Enriching CRM records<span class="type-dots"></span></p>
+            <p><span class="tc-g">✓</span> Pipeline live. ROI: <span class="tc-o">+340%</span></p>
+            <p class="term__cursor">█</p>
+          </div>
+        </aside>
+
+      </div>
+    </section><!-- /hero -->
+
+    <!-- ══════════════════════════════════
+         § 2 — ROI / CONVINCE ME
+    ══════════════════════════════════ -->
+    <section class="roi-section" id="roi">
       <div class="container">
-        <div class="section-label"><span class="dot"></span> What We Build</div>
-        <h2 class="section-heading">Engineered for <span class="highlight">Growth</span></h2>
-        <div class="cards">
 
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 28L12 18L18 23L26 12" stroke="#00FF66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="26" cy="8" r="3" stroke="#00FF66" stroke-width="2"/>
-                <circle cx="4" cy="28" r="2" fill="#00FF66"/>
+        <div class="section-kicker reveal-up">
+          <span class="pulse-dot" aria-hidden="true"></span>The Business Case
+        </div>
+        <h2 class="section-heading reveal-up" style="--d:.08s">
+          Why Automation is the Only Option<br>for <span class="dynamic-name grad-text">your business</span>.
+        </h2>
+        <p class="section-sub reveal-up" style="--d:.14s">
+          Select your industry — see exactly what inaction is costing you right now.
+        </p>
+
+        <div class="roi-tabs reveal-up" style="--d:.2s" role="tablist" aria-label="Select your industry">
+          <button class="roi-tab roi-tab--active" role="tab" aria-selected="true"
+            aria-controls="roi-panel" data-industry="healthcare">
+            <span aria-hidden="true">🏥</span> Healthcare
+          </button>
+          <button class="roi-tab" role="tab" aria-selected="false"
+            aria-controls="roi-panel" data-industry="ecommerce">
+            <span aria-hidden="true">🛒</span> E-commerce
+          </button>
+          <button class="roi-tab" role="tab" aria-selected="false"
+            aria-controls="roi-panel" data-industry="realestate">
+            <span aria-hidden="true">🏢</span> Real Estate
+          </button>
+        </div>
+
+        <div class="roi-panel" id="roi-panel" role="tabpanel" aria-live="polite">
+
+          <!-- Healthcare -->
+          <div class="roi-card" data-industry="healthcare" data-active>
+            <div class="roi-card__grid">
+              <div class="roi-col roi-col--pain">
+                <h3 class="roi-col__title"><span aria-hidden="true">⚠</span> Pain Points</h3>
+                <ul class="roi-list">
+                  <li>Manual patient intake averaging <strong>45 min/patient</strong>, creating scheduling backlogs</li>
+                  <li>Insurance claim rejection rate of <strong>32%</strong> due to data entry errors — each rework costs $25–$180</li>
+                  <li>No-shows costing mid-size clinics <strong>$150K+/year</strong> in unrecoverable revenue</li>
+                  <li>Staff spending <strong>60% of their shift</strong> on admin instead of billable patient care</li>
+                </ul>
+              </div>
+              <div class="roi-col roi-col--solved">
+                <h3 class="roi-col__title"><span aria-hidden="true">💡</span> What We Automate</h3>
+                <ul class="roi-list">
+                  <li>Digital intake + EHR sync cuts admin time by <strong>78% per patient</strong></li>
+                  <li>AI claim scrubbing reduces rejection rate to <strong>under 3.8%</strong> before submission</li>
+                  <li>SMS &amp; email reminders reduce no-shows by <strong>67%</strong>, auto-backfilling cancelled slots</li>
+                  <li>Staff fully reallocated to billable care — zero manual transcription</li>
+                </ul>
+              </div>
+              <div class="roi-col roi-col--metric">
+                <h3 class="roi-col__title"><span aria-hidden="true">📈</span> Your ROI</h3>
+                <div class="roi-big">
+                  <span class="roi-big__fig">8.4×</span>
+                  <span class="roi-big__label">ROI in Year 1</span>
+                </div>
+                <p class="roi-big__detail">Avg. <strong>$280,000</strong> saved annually for a mid-size clinic</p>
+                <a href="#contact" class="btn btn--primary btn--sm">Get My Estimate →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- E-commerce -->
+          <div class="roi-card" data-industry="ecommerce">
+            <div class="roi-card__grid">
+              <div class="roi-col roi-col--pain">
+                <h3 class="roi-col__title"><span aria-hidden="true">⚠</span> Pain Points</h3>
+                <ul class="roi-list">
+                  <li>Manual order reconciliation consuming <strong>6+ hours daily</strong> across fulfilment and finance</li>
+                  <li><strong>74% cart abandonment</strong> with zero automated recovery sequences in place</li>
+                  <li>Inventory sync errors causing oversells, refunds, and <strong>1-star reviews</strong></li>
+                  <li>Ad spend wasted on audiences with no behavioural segmentation — <strong>41% wasted CPM</strong></li>
+                </ul>
+              </div>
+              <div class="roi-col roi-col--solved">
+                <h3 class="roi-col__title"><span aria-hidden="true">💡</span> What We Automate</h3>
+                <ul class="roi-list">
+                  <li>Order-to-fulfilment pipeline with auto-reconciliation — <strong>zero manual intervention</strong></li>
+                  <li>Abandoned cart flows recover <strong>15–22% of lost carts</strong> within 24 hours</li>
+                  <li>Real-time cross-platform inventory sync — <strong>oversells drop to zero</strong></li>
+                  <li>Behavioural segmentation cuts wasted ad spend by <strong>41%</strong></li>
+                </ul>
+              </div>
+              <div class="roi-col roi-col--metric">
+                <h3 class="roi-col__title"><span aria-hidden="true">📈</span> Your ROI</h3>
+                <div class="roi-big">
+                  <span class="roi-big__fig">11×</span>
+                  <span class="roi-big__label">ROI in Year 1</span>
+                </div>
+                <p class="roi-big__detail">Avg. <strong>$190,000</strong> recovered annually for a mid-size store</p>
+                <a href="#contact" class="btn btn--primary btn--sm">Get My Estimate →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Real Estate -->
+          <div class="roi-card" data-industry="realestate">
+            <div class="roi-card__grid">
+              <div class="roi-col roi-col--pain">
+                <h3 class="roi-col__title"><span aria-hidden="true">⚠</span> Pain Points</h3>
+                <ul class="roi-list">
+                  <li>Average <strong>47-hour lag</strong> before first lead follow-up — buyers go cold in under 5 min</li>
+                  <li>Manual CMA reports taking <strong>3+ hours each</strong>, delaying listing velocity</li>
+                  <li>Listing data manually duplicated across <strong>5+ portals</strong> per property</li>
+                  <li>No nurture system — <strong>82% of cold leads</strong> close with a competitor who followed up faster</li>
+                </ul>
+              </div>
+              <div class="roi-col roi-col--solved">
+                <h3 class="roi-col__title"><span aria-hidden="true">💡</span> What We Automate</h3>
+                <ul class="roi-list">
+                  <li>Instant lead response sequences fire in <strong>under 90 seconds</strong>, personalised to source</li>
+                  <li>Automated CMA data pulls cut report time from 3 hrs to <strong>12 minutes</strong></li>
+                  <li>Single-source listing syndication — <strong>one update, everywhere</strong></li>
+                  <li>12-month drip nurture converts <strong>3× more cold leads</strong> into closed deals</li>
+                </ul>
+              </div>
+              <div class="roi-col roi-col--metric">
+                <h3 class="roi-col__title"><span aria-hidden="true">📈</span> Your ROI</h3>
+                <div class="roi-big">
+                  <span class="roi-big__fig">9.2×</span>
+                  <span class="roi-big__label">ROI in Year 1</span>
+                </div>
+                <p class="roi-big__detail">Avg. <strong>$240,000</strong> in leads &amp; time recovered annually</p>
+                <a href="#contact" class="btn btn--primary btn--sm">Get My Estimate →</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /roi-panel -->
+      </div>
+    </section><!-- /roi-section -->
+
+    <!-- ══════════════════════════════════
+         § 3 — SERVICES GRID
+    ══════════════════════════════════ -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-kicker reveal-up">
+          <span class="pulse-dot" aria-hidden="true"></span>What We Build
+        </div>
+        <h2 class="section-heading reveal-up" style="--d:.08s">
+          Engineered for <span class="grad-text">Growth</span>
+        </h2>
+
+        <div class="svc-grid">
+
+          <a href="automated-lead-gen.html" class="svc-card reveal-up" style="--d:0s"
+            aria-label="Automated Lead Generation — view service page">
+            <div class="svc-card__glow" aria-hidden="true"></div>
+            <div class="svc-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <path d="M3 22L9 14L15 19L21 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="21" cy="6.5" r="2.5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="3" cy="22" r="1.8" fill="currentColor"/>
               </svg>
             </div>
-            <h3 class="card-title">Automated Lead Gen</h3>
-            <p class="card-desc">End-to-end prospecting pipelines that identify, qualify, and engage your ideal B2B clients — 24/7, without manual effort.</p>
-            <ul class="card-list">
+            <h3 class="svc-card__title">Automated Lead Gen</h3>
+            <p class="svc-card__desc">End-to-end prospecting pipelines that identify, qualify, and engage your ideal B2B clients — 24/7, with zero manual effort.</p>
+            <ul class="svc-card__list">
               <li>Multi-channel outreach sequences</li>
               <li>ICP-matched prospect scraping</li>
               <li>CRM sync &amp; enrichment</li>
             </ul>
-          </article>
+            <span class="svc-card__cta" aria-hidden="true">Explore service →</span>
+          </a>
 
-          <article class="card card--featured">
-            <div class="card-badge">Most Popular</div>
-            <div class="card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="20" width="6" height="9" rx="1" stroke="#00FF66" stroke-width="2"/>
-                <rect x="13" y="13" width="6" height="16" rx="1" stroke="#00FF66" stroke-width="2"/>
-                <rect x="23" y="6" width="6" height="23" rx="1" stroke="#00FF66" stroke-width="2"/>
-                <path d="M6 17L16 10L26 4" stroke="#00FF66" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <a href="custom-bi-dashboards.html" class="svc-card svc-card--featured reveal-up" style="--d:.08s"
+            aria-label="Custom BI Dashboards — view service page">
+            <div class="svc-card__glow" aria-hidden="true"></div>
+            <div class="svc-card__badge">Most Popular</div>
+            <div class="svc-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <rect x="2" y="16" width="5" height="8" rx="1" stroke="currentColor" stroke-width="2"/>
+                <rect x="10.5" y="10" width="5" height="14" rx="1" stroke="currentColor" stroke-width="2"/>
+                <rect x="19" y="4" width="5" height="20" rx="1" stroke="currentColor" stroke-width="2"/>
+                <path d="M4.5 13L13 7L21.5 2" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
               </svg>
             </div>
-            <h3 class="card-title">Custom BI Dashboards</h3>
-            <p class="card-desc">Real-time intelligence dashboards that transform your raw data into actionable business insights and competitive advantage.</p>
-            <ul class="card-list">
+            <h3 class="svc-card__title">Custom BI Dashboards</h3>
+            <p class="svc-card__desc">Real-time intelligence dashboards that transform raw data into actionable decisions and sustained competitive advantage.</p>
+            <ul class="svc-card__list">
               <li>Live KPI monitoring</li>
               <li>Multi-source data pipelines</li>
-              <li>Custom reporting &amp; alerts</li>
+              <li>Custom alerts &amp; reports</li>
             </ul>
-          </article>
+            <span class="svc-card__cta" aria-hidden="true">Explore service →</span>
+          </a>
 
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="8" cy="16" r="4" stroke="#00FF66" stroke-width="2"/>
-                <circle cx="24" cy="8" r="4" stroke="#00FF66" stroke-width="2"/>
-                <circle cx="24" cy="24" r="4" stroke="#00FF66" stroke-width="2"/>
-                <line x1="12" y1="14" x2="20" y2="10" stroke="#00FF66" stroke-width="1.5"/>
-                <line x1="12" y1="18" x2="20" y2="22" stroke="#00FF66" stroke-width="1.5"/>
+          <a href="web-social-automation.html" class="svc-card reveal-up" style="--d:.16s"
+            aria-label="Web &amp; Social Automation — view service page">
+            <div class="svc-card__glow" aria-hidden="true"></div>
+            <div class="svc-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <circle cx="6"  cy="13" r="3.5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="20" cy="6"  r="3.5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="20" cy="20" r="3.5" stroke="currentColor" stroke-width="2"/>
+                <line x1="9.5" y1="11.2" x2="16.5" y2="7.8"  stroke="currentColor" stroke-width="1.5"/>
+                <line x1="9.5" y1="14.8" x2="16.5" y2="18.2" stroke="currentColor" stroke-width="1.5"/>
               </svg>
             </div>
-            <h3 class="card-title">Web &amp; Social Automation</h3>
-            <p class="card-desc">High-converting web infrastructure combined with automated social presence — so your brand grows while you focus on closing deals.</p>
-            <ul class="card-list">
-              <li>Landing page &amp; funnel builds</li>
+            <h3 class="svc-card__title">Web &amp; Social Automation</h3>
+            <p class="svc-card__desc">High-converting web infrastructure combined with automated social presence — your brand grows while you focus on closing.</p>
+            <ul class="svc-card__list">
+              <li>Landing pages &amp; funnels</li>
               <li>Scheduled social publishing</li>
               <li>Analytics &amp; A/B testing</li>
             </ul>
-          </article>
+            <span class="svc-card__cta" aria-hidden="true">Explore service →</span>
+          </a>
 
+          <a href="automated-document-processing.html" class="svc-card reveal-up" style="--d:.24s"
+            aria-label="Automated Document Processing (OCR) — view service page">
+            <div class="svc-card__glow" aria-hidden="true"></div>
+            <div class="svc-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <rect x="4" y="2" width="13" height="17" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 7h5M8 11h5M8 15h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="19.5" cy="19.5" r="4.5" fill="#0F172A" stroke="currentColor" stroke-width="2"/>
+                <path d="M17.5 19.5l1.5 1.5 2.5-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-card__title">Document Processing <span class="svc-tag">OCR</span></h3>
+            <p class="svc-card__desc">We build custom AI bots that scan PDFs, handwritten invoices, and physical documents, extracting raw text into structured, error-free databases.</p>
+            <ul class="svc-card__list">
+              <li>PDF &amp; invoice extraction</li>
+              <li>Structured DB output</li>
+              <li>99.4% accuracy rate</li>
+            </ul>
+            <span class="svc-card__cta" aria-hidden="true">Explore service →</span>
+          </a>
+
+        </div>
+      </div>
+    </section><!-- /services-section -->
+
+    <!-- ══════════════════════════════════
+         § 4 — LIVE DATA DEMO (Power BI)
+    ══════════════════════════════════ -->
+    <section class="demo-section" id="work">
+      <div class="container">
+
+        <div class="section-kicker reveal-up">
+          <span class="pulse-dot" aria-hidden="true"></span>Live Demo
+        </div>
+        <h2 class="section-heading reveal-up" style="--d:.08s">
+          Interact With <span class="grad-text">Our Work.</span>
+        </h2>
+        <p class="section-sub reveal-up" style="--d:.14s">
+          A live embedded Power BI dashboard — click, filter, and drill down. This is what your data looks like when it actually works for you.
+        </p>
+
+        <!-- Glassmorphism container -->
+        <div class="bi-glass reveal-up" style="--d:.22s">
+
+          <div class="bi-toolbar">
+            <div class="bi-toolbar__dots">
+              <span class="bi-dot bi-dot--r" aria-hidden="true"></span>
+              <span class="bi-dot bi-dot--y" aria-hidden="true"></span>
+              <span class="bi-dot bi-dot--g" aria-hidden="true"></span>
+            </div>
+            <div class="bi-toolbar__title">
+              <span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span>
+              Marvelous Ascent — Client Analytics Dashboard
+            </div>
+            <span class="bi-live-badge">● LIVE</span>
+          </div>
+
+          <!-- ═══════════════════════════════════════════════════════
+               HOW TO EMBED YOUR POWER BI DASHBOARD
+               ───────────────────────────────────────────────────────
+               1. Open your report in Power BI Service
+               2. File → Embed report → Publish to web (or Website)
+               3. Copy the src URL from the generated <iframe> tag
+               4. Paste it into src="" on the iframe below
+               URL format: https://app.powerbi.com/reportEmbed?reportId=...
+          ═══════════════════════════════════════════════════════════ -->
+          <div class="bi-embed-wrap">
+            <iframe
+              id="power-bi-embed"
+              title="Marvelous Ascent Live Analytics Dashboard"
+              src=""
+              frameborder="0"
+              allowfullscreen="true"
+              loading="lazy"
+              aria-label="Interactive Power BI analytics dashboard"
+            ></iframe>
+
+            <!-- Visible only when src is empty — remove this div once you add your URL -->
+            <div class="bi-placeholder" id="bi-placeholder">
+              <div class="bi-placeholder__inner">
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+                  <rect x="4"  y="32" width="8" height="16" rx="2" stroke="#00FF66" stroke-width="1.8"/>
+                  <rect x="22" y="20" width="8" height="28" rx="2" stroke="#00FF66" stroke-width="1.8"/>
+                  <rect x="40" y="8"  width="8" height="40" rx="2" stroke="#00FF66" stroke-width="1.8"/>
+                  <path d="M8 28L26 16L44 5" stroke="#00FF66" stroke-width="1.5" stroke-dasharray="4 3"/>
+                </svg>
+                <p class="bi-placeholder__title">Power BI Dashboard</p>
+                <p class="bi-placeholder__hint">Paste your embed URL into <code>src=""</code> on the <code>#power-bi-embed</code> iframe above.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bi-footer">
+            <span>📊 Revenue &nbsp;·&nbsp; Leads &nbsp;·&nbsp; Conversions &nbsp;·&nbsp; Pipeline</span>
+            <span>🔄 Real-time</span>
+          </div>
+
+        </div><!-- /bi-glass -->
+      </div>
+    </section><!-- /demo-section -->
+
+    <!-- ══════════════════════════════════
+         § 5a — NEWSLETTER
+    ══════════════════════════════════ -->
+    <section class="newsletter-section" id="newsletter">
+      <div class="container">
+        <div class="newsletter-card reveal-up">
+          <div class="newsletter-card__content">
+            <div class="section-kicker">
+              <span class="pulse-dot" aria-hidden="true"></span>Free Weekly Intel
+            </div>
+            <h2 class="section-heading" style="margin-bottom:10px">
+              Get Our Free Data &amp; Automation<br>Strategies <span class="grad-text">Weekly.</span>
+            </h2>
+            <p class="newsletter-card__sub">
+              Practical tactics from active campaigns. No fluff. Unsubscribe any time.
+            </p>
+          </div>
+          <div class="newsletter-card__form">
+            <form id="subscribe-form" novalidate>
+              <div class="inline-row">
+                <label for="sub-email" class="sr-only">Email Address</label>
+                <input
+                  type="email" id="sub-email" name="email"
+                  placeholder="Enter your email address"
+                  autocomplete="email" required
+                >
+                <button type="submit" class="btn btn--primary">Subscribe</button>
+              </div>
+              <p class="form-note">Join 2,400+ operators. Zero spam — ever.</p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ░░ NEWSLETTER ░░ -->
-    <section class="newsletter" id="newsletter">
-      <div class="container newsletter-inner">
-        <div class="newsletter-content">
-          <div class="section-label"><span class="dot"></span> Free Weekly Intel</div>
-          <h2 class="section-heading">Get Our Free Data &amp; Automation<br>Strategies <span class="highlight">Weekly.</span></h2>
-          <p class="newsletter-sub">Practical tactics from active campaigns. No fluff. Unsubscribe any time.</p>
-        </div>
-        <form id="subscribe-form" class="subscribe-form" novalidate>
-          <div class="form-row">
-            <label for="sub-email" class="sr-only">Email Address</label>
-            <input type="email" id="sub-email" name="email" placeholder="Enter your email address" autocomplete="email" required>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </div>
-          <p class="form-note">Join 2,400+ operators. No spam, ever.</p>
-        </form>
-      </div>
-    </section>
+    <!-- ══════════════════════════════════
+         § 5b — CONTACT
+    ══════════════════════════════════ -->
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
 
-    <!-- ░░ CONTACT ░░ -->
-    <section class="contact" id="contact">
-      <div class="container contact-inner">
-        <div class="contact-left">
-          <div class="section-label"><span class="dot"></span> Let's Talk</div>
-          <h2 class="section-heading">Ready to Build<br>Your <span class="highlight">Growth Engine?</span></h2>
-          <p class="contact-sub">Tell us about your business goals and we'll map out a custom automation strategy — free consultation, no commitment.</p>
-          <div class="contact-meta">
-            <div class="meta-item"><span class="meta-icon">⚡</span> Typical response in &lt; 4 hours</div>
-            <div class="meta-item"><span class="meta-icon">🔒</span> All conversations are confidential</div>
+        <div class="contact-left reveal-up">
+          <div class="section-kicker">
+            <span class="pulse-dot" aria-hidden="true"></span>Let's Talk
           </div>
+          <h2 class="section-heading" style="--d:.06s">
+            Ready to Build<br>
+            <span class="dynamic-name grad-text">Your</span> Growth Engine?
+          </h2>
+          <p class="contact-left__sub">
+            Tell us about your goals and we'll map out a custom automation strategy — free consultation, zero commitment.
+          </p>
+          <ul class="trust-list">
+            <li><span aria-hidden="true">⚡</span> Response in under 4 hours</li>
+            <li><span aria-hidden="true">🔒</span> All conversations are confidential</li>
+            <li><span aria-hidden="true">📋</span> Free strategy session included</li>
+          </ul>
         </div>
-        <div class="contact-right">
+
+        <div class="contact-right reveal-up" style="--d:.12s">
           <form id="contact-form" class="contact-form" novalidate>
-            <div class="field-group">
+            <div class="field">
               <label for="c-name">Name</label>
-              <input type="text" id="c-name" name="name" placeholder="Your full name" autocomplete="name" required>
+              <input type="text"  id="c-name"    name="name"
+                placeholder="Your full name"  autocomplete="name"  required>
             </div>
-            <div class="field-group">
+            <div class="field">
               <label for="c-email">Business Email</label>
-              <input type="email" id="c-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+              <input type="email" id="c-email"   name="email"
+                placeholder="you@company.com"  autocomplete="email" required>
             </div>
-            <div class="field-group">
-              <label for="c-message">Message</label>
-              <textarea id="c-message" name="message" rows="5" placeholder="Tell us about your goals, current challenges, and what you'd like to automate..." required></textarea>
+            <div class="field">
+              <label for="c-msg">Message</label>
+              <textarea id="c-msg" name="message" rows="5"
+                placeholder="Tell us about your goals, current bottlenecks, and what you'd like to automate..."
+                required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+            <button type="submit" class="btn btn--primary btn--full">Send Message →</button>
           </form>
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- ░░ FOOTER ░░ -->
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <a href="#" class="logo" aria-label="Back to top">
         <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
-        <span class="logo-text">Marvelous Ascent</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
       </a>
-      <p class="copyright">© 2026 Marvelous Ascent. All rights reserved.</p>
+      <p class="footer-copy">© 2026 Marvelous Ascent. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Intersection Observer for reveal animations (no GSAP needed)
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+  <!-- ══════════════════════════════════
+       SUCCESS TOAST  (CSS only — JS triggers .is-visible)
+  ══════════════════════════════════ -->
+  <div class="success-toast" id="success-toast"
+    role="status" aria-live="polite" aria-atomic="true">
+    <span class="success-toast__icon" aria-hidden="true">✓</span>
+    <span class="success-toast__msg"  id="toast-msg">Done!</span>
+    <button class="success-toast__close" id="toast-close" aria-label="Dismiss">✕</button>
+  </div>
 
-    document.querySelectorAll('.card, .section-heading, .newsletter-inner, .contact-inner').forEach(function(el) {
-      observer.observe(el);
-    });
-  </script>
-  <script src="script.js"></script>
+  <script src="ui-scripts.js" defer></script>
 </body>
 </html>
