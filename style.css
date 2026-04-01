@@ -11,8 +11,8 @@
   --bg-card-alt: #0C1525;
   --bg-glass:    rgba(13, 23, 42, 0.72);
   --text:        #F8FAFC;
-  --text-dim:    #94A3B8;
-  --text-muted:  #475569;
+  --text-dim:    #CBD5E1; /* Brightened from #94A3B8 */
+  --text-muted:  #94A3B8; /* Brightened from #475569 */
   --green:       #00FF66;
   --green-10:    rgba(0, 255, 102, 0.10);
   --green-18:    rgba(0, 255, 102, 0.18);
