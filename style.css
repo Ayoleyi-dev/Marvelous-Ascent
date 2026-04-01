@@ -180,6 +180,25 @@ textarea  { resize: vertical; }
 .btn--sm   { padding: 10px 20px; font-size: 13px; }
 .btn--full { width: 100%; }
 
+/* Premium CTA Micro-Nudge Animation */
+@keyframes microNudge {
+  0%, 85%, 100% { transform: translate3d(0, 0, 0); }
+  88%  { transform: translate3d(-3px, 0, 0); }
+  91%  { transform: translate3d(3px, 0, 0); }
+  94%  { transform: translate3d(-2px, 0, 0); }
+  97%  { transform: translate3d(2px, 0, 0); }
+}
+
+/* Add this class to any button you want to shake */
+.btn--nudge {
+  animation: microNudge 6s cubic-bezier(.36,.07,.19,.97) infinite;
+}
+
+/* Stop the shake if the user is hovering over it */
+.btn--nudge:hover {
+  animation: none;
+}
+
 /* ─── 7. SCROLL REVEAL ──────────────────────────────────────── */
 .reveal-up {
   opacity: 0;
