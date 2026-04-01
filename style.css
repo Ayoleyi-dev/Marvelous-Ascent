@@ -1068,3 +1068,20 @@ textarea:focus {
 .dual-picker { -webkit-appearance: none; appearance: none; width: 28px; height: 28px; border: none; background: transparent; cursor: pointer; padding: 0; }
 .dual-picker::-webkit-color-swatch-wrapper { padding: 0; border-radius: 4px; }
 .dual-picker::-webkit-color-swatch { border: none; border-radius: 4px; }
+
+/* Premium CTA Micro-Nudge Animation */
+@keyframes microNudge {
+  0%, 85%, 100% { transform: translate3d(0, 0, 0); }
+  88%  { transform: translate3d(-3px, 0, 0); }
+  91%  { transform: translate3d(3px, 0, 0); }
+  94%  { transform: translate3d(-2px, 0, 0); }
+  97%  { transform: translate3d(2px, 0, 0); }
+}
+
+.btn--nudge {
+  animation: microNudge 6s cubic-bezier(.36,.07,.19,.97) infinite;
+}
+
+.btn--nudge:hover {
+  animation: none;
+}
