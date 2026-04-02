@@ -468,7 +468,7 @@
       var bizInput = document.getElementById('business-name-input');
       var clientName = bizInput && bizInput.value.trim() !== '' ? bizInput.value : 'there';
       
-      var warmMessage = "Hey " + clientName + ", thanks so much for reaching out! A real human from our team will review your details and get back to you within 4 hours. Talk soon!";
+      var warmMessage = "Hey " + clientName + ", thanks so much for reaching out! Esther from our team will review your details and get back to you within 4 hours. Talk soon!";
       
       // Override the default bindForm behavior to inject the dynamic name
       var submitBtn = contactForm.querySelector('[type="submit"]');
