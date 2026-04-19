@@ -166,7 +166,42 @@ textarea  { resize: vertical; }
 .logo:hover { color: var(--green); }
 .logo-bracket  { color: var(--green); }
 .logo-wordmark { margin-left: 5px; }
+/* ─── PREMIUM LOGO ENTRANCE ANIMATION ───────────────────────── */
+.site-header .logo {
+  opacity: 0;
+  animation: logoEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
 
+.site-header .logo-bracket {
+  display: inline-block;
+  opacity: 0;
+  animation: bracketSnap 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+/* Make the left bracket slide from the left, right from the right */
+.site-header .logo-bracket:first-child { --dir: -1; transform: translateX(-15px); }
+.site-header .logo-bracket:last-child { --dir: 1; transform: translateX(15px); }
+
+/* The whole logo fades up from a blur */
+@keyframes logoEntrance {
+  0% { opacity: 0; transform: translateY(-8px) scale(0.97); filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+/* The brackets snap in and glow */
+@keyframes bracketSnap {
+  0% { 
+    opacity: 0; 
+    transform: translateX(calc(var(--dir) * 15px)); 
+    color: var(--text); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0); 
+    color: var(--green); 
+    text-shadow: 0 0 12px var(--green-glow); 
+  }
+}
 .primary-nav { display: none; align-items: center; gap: 28px; }
 .nav-link { font-size: 13px; color: var(--text-dim); transition: color var(--tx); }
 .nav-link:hover { color: var(--text); }
