@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marvelous Ascent — Automated Lead Generation. End-to-end prospecting pipelines that identify, qualify, and engage your ideal B2B clients.">
+  <title>Automated Lead Gen | Marvelous Ascent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-Specific Styles for Lead Gen Simulator */
+    .lg-hero { position: relative; z-index: 1; padding: clamp(72px, 10vw, 120px) 0 clamp(60px, 8vw, 96px); }
+    .funnel-sim { background: var(--bg-card); border: 1px solid var(--border-dim); border-radius: var(--r-xl); padding: 40px; text-align: center; margin-top: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .funnel-nodes { display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto 40px; position: relative; }
+    .funnel-nodes::before { content: ''; position: absolute; top: 50%; left: 10%; right: 10%; height: 2px; background: var(--border-dim); z-index: 0; transform: translateY(-50%); }
+    .f-node { position: relative; z-index: 1; width: 80px; height: 80px; background: var(--bg-card-alt); border: 2px solid var(--border-dim); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; transition: all 0.4s var(--ease); }
+    .f-node.is-active { border-color: var(--green); background: var(--green-10); box-shadow: 0 0 20px var(--green-glow); color: var(--green); transform: scale(1.1); }
+    .f-node-label { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 12px; font-size: 11px; color: var(--text-muted); text-transform: uppercase; white-space: nowrap; letter-spacing: 0.05em; font-family: var(--f-mono); }
+    .f-node.is-active .f-node-label { color: var(--green); }
+    
+    .sim-terminal { max-width: 600px; margin: 0 auto; background: var(--bg-card-alt); border: 1px solid var(--border); border-radius: var(--r-lg); text-align: left; padding: 20px; font-size: 13px; color: var(--text-dim); min-height: 180px; font-family: var(--f-mono); }
+    .log-line { margin-bottom: 8px; opacity: 0; transform: translateY(10px); animation: fadeUp 0.3s forwards; }
+    .tc-blue { color: #00E5FF; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
+      </a>
+      <nav class="primary-nav">
+        <a href="index.html#services" class="nav-link">All Services</a>
+        <button id="theme-toggle" class="theme-toggle">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="lg-hero">
+      <div class="container">
+        <div class="breadcrumb reveal-up">
+          <a href="index.html">Home</a> <span aria-hidden="true">/</span> 
+          <a href="index.html#services">Services</a> <span aria-hidden="true">/</span> 
+          <span aria-current="page">Automated Lead Generation</span>
+        </div>
+
+        <h1 class="hero__headline reveal-up" style="--d:.1s">
+          Never Miss a <span class="grad-text">Lead</span> Again.
+        </h1>
+        <p class="hero__sub reveal-up" style="--d:.2s">
+          We build instant routing pipelines for <span class="dynamic-name">your business</span>. The moment a prospect clicks your ad, they are qualified, routed to your CRM, and sent a personalized nurture sequence—in under 5 seconds.
+        </p>
+
+        <div class="funnel-sim reveal-up" style="--d:.3s">
+          <div class="section-kicker">Live Pipeline Simulator</div>
+          
+          <div class="funnel-nodes">
+            <div class="f-node" id="node-1">📱<span class="f-node-label">Ad Click</span></div>
+            <div class="f-node" id="node-2">⚡<span class="f-node-label">Webhook Trigger</span></div>
+            <div class="f-node" id="node-3">🧠<span class="f-node-label">Data Enrichment</span></div>
+            <div class="f-node" id="node-4">🎯<span class="f-node-label">CRM Injection</span></div>
+          </div>
+
+          <div class="sim-terminal" id="sim-terminal">
+            <div style="color: var(--text-muted);">// System standing by. Click the button to simulate an incoming lead.</div>
+          </div>
+
+          <button id="run-sim-btn" class="btn btn--primary" style="margin-top: 30px;">Simulate Inbound Lead →</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: var(--sec-py) 0;">
+      <div class="container">
+        <h2 class="section-heading reveal-up">The <span class="grad-text">Architecture.</span></h2>
+        <div class="svc-grid">
+          <div class="svc-card reveal-up">
+            <div class="svc-card__icon">📱</div>
+            <h3 class="svc-card__title">Meta &amp; TikTok Integration</h3>
+            <p class="svc-card__desc">Direct webhook connections to your performance marketing campaigns. Instant capture from Lead Forms straight into your database without manual CSV exports.</p>
+          </div>
+          <div class="svc-card reveal-up" style="--d:.1s">
+            <div class="svc-card__icon">🧠</div>
+            <h3 class="svc-card__title">Behavioral Routing</h3>
+            <p class="svc-card__desc">Smart logic that analyzes the lead's responses and routes them to the correct sales rep or specific email drip campaign based on their exact needs.</p>
+          </div>
+          <div class="svc-card reveal-up" style="--d:.2s">
+            <div class="svc-card__icon">⚡</div>
+            <h3 class="svc-card__title">Instant Nurture Sequences</h3>
+            <p class="svc-card__desc">Strike while the iron is hot. Automated SMS and email sequences fire within seconds of a form submission, booking appointments while your competitors sleep.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="newsletter-card reveal-up" style="text-align: center; display: block; max-width: 800px; margin: 0 auto;">
+          <h2 class="section-heading">Stop Leaking Traffic.</h2>
+          <p class="section-sub" style="margin: 0 auto 30px;">Let's audit your current ad flow and build a pipeline that converts.</p>
+          <a href="index.html#contact" class="btn btn--primary btn--nudge">Book a Strategy Call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
+      </a>
+      <p class="footer-copy">© 2026 Marvelous Ascent. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="ui-scripts.js"></script>
+  <script>
+    // Page-Specific Simulator Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('run-sim-btn');
+      const terminal = document.getElementById('sim-terminal');
+      const nodes = [
+        document.getElementById('node-1'),
+        document.getElementById('node-2'),
+        document.getElementById('node-3'),
+        document.getElementById('node-4')
+      ];
+
+      const logs = [
+        "<span class='tc-blue'>[Incoming]</span> New payload from Meta Lead Ads...",
+        "<span class='tc-g'>[Parsed]</span> Name: Wayne Enterprises | Intent: High",
+        "<span class='tc-o'>[Enriching]</span> Fetching company data & validating email...",
+        "<span class='tc-g'>[Success]</span> Lead injected to CRM. Triggering Welcome SMS sequence."
+      ];
+
+      btn.addEventListener('click', function() {
+        if (btn.disabled) return;
+        btn.disabled = true;
+        btn.textContent = 'Processing Pipeline...';
+        terminal.innerHTML = '';
+        
+        nodes.forEach(n => n.classList.remove('is-active'));
+
+        let step = 0;
+        const interval = setInterval(() => {
+          if (step > 0) nodes[step-1].classList.remove('is-active');
+          if (step < nodes.length) {
+            nodes[step].classList.add('is-active');
+            const p = document.createElement('div');
+            p.className = 'log-line';
+            p.innerHTML = logs[step];
+            terminal.appendChild(p);
+            step++;
+          } else {
+            clearInterval(interval);
+            setTimeout(() => {
+              btn.disabled = false;
+              btn.textContent = 'Simulate Another Lead →';
+            }, 1000);
+          }
+        }, 800); // 800ms per step
+      });
+    });
+  </script>
+</body>
+</html>
