@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marvelous Ascent — Web & Social Automation. High-converting web infrastructure combined with automated content syndication across all social platforms.">
+  <title>Web & Social Automation | Marvelous Ascent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ─── HERO & SIMULATOR STYLES ───────────────────────────── */
+    .ws-hero { position: relative; z-index: 1; padding: clamp(72px, 10vw, 120px) 0 clamp(60px, 8vw, 96px); }
+    
+    .omni-sim-wrapper { background: var(--bg-card); border: 1px solid var(--border-dim); border-radius: var(--r-xl); padding: clamp(24px, 4vw, 40px); margin-top: 50px; box-shadow: 0 30px 60px rgba(0,0,0,0.25); display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: stretch; }
+    @media (max-width: 800px) { .omni-sim-wrapper { grid-template-columns: 1fr; } }
+    
+    /* Terminal Console */
+    .sim-console { background: var(--bg-card-alt); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 20px; font-family: var(--f-mono); font-size: 12px; color: var(--text-dim); min-height: 240px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; position: relative; }
+    .sim-console::before { content: 'SYSTEM TERMINAL'; position: absolute; top: 0; left: 0; right: 0; padding: 8px 12px; background: rgba(0, 255, 102, 0.1); color: var(--green); font-size: 10px; letter-spacing: 0.1em; border-bottom: 1px solid var(--border); }
+    .console-inner { padding-top: 30px; }
+    .log-line { margin-top: 8px; opacity: 0; transform: translateY(10px); animation: fadeUp 0.3s forwards; line-height: 1.5; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    
+    /* Traffic Chart */
+    .sim-analytics { display: flex; flex-direction: column; justify-content: space-between; }
+    .chart-box { flex: 1; background: var(--bg-card-alt); border: 1px solid var(--border-dim); border-radius: var(--r-lg); padding: 20px; display: flex; align-items: flex-end; justify-content: space-between; gap: 6px; margin-top: 16px; min-height: 180px; }
+    .t-bar { flex: 1; background: var(--border-dim); border-radius: 3px 3px 0 0; transform-origin: bottom; transition: transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 1s ease; }
+    .t-bar.is-spiking { background: var(--green); }
+    .t-bar.is-spiking:nth-child(n+5) { transform: scaleY(1.8); }
+    .t-bar.is-spiking:nth-child(n+8) { transform: scaleY(2.5); background: var(--orange); }
+
+    /* Text Colors */
+    .tc-blue { color: #3B82F6; } .tc-g { color: var(--green); } .tc-o { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
+      </a>
+      <nav class="primary-nav">
+        <a href="index.html#services" class="nav-link">All Services</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 15px;" class="mobile-only">
+        <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="ws-hero">
+      <div class="container">
+        <div class="breadcrumb reveal-up">
+          <a href="index.html">Home</a> <span aria-hidden="true">/</span> 
+          <a href="index.html#services">Services</a> <span aria-hidden="true">/</span> 
+          <span aria-current="page">Web & Social Automation</span>
+        </div>
+
+        <div style="max-width: 800px;">
+          <h1 class="hero__headline reveal-up" style="--d:.1s">
+            Digital Omnipresence.<br>
+            <span class="grad-text">On Autopilot.</span>
+          </h1>
+          <p class="hero__sub reveal-up" style="--d:.2s">
+            Stop treating your website like a digital brochure. We build blazing-fast web infrastructure paired with automated social syndication engines for <span class="dynamic-name">your business</span>. Capture attention everywhere, convert it on a site that never sleeps.
+          </p>
+        </div>
+
+        <div class="omni-sim-wrapper reveal-up" style="--d:.3s">
+          
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div>
+              <h3 style="font-family: var(--f-display); font-size: 18px; margin-bottom: 8px;">Content Syndication Engine</h3>
+              <p style="font-size: 13px; color: var(--text-dim);">Watch how one action cascades across your entire digital footprint instantly.</p>
+            </div>
+            
+            <button class="btn btn--ghost" id="trigger-omni" style="align-self: flex-start;">Deploy New Content Asset →</button>
+            
+            <div class="sim-console">
+              <div class="console-inner" id="console-inner">
+                <div style="color: var(--text-muted);">// System standing by. Waiting for deployment trigger...</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-analytics">
+            <div>
+              <h3 style="font-family: var(--f-display); font-size: 18px; margin-bottom: 8px;">Live Web Traffic</h3>
+              <p style="font-size: 13px; color: var(--text-dim);">Real-time visitors routed from social channels.</p>
+            </div>
+            
+            <div class="chart-box" id="traffic-chart">
+              <div class="t-bar" style="height: 20%;"></div>
+              <div class="t-bar" style="height: 25%;"></div>
+              <div class="t-bar" style="height: 18%;"></div>
+              <div class="t-bar" style="height: 30%;"></div>
+              
+              <div class="t-bar" style="height: 22%;"></div>
+              <div class="t-bar" style="height: 28%;"></div>
+              <div class="t-bar" style="height: 35%;"></div>
+              <div class="t-bar" style="height: 40%;"></div>
+              <div class="t-bar" style="height: 38%;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); font-family: var(--f-mono); margin-top: 8px;">
+              <span>T-60m</span>
+              <span>NOW</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: var(--sec-py) 0;">
+      <div class="container">
+        <div class="section-kicker reveal-up"><span class="pulse-dot"></span>Infrastructure</div>
+        <h2 class="section-heading reveal-up">The <span class="grad-text">Ecosystem.</span></h2>
+        
+        <div class="svc-grid" style="margin-top: 40px;">
+          <div class="svc-card reveal-up">
+            <div class="svc-card__icon">⚡</div>
+            <h3 class="svc-card__title">High-Performance Web</h3>
+            <p class="svc-card__desc">We build lightning-fast, SEO-optimized websites (like the one you are on right now). Better load times mean lower bounce rates and higher conversion ratios.</p>
+          </div>
+          <div class="svc-card reveal-up" style="--d:.1s">
+            <div class="svc-card__icon">🔄</div>
+            <h3 class="svc-card__title">Social Syndication</h3>
+            <p class="svc-card__desc">Write a blog post once. Our bots automatically extract quotes, format them into Twitter threads and LinkedIn posts, and publish them on schedule to drive traffic.</p>
+          </div>
+          <div class="svc-card reveal-up" style="--d:.2s">
+            <div class="svc-card__icon">🤖</div>
+            <h3 class="svc-card__title">Engagement AI</h3>
+            <p class="svc-card__desc">Never leave a lead hanging. We deploy AI agents that auto-reply to Instagram DMs and LinkedIn comments, capturing lead info and pushing it to your CRM while you sleep.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="newsletter-card reveal-up" style="text-align: center; display: block; max-width: 800px; margin: 0 auto; border-color: var(--green);">
+          <h2 class="section-heading">Build Your Digital Moat.</h2>
+          <p class="section-sub" style="margin: 0 auto 30px;">Let's automate your presence so you can focus on closing deals.</p>
+          <a href="index.html#contact" class="btn btn--primary btn--nudge">Upgrade My Infrastructure</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
+        <span class="logo-wordmark">Marvelous Ascent</span>
+      </a>
+      <p class="footer-copy">© 2026 Marvelous Ascent. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="ui-scripts.js"></script>
+  <script>
+    // Simulator Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('trigger-omni');
+      const consoleInner = document.getElementById('console-inner');
+      const bars = document.querySelectorAll('.t-bar');
+
+      const logs = [
+        "<span class='tc-blue'>[CMS]</span> Parsing new Markdown asset 'B2B Growth 2026'...",
+        "<span class='tc-g'>[Web]</span> Successfully deployed to edge network (0.4s build).",
+        "<span class='tc-o'>[API: X/Twitter]</span> Extracted 5 key insights. Thread published.",
+        "<span class='tc-o'>[API: LinkedIn]</span> Formatted as long-form post. Published.",
+        "<span class='tc-blue'>[Event]</span> Webhooks firing. Social traffic routing to landing page...",
+        "<span class='tc-g'>[Analytics]</span> Massive traffic spike detected. Conversion forms active."
+      ];
+
+      btn.addEventListener('click', function() {
+        if (btn.disabled) return;
+        btn.disabled = true;
+        btn.textContent = 'Executing Workflow...';
+        btn.classList.remove('btn--ghost');
+        btn.classList.add('btn--primary');
+        
+        consoleInner.innerHTML = '';
+        bars.forEach(bar => bar.classList.remove('is-spiking'));
+
+        let step = 0;
+        const interval = setInterval(() => {
+          if (step < logs.length) {
+            const p = document.createElement('div');
+            p.className = 'log-line';
+            p.innerHTML = logs[step];
+            consoleInner.appendChild(p);
+            
+            // Trigger graph spike on the last two logs
+            if (step === 4 || step === 5) {
+              bars.forEach(bar => bar.classList.add('is-spiking'));
+            }
+            
+            step++;
+          } else {
+            clearInterval(interval);
+            setTimeout(() => {
+              btn.disabled = false;
+              btn.textContent = 'Deploy Another Asset →';
+              btn.classList.remove('btn--primary');
+              btn.classList.add('btn--ghost');
+            }, 2000);
+          }
+        }, 800); // 800ms per step
+      });
+    });
+  </script>
+</body>
+</html>
