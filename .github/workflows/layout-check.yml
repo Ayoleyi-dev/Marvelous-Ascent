@@ -23,11 +23,15 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Check responsive layout and shared logos
         run: node scripts/check-layout.mjs
+      - name: Check service pages and mobile navigation
+        run: node scripts/check-service-layout.mjs
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: responsive-home-screenshots
-          path: artifacts/layout-check/*.png
+          path: |
+            artifacts/layout-check/*.png
+            artifacts/service-layout/*.png
           if-no-files-found: ignore
           retention-days: 7
