@@ -20,5 +20,9 @@ jobs:
         run: |
           node --check ui-scripts.js
           node --check doc-processing.js
+          node --check site-navigation.js
+          node --check scripts/generate-services.mjs
+      - name: Verify generated service pages
+        run: node scripts/generate-services.mjs --check
       - name: Check site structure and references
         run: node scripts/check-site.mjs
