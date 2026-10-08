@@ -8,7 +8,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(fs.readFileSync(path.join(root,'data/services.json'),'utf8'));
 const pages = [
   'index.html', 'services.html', 'work.html', 'work/sonofiam.html',
-  'work/diams.html', 'project-brief.html',
+  'work/diams.html', 'project-brief.html', 'about.html', 'privacy.html',
+  'terms.html', 'accessibility.html', '404.html',
   'automated-lead-gen.html', 'custom-bi-dashboards.html',
   'web-social-automation.html', 'automated-document-processing.html',
   ...data.map(s => 'services/'+s.slug+'.html')
@@ -79,16 +80,24 @@ const doc = read('automated-document-processing.html');
 assert.doesNotMatch(doc, /id="poc-upload-form"|AES-256 Encrypted/, 'Unimplemented document upload or claims resurfaced');
 const brief = read('project-brief.html');
 assert.match(brief, /id="brief-review"/, 'Form review missing');
-assert.match(brief, /does not submit anything to a server/, 'Draft-only notice missing');
+assert.match(brief, /id="brief-delivery-mode"/, 'Delivery mode explanation required');
+assert.match(brief, /id="brief-privacy"/, 'Explicit privacy confirmation required');
+assert.match(brief, /lead-config\.js/, 'Public configuration must be loaded');
 assert.equal((brief.match(/class="warm-intake-step"/g)||[]).length,3,'Expected 3 project-intake steps');
 const ui = read('ui-scripts.js');
 assert.match(ui, /safeName/, 'Local personalisation name escaping required');
 assert.match(ui, /setAttribute\('aria-expanded'/, 'Mobile menu accessibility state required');
 const briefJs = read('project-brief.js');
 assert.match(briefJs, /encodeURIComponent\(body\)/, 'Email draft encoding missing');
-assert.doesNotMatch(briefJs, /fetch\(|XMLHttpRequest/, 'Project brief must not claim persistence');
+assert.match(briefJs, /backendReady/, 'Submission requires explicit backend configuration');
+assert.match(briefJs, /mailto:meet\.ayoleyi@gmail\.com/, 'Email fallback required');
+assert.match(briefJs, /anti-spam|turnstile/i, 'Anti-spam check required');
 const sitemap = read('sitemap.xml');
-for (const required of ['work.html','work/sonofiam.html','work/diams.html','project-brief.html']) {
+for (const required of ['work.html','work/sonofiam.html','work/diams.html','project-brief.html','about.html','privacy.html','terms.html','accessibility.html']) {
   assert.ok(sitemap.includes('/'+required+'</loc>'),'Sitemap missing '+required);
 }
-console.log('PASS: '+pages.length+' pages, links, anchors, honest proof and safe project brief');
+assert.ok(!sitemap.includes('/404.html</loc>'), '404 must not be in sitemap');
+assert.match(read('404.html'), /noindex,follow/, 'Custom 404 should not be indexed');
+assert.equal(read('lead-config.js').includes("endpoint: ''"),true, 'Production backend must remain opt-in until tested');
+assert.match(read('backend/lead-worker.mjs'), /TURNSTILE_SECRET/, 'Private backend anti-spam check required');
+console.log('PASS: '+pages.length+' public pages, truthful enquiry modes, links, policies and draft launch safeguards');
