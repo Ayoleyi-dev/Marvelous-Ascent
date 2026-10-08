@@ -79,3 +79,8 @@
 @media(max-width:760px){.ma-header-inner{justify-content:flex-start}.ma-logo{flex:1 1 100%}.ma-main-nav{order:2;flex:1;gap:16px}.ma-theme{order:3}.ma-card-grid,.ma-panel-grid,.ma-split{grid-template-columns:1fr}.ma-service-card{min-height:240px}.ma-services h1{font-size:clamp(2.2rem,8vw,3.8rem)}}
 @media(max-width:440px){.ma-header-inner{gap:12px}.ma-main-nav{gap:12px}.ma-main-nav a{font-size:12px}.ma-theme span{display:none}.ma-service-card{min-height:auto}}
 @media(prefers-reduced-motion:reduce){.ma-services *{scroll-behavior:auto!important}}
+
+/* Cross-navigation for preserved example/demo pages. */
+.ma-legacy-nav{width:min(1120px,calc(100% - 40px));margin:18px auto 30px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.ma-legacy-nav a{display:inline-block;color:var(--text);border:1px solid var(--border-dim);border-radius:6px;padding:7px 12px;font-size:12px;background:var(--bg-card)}
+.ma-legacy-nav a:hover,.ma-legacy-nav a:focus-visible{border-color:var(--green);color:var(--green)}
