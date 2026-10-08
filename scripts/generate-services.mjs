@@ -73,6 +73,7 @@ function renderHub(data){
 </div></section>
 <section class="ma-section" aria-labelledby="catalogue-title"><div class="ma-container">
   <div class="ma-section-intro"><p class="ma-eyebrow">Service catalogue</p><h2 id="catalogue-title">Find your starting point.</h2><p>Available to scope means we can discuss a defined project; exploratory services require a pilot or feasibility check. Neither status guarantees an outcome.</p></div>
+  <div class="ma-hub-direction"><span aria-hidden="true">✦</span><p><strong>Start with the problem, not a technical specification.</strong> Not sure where you fit? We can help you choose a sensible first step.</p><a href="project-brief.html">Tell us what is getting in the way →</a></div>
   <div class="ma-card-grid">${cards}</div>
 </div></section>
 <section class="ma-section ma-section--soft"><div class="ma-container ma-split">
