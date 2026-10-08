@@ -139,8 +139,22 @@
   });
 
   var hamburger = document.getElementById('hamburger'), mobileNav = document.getElementById('mobile-nav');
-  function closeMobileNav() { if (mobileNav && mobileNav.classList.contains('is-open')) { mobileNav.classList.remove('is-open'); hamburger.classList.remove('is-open'); } }
-  if (hamburger) { hamburger.addEventListener('click', function () { mobileNav.classList.toggle('is-open'); hamburger.classList.toggle('is-open'); }); }
+  function closeMobileNav() {
+    if (!mobileNav || !hamburger) return;
+    mobileNav.classList.remove('is-open');
+    hamburger.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileNav.setAttribute('aria-hidden','true');
+  }
+  if (hamburger && mobileNav) hamburger.addEventListener('click', function () {
+    var isOpen = mobileNav.classList.toggle('is-open');
+    hamburger.classList.toggle('is-open',isOpen);
+    hamburger.setAttribute('aria-expanded',String(isOpen));
+    mobileNav.setAttribute('aria-hidden',String(!isOpen));
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMobileNav();
+  });
 
   var header = document.getElementById('site-header'), lastY = 0;
   window.addEventListener('scroll', function () {
