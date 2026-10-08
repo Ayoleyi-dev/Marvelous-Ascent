@@ -39,6 +39,7 @@ function siteShell({title,description,canonical,depth,body,active}){
     <div class="ma-container ma-header-inner">
       <a class="ma-logo brand-lockup" href="${p}index.html" aria-label="Marvelous Ascent home"><span class="brand-lockup__mark" aria-hidden="true">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span></a>
       <nav class="ma-main-nav" aria-label="Primary navigation">${navHtml}</nav>
+      <details class="ma-mobile-menu"><summary aria-label="Open page navigation"><span aria-hidden="true">☰</span> Menu</summary><nav class="ma-mobile-menu__links" aria-label="Mobile primary navigation">${navHtml}</nav></details>
       <button class="ma-theme" type="button" aria-label="Switch colour theme" aria-pressed="false">◐ <span>Theme</span></button>
     </div>
   </header>
@@ -91,28 +92,30 @@ function renderService(s,data){
 <section class="ma-hero"><div class="ma-container">
   <nav aria-label="Breadcrumb" class="ma-breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../services.html">Services</a><span>/</span><span aria-current="page">${esc(s.title)}</span></nav>
   <div class="ma-eyebrow">${esc(s.label)} <span class="ma-bullet" aria-hidden="true">•</span> <span class="ma-status">${esc(s.status)}</span></div>
-  <h1>${esc(s.title)}<span class="ma-accent">, built for practical decisions.</span></h1>
+  <h1>${esc(s.title)}</h1>
+  <p class="ma-service-tagline">Less uncertainty. More room to focus on your work.</p>
   <p class="ma-lead">${esc(s.summary)}</p><p class="ma-for"><strong>Best fit:</strong> ${esc(s.audience)}</p>
   <div class="ma-actions"><a class="ma-button" href="../project-brief.html">Discuss this service →</a><a class="ma-button ma-button--outline" href="../services.html">All services</a></div>
 </div></section>
-<section class="ma-section"><div class="ma-container ma-split">
+<nav class="ma-page-jumps" aria-label="On this service page"><div class="ma-container ma-page-jumps__inner"><span class="ma-page-jumps__caption">Explore this service</span><a href="#problem">The challenge</a><a href="#deliverables">What we deliver</a><a href="#approach">Our approach</a><a href="#evidence">Our experience</a><a href="#questions">Questions</a></div></nav>
+<section class="ma-section" id="problem"><div class="ma-container ma-split">
  <div><p class="ma-eyebrow">The problem</p><h2>Does this sound familiar?</h2><p>These are common symptoms, not claims about your business.</p></div>
  <ul class="ma-check-list">${bullets(s.symptoms)}</ul>
 </div></section>
-<section class="ma-section ma-section--soft"><div class="ma-container">
+<section class="ma-section ma-section--soft" id="deliverables"><div class="ma-container">
   <p class="ma-eyebrow">What is included</p><h2>Clear deliverables, not buzzwords.</h2>
   <div class="ma-panel-grid"><div class="ma-panel"><h3>Typical scope</h3><ul class="ma-check-list">${bullets(s.includes)}</ul></div>
   <div class="ma-panel"><h3>Scope boundaries</h3><p>Technology choices, integration access, client responsibilities and required security controls are confirmed during discovery.</p><p class="ma-small"><strong>Tools considered:</strong> ${esc(s.tools)}</p><p class="ma-small"><strong>Timeline:</strong> Proposed after reviewing complexity, dependencies and access.</p><p class="ma-small"><strong>Pricing:</strong> Written project quote based on agreed scope.</p></div></div>
 </div></section>
-<section class="ma-section"><div class="ma-container ma-split">
+<section class="ma-section" id="approach"><div class="ma-container ma-split">
  <div><p class="ma-eyebrow">Working method</p><h2>From input to handover.</h2><p>We define what success means before building and check outputs against agreed acceptance criteria.</p></div>
  <ol class="ma-numbered">${steps}</ol>
 </div></section>
-<section class="ma-section ma-section--soft"><div class="ma-container">
+<section class="ma-section ma-section--soft" id="evidence"><div class="ma-container">
  <p class="ma-eyebrow">Evidence and honesty</p><h2>Here is what we can point to.</h2>
  <div class="ma-evidence"><span class="ma-status">${esc(s.evidence.type)}</span><h3>${esc(s.evidence.title)}</h3><p>${esc(s.evidence.description)}</p><a class="ma-inline-link" href="${esc(s.evidence.href)}"${typeLink}>Explore this reference →</a></div>
 </div></section>
-<section class="ma-section"><div class="ma-container ma-split">
+<section class="ma-section" id="questions"><div class="ma-container ma-split">
  <div><p class="ma-eyebrow">Practical questions</p><h2>Before we begin.</h2></div>
  <div>${faqs}</div>
 </div></section>
