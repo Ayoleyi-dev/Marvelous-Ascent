@@ -128,7 +128,7 @@ function renderService(s,data){
 
 function renderSitemap(data){
  const base="https://ayoleyi-dev.github.io/Marvelous-Ascent/";
- const pages=["","about.html","privacy.html","terms.html","accessibility.html","404.html","services.html","work.html","work/sonofiam.html","work/diams.html","project-brief.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
+ const pages=["","about.html","privacy.html","terms.html","accessibility.html","services.html","work.html","work/sonofiam.html","work/diams.html","project-brief.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(x=>`  <url><loc>${base+x}</loc></url>`).join("\n")}\n</urlset>\n`;
 }
 const output = {'services.html':renderHub(data),'sitemap.xml':renderSitemap(data)};
