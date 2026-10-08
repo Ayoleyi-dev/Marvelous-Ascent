@@ -109,3 +109,14 @@ The previous fictional healthcare, ecommerce and real-estate testimonials, autom
 7. Verify newsletter integrations separately: no subscriber storage or email automation is established by this phase.
 
 The new pages are included in the generated sitemap. Do not merge the development PR until those checks are reviewed.
+
+## Interactive workflow showcase
+
+The homepage `#showcase` section provides three keyboard-accessible examples: reporting clarity, smoother operations and web presence. These are **fictional, static examples**, not live customer data, connected workflows or quantified business results.
+
+- `showcase.js` owns the three scenario records and updates the preview using safe DOM APIs; it does not make requests or send notifications.
+- `showcase.css` provides a high-contrast, responsive experience in both dark and light modes.
+- The page continues to link into canonical service descriptions and the guided project brief.
+- On desktop and mobile, check that the three tabs work by mouse, touch and keyboard (arrow keys, Home/End), and that each preview stays legible in both themes.
+
+Do not introduce mock conversion improvements, anonymous partner logos or live-looking client metrics into the showcase.
