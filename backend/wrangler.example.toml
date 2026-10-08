@@ -1,0 +1,20 @@
+# Copy to wrangler.toml and fill the database ID locally before deploying.
+# Do not put API keys, Turnstile secret, or email provider secrets in this file.
+name = "marvelous-ascent-enquiries"
+main = "lead-worker.mjs"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGINS = "https://ayoleyi-dev.github.io"
+ALLOWED_HOSTNAMES = "ayoleyi-dev.github.io"
+NOTIFY_TO = "meet.ayoleyi@gmail.com"
+NOTIFY_FROM = "Marvelous Ascent <enquiries@YOUR_VERIFIED_DOMAIN>"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "marvelous-ascent-leads"
+database_id = "REPLACE_WITH_YOUR_DATABASE_UUID"
+
+[triggers]
+crons = ["0 3 * * *"]

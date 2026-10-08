@@ -51,3 +51,25 @@ We are **building out and quality-checking Phase 1: the proof-first public websi
 6. Only then open Phase 2 CRM/pipeline work.
 
 **Do not mark a later phase as complete because a front-end demonstration resembles it.**
+
+## 8 October continuation — About, policies and lead-intake backend prepared
+
+This update is layered **after** the Phase 1 navigation polish branch. It is still under review and has **not** been merged.
+
+**Implemented in a review branch:**
+- `about.html`, `privacy.html`, `terms.html`, `accessibility.html`, `404.html`, shared responsive styles and footer navigation.
+- The sitemap includes the public trust pages and excludes the noindex 404 page.
+- `project-brief.js` now supports a real server submission **only when explicit public configuration has been provided**. Until then it retains the transparent email-app draft method and required privacy acknowledgement.
+- `backend/lead-worker.mjs`, D1 migration, Turnstile validation, email notification and tests; see `backend/README.md`.
+- Browser and static regression checks plus dedicated launch, newsletter and analytics planning documents.
+
+**What remains not done:**
+- **No live backend is deployed or configured**; unmerged website remains on email draft. A successful automated unit test does not prove live delivery.
+- Provider setup/credentials, real inbox+DB end-to-end testing, spam configuration, rate limits and operational monitoring.
+- Legal review of all new draft policy pages and owner approval of About/case-study disclosures.
+- Newsletter provider/list storage/unsubscribe validation and live analytics baseline.
+- Final human visual/a11y/performance QA plus explicit merge approval.
+
+See `docs/phase1-launch-checklist.md`, `docs/newsletter-audit.md` and `docs/analytics-event-plan.md` for acceptance steps.
+
+**Milestone assessment remains:** Phase 1 frontend nearly complete; Phase 1 gate not yet passed. Do not report Phase 2 as operational before durable lead ownership, status tracking and a confirmed reply process.

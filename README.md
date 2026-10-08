@@ -148,3 +148,15 @@ The service catalogue and all seven generated service pages now share a compact 
 - Browser check: `node scripts/check-service-layout.mjs`; it checks navigation, anchors, horizontal overflow, and phone/tablet/desktop layouts in dark/light modes.
 
 For the **actual milestone audit and what's left before Phase 2**, see [ROADMAP_STATUS.md](ROADMAP_STATUS.md). A live lead-capture backend, About/legal pages, analytics baseline and further release gates are still outstanding.
+
+## Phase 1 trust and enquiry completion work (review branch)
+
+Added a welcoming About page, draft privacy/terms/accessibility policies, 404 route, footer policy links, sitemap updates, and stronger enquiry validation. The three-step enquiry chooses **email-draft mode** until the optional Cloudflare Worker + D1 submission endpoint and Turnstile site key are actually configured.
+
+- Backend: [backend/README.md](backend/README.md) — required provider setup and security checks.
+- Launch QA: [docs/phase1-launch-checklist.md](docs/phase1-launch-checklist.md).
+- Analytics plan: [docs/analytics-event-plan.md](docs/analytics-event-plan.md).
+- Newsletter audit: [docs/newsletter-audit.md](docs/newsletter-audit.md).
+- Status by roadmap phase: [ROADMAP_STATUS.md](ROADMAP_STATUS.md).
+
+**Important:** provider tokens are secrets and must never be committed; draft legal pages need actual legal/operational review; no claim of live lead-capture deployment is made in this update.

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/</loc></url>
+  <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/about.html</loc></url>
+  <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/privacy.html</loc></url>
+  <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/terms.html</loc></url>
+  <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/accessibility.html</loc></url>
   <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/services.html</loc></url>
   <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/work.html</loc></url>
   <url><loc>https://ayoleyi-dev.github.io/Marvelous-Ascent/work/sonofiam.html</loc></url>

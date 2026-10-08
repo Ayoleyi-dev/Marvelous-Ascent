@@ -8,7 +8,7 @@ import {chromium} from 'playwright';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const screenshots=path.join(root,'artifacts','service-layout');
 fs.mkdirSync(screenshots,{recursive:true});
-const routes=['services.html','services/data-analytics.html','services/market-research.html','work.html','project-brief.html'];
+const routes=['services.html','services/data-analytics.html','services/market-research.html','work.html','project-brief.html','about.html','privacy.html','terms.html','accessibility.html','404.html'];
 const screenSizes=[{width:390,height:844,name:'phone'},{width:768,height:1024,name:'tablet'},{width:1440,height:900,name:'desktop'}];
 const browser=await chromium.launch({headless:true});
 try{
@@ -62,5 +62,24 @@ try{
    }
   }
  }
+ // Exercise enquiry-review interactions without launching the visitor's email application.
+ const page=await browser.newPage({viewport:{width:390,height:844}});
+ await page.goto(pathToFileURL(path.join(root,'project-brief.html')).href,{waitUntil:'domcontentloaded'});
+ assert.match(await page.locator('#brief-delivery-mode').innerText(),/email app/i);
+ await page.locator('#brief-name').fill('Test Client');
+ await page.locator('#brief-email').fill('visitor@example.org');
+ await page.locator('#brief-next').click();
+ assert.equal(await page.locator('#brief-service').isVisible(),true);
+ await page.locator('#brief-service').selectOption({label:'Data, dashboards and reporting'});
+ await page.locator('#brief-challenge').fill('I want a simpler way to review weekly performance reports.');
+ await page.locator('#brief-timing').selectOption({label:'Within the next month'});
+ await page.locator('#brief-next').click();
+ assert.equal(await page.locator('#brief-review').getByText('Test Client').count(),1);
+ assert.equal(await page.locator('#brief-privacy').isChecked(),false);
+ assert.match(await page.locator('#brief-send').innerText(),/Open email draft/i);
+ await page.locator('#brief-privacy').check();
+ assert.equal(await page.locator('#brief-privacy').isChecked(),true);
+ await page.close();
+ console.log('PASS: project enquiry validation, review, disclosure and privacy acknowledgement');
  console.log('PASS: service routes, page jumps, keyboard navigation, layouts and themes');
 } finally {await browser.close();}

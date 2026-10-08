@@ -22,6 +22,9 @@ jobs:
           node --check doc-processing.js
           node --check site-navigation.js
           node --check project-brief.js
+          node --check lead-config.js
+          node --check backend/lead-worker.mjs
+          node --check backend/test/lead-worker.test.mjs
           node --check showcase.js
           node --check scripts/check-layout.mjs
           node --check scripts/check-service-layout.mjs
@@ -30,3 +33,5 @@ jobs:
         run: node scripts/generate-services.mjs --check
       - name: Check site structure and references
         run: node scripts/check-site.mjs
+      - name: Test server-side enquiry validation and storage
+        run: node --test backend/test/lead-worker.test.mjs

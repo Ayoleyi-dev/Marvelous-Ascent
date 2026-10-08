@@ -172,3 +172,16 @@
 @media(prefers-reduced-motion:reduce){
  .ma-services .ma-service-card{transition:none}
 }
+
+/* Trust/navigation links and the project-brief consent/captcha experience. */
+.ma-policy-nav{display:flex;align-items:center;flex-wrap:wrap;gap:14px 24px;margin-top:26px;padding-block:22px;border-top:1px solid var(--border-dim);font:700 12px 'DM Sans',sans-serif}
+.ma-policy-nav a{color:var(--text-dim);text-decoration:underline;text-underline-offset:4px}
+.ma-policy-nav a:hover,.ma-policy-nav a:focus-visible{color:var(--green)}
+.ma-honeypot{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+.ma-consent-field{margin:22px 0 0}
+.ma-consent-field label{display:flex;align-items:flex-start;gap:12px;line-height:1.6;font-weight:500!important}
+.ma-consent-field input[type="checkbox"]{flex:none;width:18px;height:18px;accent-color:var(--green);margin-top:3px}
+.ma-consent-field a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+#brief-turnstile{margin-top:18px;min-height:65px}
+#brief-turnstile[hidden]{display:none}
+.warm-intake-buttons button:disabled{opacity:.6;cursor:wait}
