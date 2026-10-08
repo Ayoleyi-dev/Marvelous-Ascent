@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="brand.css">
   <link rel="stylesheet" href="welcome.css">
+  <link rel="stylesheet" href="showcase.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="warm-home">
@@ -155,6 +156,75 @@
       </div>
     </section>
 
+
+    <!-- A working, synthetic preview of what clearer business systems can feel like. -->
+    <section class="showcase-section" id="showcase" aria-labelledby="showcase-title">
+      <div class="container">
+        <div class="showcase-intro">
+          <div>
+            <p class="warm-eyebrow">A small preview of a calmer workday</p>
+            <h2 id="showcase-title">See how the work <span class="warm-gradient">could feel easier.</span></h2>
+          </div>
+          <p>Choose something your team deals with. We’ll show a simple example of the difference good systems can make — from scattered work to a clearer next step.</p>
+        </div>
+
+        <div class="showcase-tabs" role="tablist" aria-label="Explore example solutions">
+          <button type="button" class="showcase-tab is-selected" role="tab" id="showcase-tab-reporting" data-showcase="reporting" aria-selected="true" aria-controls="showcase-panel" tabindex="0"><span aria-hidden="true">▦</span> Reporting clarity</button>
+          <button type="button" class="showcase-tab" role="tab" id="showcase-tab-automation" data-showcase="automation" aria-selected="false" aria-controls="showcase-panel" tabindex="-1"><span aria-hidden="true">↻</span> Smoother operations</button>
+          <button type="button" class="showcase-tab" role="tab" id="showcase-tab-web" data-showcase="web" aria-selected="false" aria-controls="showcase-panel" tabindex="-1"><span aria-hidden="true">◇</span> Better digital presence</button>
+        </div>
+
+        <div class="showcase-frame" role="tabpanel" id="showcase-panel" aria-labelledby="showcase-tab-reporting" tabindex="0">
+          <div class="showcase-explainer">
+            <div class="showcase-scenario-tag"><span class="showcase-spark" aria-hidden="true">✦</span> An everyday business problem</div>
+            <h3 id="showcase-scenario-title">Spend less time combining reports. More time knowing what matters.</h3>
+            <p id="showcase-scenario-summary">Imagine your weekly work scattered across several sheets. A shared KPI view makes the priorities easier to spot.</p>
+            <div class="showcase-comparison">
+              <div class="showcase-comparison-item showcase-comparison-item--before">
+                <span class="showcase-state">Without a clear system</span>
+                <p id="showcase-before">Updates in different sheets. Repeated checks. No shared view of what needs attention.</p>
+              </div>
+              <div class="showcase-comparison-item showcase-comparison-item--after">
+                <span class="showcase-state">With a thoughtful system</span>
+                <p id="showcase-after">A single overview of progress, pending work and next actions.</p>
+              </div>
+            </div>
+            <a id="showcase-service-link" class="showcase-service-link" href="services/data-analytics.html">See how we approach data &amp; reporting <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="showcase-preview" aria-label="Interactive example, using fictional business information">
+            <div class="showcase-preview-top">
+              <div class="showcase-app-name"><span class="showcase-app-mark" aria-hidden="true">[MA]</span><span id="showcase-app-title">Weekly operations overview</span></div>
+              <span class="showcase-demo-pill">SAMPLE DATA</span>
+            </div>
+            <div class="showcase-preview-content">
+              <div class="showcase-preview-overline"><span class="showcase-pulse" aria-hidden="true"></span><span id="showcase-preview-caption">A clearer picture of this week</span></div>
+              <div class="showcase-kpis" id="showcase-kpis">
+                <article class="showcase-kpi"><span id="showcase-kpi-label-0">Tasks tracked</span><strong id="showcase-kpi-value-0">25</strong></article>
+                <article class="showcase-kpi"><span id="showcase-kpi-label-1">Completed</span><strong id="showcase-kpi-value-1">18</strong></article>
+                <article class="showcase-kpi"><span id="showcase-kpi-label-2">Need attention</span><strong id="showcase-kpi-value-2">2</strong></article>
+              </div>
+              <div class="showcase-chart">
+                <div class="showcase-chart-heading"><strong id="showcase-chart-title">Work at a glance</strong><span>Example only</span></div>
+                <div class="showcase-chart-rows" id="showcase-chart-rows">
+                  <div class="showcase-chart-row"><span>Completed</span><div class="showcase-track"><i style="width:72%"></i></div><strong>18</strong></div>
+                  <div class="showcase-chart-row"><span>In progress</span><div class="showcase-track"><i style="width:20%"></i></div><strong>5</strong></div>
+                  <div class="showcase-chart-row"><span>Blocked</span><div class="showcase-track"><i style="width:8%"></i></div><strong>2</strong></div>
+                </div>
+              </div>
+              <div class="showcase-insight"><span aria-hidden="true">✧</span><p id="showcase-insight-text"><strong>A helpful next step:</strong> Review the two blocked tasks and agree who owns the follow-up.</p></div>
+              <p class="showcase-preview-footnote">Illustrative workflow and fictional numbers. No client data, live integrations or measured performance are shown here.</p>
+            </div>
+          </div>
+        </div>
+        <p class="showcase-footer-note" id="showcase-update" role="status" aria-live="polite" aria-atomic="true">Showing a fictional reporting example.</p>
+        <div class="showcase-bottom-cta">
+          <p>Your work won’t look exactly like this, and that’s the point. <strong>We start with how your business actually works.</strong></p>
+          <a class="btn btn--primary warm-btn" href="project-brief.html">Show us what you need help with <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="warm-proof-section" id="work">
     <div class="container">
       <p class="warm-eyebrow">Good work has something to show</p>
@@ -170,7 +240,7 @@
         </article>
       </div>
       <p class="warm-proof-note">The visuals above are illustrations, not client screenshots. Individual roles, evidence and what remains unmeasured are explained in each case study.</p>
-      <div class="warm-inline-actions"><a href="work.html" class="btn btn--ghost">Explore our work ↗</a><a href="custom-bi-dashboards.html" class="warm-text-link">View an analytics SAMPLE DATA demo ↗</a></div>
+      <div class="warm-inline-actions"><a href="work.html" class="btn btn--ghost">Explore our work ↗</a><a href="#showcase" class="warm-text-link">Try our interactive workflow examples ↗</a></div>
     </div>
   </section>
 
@@ -245,6 +315,7 @@
     <button class="success-toast__close" id="toast-close" aria-label="Dismiss">✕</button>
   </div>
 
+  <script src="showcase.js" defer></script>
   <script src="ui-scripts.js" defer></script>
 </body>
 </html>

@@ -43,7 +43,16 @@ for (const page of pages) {
     }
   }
 }
+const showcaseJs = read('showcase.js');
+assert.match(showcaseJs, /reporting:|reporting :/, 'Reporting scenario required');
+assert.match(showcaseJs, /automation:|automation :/, 'Automation scenario required');
+assert.match(showcaseJs, /web:|web :/, 'Website scenario required');
+assert.doesNotMatch(showcaseJs, /fetch\(/, 'Showcase must work without a network');
+const showcaseCss = read('showcase.css');
+assert.match(showcaseCss, /\[data-theme="light"\]/, 'Light mode contrast styling required');
 const home = read('index.html');
+assert.match(home, /id="showcase"/, 'Interactive showcase section required');
+assert.match(home, /SAMPLE DATA/, 'Showcase must label sample data');
 assert.match(home, /Let’s make work feel lighter/, 'Warm welcome headline missing');
 assert.match(home, /href="work\/diams\.html"/, 'DIAMS case study missing');
 assert.match(home, /href="work\/sonofiam\.html"/, 'SonofIAM case study missing');
