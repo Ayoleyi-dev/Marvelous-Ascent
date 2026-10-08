@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ayoleyi-dev.github.io/Marvelous-Ascent/sitemap.xml

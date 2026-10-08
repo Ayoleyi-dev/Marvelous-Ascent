@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="brand.css">
+  <link rel="stylesheet" href="services.css">
   <style>
     /* ─── HERO & SIMULATOR STYLES ───────────────────────────── */
     .ws-hero { position: relative; z-index: 1; padding: clamp(72px, 10vw, 120px) 0 clamp(60px, 8vw, 96px); }
@@ -49,7 +50,7 @@
         <span class="logo-wordmark">Marvelous Ascent</span>
       </a>
       <nav class="primary-nav">
-        <a href="index.html#services" class="nav-link">All Services</a>
+        <a href="services.html" class="nav-link">All Services</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
       </nav>
       <div style="display: flex; align-items: center; gap: 15px;" class="mobile-only">
@@ -59,11 +60,19 @@
   </header>
 
   <main>
+<div class="ma-service-notice" role="note"><strong>Concept and demo page.</strong> These workflows and figures are illustrative, not a production deployment or verified client result. <a href="services.html">View the scoped service catalogue.</a></div>
+<nav class="ma-legacy-nav" aria-label="Related service pages">
+  <a href="services.html">All services</a>
+  <a href="services/data-analytics.html">Data</a>
+  <a href="services/workflow-automation.html">Automation</a>
+  <a href="services/web-presence.html">Web</a>
+  <a href="index.html#contact">Enquire</a>
+</nav>
     <section class="ws-hero">
       <div class="container">
         <div class="breadcrumb reveal-up">
           <a href="index.html">Home</a> <span aria-hidden="true">/</span> 
-          <a href="index.html#services">Services</a> <span aria-hidden="true">/</span> 
+          <a href="services.html">Services</a> <span aria-hidden="true">/</span> 
           <span aria-current="page">Web & Social Automation</span>
         </div>
 
@@ -96,7 +105,7 @@
 
           <div class="sim-analytics">
             <div>
-              <h3 style="font-family: var(--f-display); font-size: 18px; margin-bottom: 8px;">Live Web Traffic</h3>
+              <h3 style="font-family: var(--f-display); font-size: 18px; margin-bottom: 8px;">Sample Web Traffic</h3>
               <p style="font-size: 13px; color: var(--text-dim);">Real-time visitors routed from social channels.</p>
             </div>
             
@@ -141,7 +150,7 @@
           <div class="svc-card reveal-up" style="--d:.2s">
             <div class="svc-card__icon">🤖</div>
             <h3 class="svc-card__title">Engagement AI</h3>
-            <p class="svc-card__desc">Never leave a lead hanging. We deploy AI agents that auto-reply to Instagram DMs and LinkedIn comments, capturing lead info and pushing it to your CRM while you sleep.</p>
+            <p class="svc-card__desc">Where platform permissions allow, we can scope routing, response templates and human-reviewed follow-ups for inbound enquiries. Live integrations require authorisation.</p>
           </div>
         </div>
       </div>

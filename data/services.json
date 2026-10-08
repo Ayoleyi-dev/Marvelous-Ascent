@@ -1,0 +1,380 @@
+[
+  {
+    "slug": "data-analytics",
+    "title": "Data & Analytics",
+    "label": "Business Data Infrastructure",
+    "status": "Available to scope",
+    "audience": "Teams working across spreadsheets, reports and disconnected data",
+    "summary": "Bring reporting into one reliable view, from cleaner source files to KPI dashboards that explain what is happening.",
+    "symptoms": [
+      "Monthly reports take too long to prepare",
+      "Different teams use conflicting versions of the same metric",
+      "Decisions depend on manually combining spreadsheets"
+    ],
+    "includes": [
+      "Data-source review and KPI definition",
+      "Cleaning and validation rules for spreadsheets or SQL data",
+      "Management reporting dashboards and control workbooks",
+      "Documentation and handover for ongoing reporting"
+    ],
+    "steps": [
+      [
+        "Discover",
+        "Review your reports, sources, definitions and decision needs."
+      ],
+      [
+        "Design & build",
+        "Prepare a model, checks and decision-focused reports."
+      ],
+      [
+        "Hand over",
+        "Validate with stakeholders, document the logic and agree refresh ownership."
+      ]
+    ],
+    "tools": "Excel, Google Sheets, SQL, Python and Power BI, selected to fit the scope",
+    "evidence": {
+      "type": "Synthetic demo",
+      "title": "Analytics demonstration",
+      "description": "Our homepage includes a labelled illustrative dashboard. Figures are synthetic rather than client performance results.",
+      "href": "../index.html#work"
+    },
+    "faqs": [
+      [
+        "Can you work with my existing spreadsheets?",
+        "Yes. We start by assessing your current files and agreeing which fields and metrics need to be trustworthy."
+      ],
+      [
+        "Will the dashboard update automatically?",
+        "That depends on the sources, access and budget. Refresh and automation are defined during scoping."
+      ],
+      [
+        "Who owns the outputs?",
+        "Ownership, access and handover arrangements are agreed in writing before a project begins."
+      ]
+    ]
+  },
+  {
+    "slug": "workflow-automation",
+    "title": "Workflow Automation",
+    "label": "Automation & Digital Operations",
+    "status": "Available to scope",
+    "audience": "Operations teams repeating the same administrative work",
+    "summary": "Connect forms, spreadsheets, reporting and notifications so routine steps require less manual attention.",
+    "symptoms": [
+      "The same details are copied between tools",
+      "Requests get lost between inboxes and spreadsheets",
+      "Recurring reports require manual reminders and exports"
+    ],
+    "includes": [
+      "Workflow mapping and control-point review",
+      "Google Sheets and Apps Script automations where appropriate",
+      "Notifications, validation and approval checkpoints",
+      "Test cases, failure handling and operating notes"
+    ],
+    "steps": [
+      [
+        "Map",
+        "Identify each trigger, handoff, owner and exception."
+      ],
+      [
+        "Pilot",
+        "Build one manageable flow and test sample and failure cases."
+      ],
+      [
+        "Operate",
+        "Document ownership, monitoring and recovery steps."
+      ]
+    ],
+    "tools": "Google Apps Script, Python, spreadsheets, APIs and suitable workflow integrations",
+    "evidence": {
+      "type": "Relevant experience",
+      "title": "Operational tracker work",
+      "description": "Experience with recurring KPI reporting and master trackers informs the approach. No unverified time savings are claimed.",
+      "href": "../index.html#contact"
+    },
+    "faqs": [
+      [
+        "Do I need to change all my tools?",
+        "Usually not. We evaluate your current tools first and suggest integration before replacement."
+      ],
+      [
+        "What happens when an automation fails?",
+        "The specification includes alerting, a human fallback and ownership where the integration supports it."
+      ],
+      [
+        "Will you automate sensitive decisions?",
+        "High-impact workflows need explicit approvals, access controls and human review before deployment."
+      ]
+    ]
+  },
+  {
+    "slug": "web-presence",
+    "title": "Web & Online Presence",
+    "label": "Web and Digital Presence",
+    "status": "Available to scope",
+    "audience": "Founders, businesses and creators who need a credible online home",
+    "summary": "Build a clear, accessible website that explains what you offer and makes the next step easy for visitors.",
+    "symptoms": [
+      "Visitors cannot quickly understand your offer",
+      "An outdated site does not reflect your work",
+      "Contact, payments or analytics are disconnected"
+    ],
+    "includes": [
+      "Site structure, messaging and responsive design",
+      "Landing pages, business websites or scoped commerce flows",
+      "Contact flows and basic measurement planning",
+      "Launch QA, documentation and handover"
+    ],
+    "steps": [
+      [
+        "Plan",
+        "Agree content, pages, platform and key visitor journeys."
+      ],
+      [
+        "Create",
+        "Build responsive pages, integrate agreed services and test the experience."
+      ],
+      [
+        "Launch",
+        "Review accessibility, tracking, security settings and handover."
+      ]
+    ],
+    "tools": "HTML, CSS, JavaScript and project-appropriate hosting or commerce platforms",
+    "evidence": {
+      "type": "Delivered work",
+      "title": "SonofIAM website",
+      "description": "The SonofIAM digital experience is a delivered web project. We do not attribute unmeasured revenue or conversion improvements to it.",
+      "href": "https://www.sonofiam.com/"
+    },
+    "faqs": [
+      [
+        "Can you work on an existing website?",
+        "Yes. We can review an existing site and define a focused improvement scope."
+      ],
+      [
+        "Do you provide ongoing hosting?",
+        "Hosting, account ownership and maintenance are agreed as separate line items if requested."
+      ],
+      [
+        "Will I be able to update my own content?",
+        "We discuss content editing and handover needs before choosing the website architecture."
+      ]
+    ]
+  },
+  {
+    "slug": "commerce-conversion",
+    "title": "Commerce & Conversion",
+    "label": "Commerce and Conversion",
+    "status": "Scoped pilot / enquiry",
+    "audience": "Stores and service businesses with fragmented enquiry or checkout journeys",
+    "summary": "Map the steps from a visitor’s interest to a completed enquiry or purchase, then improve the weakest handoffs.",
+    "symptoms": [
+      "Customers encounter confusing checkout steps",
+      "Orders and stock updates need repetitive reconciliation",
+      "Traffic cannot be tied to completed enquiries or sales"
+    ],
+    "includes": [
+      "Conversion journey review and basic event plan",
+      "Scoped checkout, forms or product-page improvements",
+      "Order-tracking and operational handoff design",
+      "A measurement and validation checklist"
+    ],
+    "steps": [
+      [
+        "Audit",
+        "Map the current journey, integrations and failure points."
+      ],
+      [
+        "Prioritise",
+        "Agree realistic changes and the metrics that could validate them."
+      ],
+      [
+        "Pilot",
+        "Implement a small release and verify it before expanding."
+      ]
+    ],
+    "tools": "Analytics, spreadsheets and selected ecommerce or payment integrations",
+    "evidence": {
+      "type": "Relevant web foundation",
+      "title": "SonofIAM digital storefront experience",
+      "description": "Our web project includes digital-commerce foundations; verified conversion outcomes are not yet published.",
+      "href": "https://www.sonofiam.com/"
+    },
+    "faqs": [
+      [
+        "Can you guarantee a conversion lift?",
+        "No. We can recommend and test improvements, but results depend on traffic, audience and implementation."
+      ],
+      [
+        "Do you handle customer payment details?",
+        "Any payment work should use appropriate hosted provider flows. We do not request raw card details."
+      ],
+      [
+        "What is a sensible first milestone?",
+        "A checkout or enquiry-journey audit with agreed high-priority fixes."
+      ]
+    ]
+  },
+  {
+    "slug": "seo-visibility",
+    "title": "SEO & AI Visibility",
+    "label": "SEO and AI Visibility",
+    "status": "Scoped pilot / enquiry",
+    "audience": "Teams that want people to find accurate information about their business",
+    "summary": "Create a technically clear site and useful service content that search engines and people can understand.",
+    "symptoms": [
+      "Important pages are difficult to discover",
+      "Search results show outdated descriptions",
+      "Content is inconsistent across key pages"
+    ],
+    "includes": [
+      "Technical site and content structure review",
+      "Page titles, metadata and internal linking",
+      "Sitemap, indexability and basic structured-content plan",
+      "Search measurement setup recommendations"
+    ],
+    "steps": [
+      [
+        "Inspect",
+        "Check public pages, crawl signals and service messaging."
+      ],
+      [
+        "Improve",
+        "Prioritise on-page content, metadata and navigation."
+      ],
+      [
+        "Measure",
+        "Agree a baseline and monitor changes without promising rankings."
+      ]
+    ],
+    "tools": "Search Console, web analytics and standard web SEO tooling where client access permits",
+    "evidence": {
+      "type": "Process demonstration",
+      "title": "Marvelous Ascent website work",
+      "description": "This site shows our own metadata, navigation and service-structure approach. It does not establish client search-ranking results.",
+      "href": "../services.html"
+    },
+    "faqs": [
+      [
+        "Can you guarantee first-page rankings?",
+        "No. Search results are controlled by search engines and competition changes."
+      ],
+      [
+        "Do you create content?",
+        "Content outlines and selected copywriting can be included in a separately agreed scope."
+      ],
+      [
+        "What about AI search results?",
+        "We focus on accurate, accessible, well-structured public information rather than promises of inclusion."
+      ]
+    ]
+  },
+  {
+    "slug": "advertising-optimisation",
+    "title": "Advertising & Campaign Optimisation",
+    "label": "Paid Advertising",
+    "status": "Exploratory / enquiry",
+    "audience": "Teams ready to measure campaign outcomes instead of relying on reach alone",
+    "summary": "Plan campaigns around a measurable business objective, a clear budget and reliable conversion tracking.",
+    "symptoms": [
+      "Spend is reported without business outcomes",
+      "Campaign links and attribution are inconsistent",
+      "There is no repeatable campaign review process"
+    ],
+    "includes": [
+      "Campaign measurement and tagging plan",
+      "KPI definitions, reporting template and review cadence",
+      "Creative and audience-testing hypotheses",
+      "Budget and account-control recommendations"
+    ],
+    "steps": [
+      [
+        "Define",
+        "Choose business goals, authorised access and baseline measurements."
+      ],
+      [
+        "Prepare",
+        "Set tracking and a test plan with clear spending limits."
+      ],
+      [
+        "Review",
+        "Evaluate results and document what should change next."
+      ]
+    ],
+    "tools": "Campaign-platform reports, analytics and spreadsheets, subject to platform access",
+    "evidence": {
+      "type": "No published client results",
+      "title": "Enquiry-led service",
+      "description": "Campaign management is not presented here as a proven retainer service. We scope measurement or a pilot before making delivery commitments.",
+      "href": "../index.html#contact"
+    },
+    "faqs": [
+      [
+        "Do you promise a return on ad spend?",
+        "No. Any assumptions, budgets and success measures must be agreed before testing."
+      ],
+      [
+        "Who pays the advertising budget?",
+        "Ad spend remains separate from any agency fee and should stay under client-controlled accounts."
+      ],
+      [
+        "Do you run long-term social management?",
+        "No ongoing social-community management is included unless a specific separate engagement is agreed."
+      ]
+    ]
+  },
+  {
+    "slug": "market-research",
+    "title": "Market Research & Surveys",
+    "label": "Market Research and Surveys",
+    "status": "Available to scope",
+    "audience": "Businesses needing evidence before pricing, product or market decisions",
+    "summary": "Turn market questions into a defined research brief, traceable sources and decision-ready findings.",
+    "symptoms": [
+      "Pricing decisions are based on assumptions",
+      "Competitor information is scattered or unverified",
+      "Survey responses are collected but not analysed"
+    ],
+    "includes": [
+      "Research question, sampling and source plan",
+      "Market and competitor desk research",
+      "Survey design and basic data quality checks",
+      "Findings report with methods, limitations and recommendations"
+    ],
+    "steps": [
+      [
+        "Frame",
+        "Agree the commercial question and evidence boundaries."
+      ],
+      [
+        "Collect",
+        "Document sources, dates, definitions and checks."
+      ],
+      [
+        "Report",
+        "Present patterns, uncertainties and practical next decisions."
+      ]
+    ],
+    "tools": "Web research, spreadsheets, Python and survey tools as relevant",
+    "evidence": {
+      "type": "Research workstream",
+      "title": "Art-market pricing research",
+      "description": "Art-market pricing analysis provides an example of a research workflow; sources and findings are not published as a client outcome here.",
+      "href": "../index.html#contact"
+    },
+    "faqs": [
+      [
+        "Can you research international markets?",
+        "Yes, if the requested market, timeframe and available data can be scoped responsibly."
+      ],
+      [
+        "Will you build and analyse surveys?",
+        "We can design a survey and analyse its responses, subject to consent and sample-quality limitations."
+      ],
+      [
+        "How will I know the data is reliable?",
+        "Reports should identify sources, assumptions, missing data and what cannot be concluded."
+      ]
+    ]
+  }
+]

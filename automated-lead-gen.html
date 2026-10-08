@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="brand.css">
+  <link rel="stylesheet" href="services.css">
   <style>
     /* Page-Specific Styles for Lead Gen Simulator */
     .lg-hero { position: relative; z-index: 1; padding: clamp(72px, 10vw, 120px) 0 clamp(60px, 8vw, 96px); }
@@ -40,18 +41,26 @@
         <span class="logo-wordmark">Marvelous Ascent</span>
       </a>
       <nav class="primary-nav">
-        <a href="index.html#services" class="nav-link">All Services</a>
+        <a href="services.html" class="nav-link">All Services</a>
         <button id="theme-toggle" class="theme-toggle">☀️</button>
       </nav>
     </div>
   </header>
 
   <main>
+<div class="ma-service-notice" role="note"><strong>Concept and demo page.</strong> These workflows and figures are illustrative, not a production deployment or verified client result. <a href="services.html">View the scoped service catalogue.</a></div>
+<nav class="ma-legacy-nav" aria-label="Related service pages">
+  <a href="services.html">All services</a>
+  <a href="services/data-analytics.html">Data</a>
+  <a href="services/workflow-automation.html">Automation</a>
+  <a href="services/web-presence.html">Web</a>
+  <a href="index.html#contact">Enquire</a>
+</nav>
     <section class="lg-hero">
       <div class="container">
         <div class="breadcrumb reveal-up">
           <a href="index.html">Home</a> <span aria-hidden="true">/</span> 
-          <a href="index.html#services">Services</a> <span aria-hidden="true">/</span> 
+          <a href="services.html">Services</a> <span aria-hidden="true">/</span> 
           <span aria-current="page">Automated Lead Generation</span>
         </div>
 
@@ -63,7 +72,7 @@
         </p>
 
         <div class="funnel-sim reveal-up" style="--d:.3s">
-          <div class="section-kicker">Live Pipeline Simulator</div>
+          <div class="section-kicker">Illustrative Pipeline Simulator</div>
           
           <div class="funnel-nodes">
             <div class="f-node" id="node-1">📱<span class="f-node-label">Ad Click</span></div>

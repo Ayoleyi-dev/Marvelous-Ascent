@@ -187,6 +187,16 @@
   var toastEl = document.getElementById('success-toast'), toastMsgEl = document.getElementById('toast-msg'), toastTimer;
   window.MAToast = {
     show: function(msg, type, dur) {
+      if (!toastEl) {
+        toastEl = document.createElement('div');
+        toastEl.className = 'success-toast';
+        toastEl.setAttribute('role', 'status');
+        toastEl.setAttribute('aria-live', 'polite');
+        toastMsgEl = document.createElement('span');
+        toastMsgEl.className = 'success-toast__msg';
+        toastEl.appendChild(toastMsgEl);
+        document.body.appendChild(toastEl);
+      }
       toastEl.className = 'success-toast';
       if(type) toastEl.classList.add('is-' + type);
       toastMsgEl.textContent = msg;
@@ -195,7 +205,8 @@
       toastTimer = setTimeout(function(){ toastEl.classList.remove('is-visible'); }, dur || 5000);
     }
   };
-  document.getElementById('toast-close').addEventListener('click', function() { toastEl.classList.remove('is-visible'); });
+  var toastClose = document.getElementById('toast-close');
+  if (toastClose && toastEl) toastClose.addEventListener('click', function() { toastEl.classList.remove('is-visible'); });
 
   /* ═══════════════════════════════════════════════════════════
      SESSION MANAGER & AUTH MODAL
