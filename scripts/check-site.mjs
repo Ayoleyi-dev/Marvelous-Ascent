@@ -61,7 +61,7 @@ for (const page of pages) {
 }
 assert.match(read('scripts/generate-services.mjs'), /brand-lockup__mark/, 'Generated pages must use the same logo');
 const welcomeCss = read('welcome.css');
-assert.ok(welcomeCss.includes('.warm-home .warm-headline{font-size:clamp(2.15rem,3.1vw,3.45rem)'), 'Compact responsive hero typography is required');
+assert.ok(welcomeCss.includes('.warm-home .warm-headline{font-size:clamp(2.15rem,2.9vw,3rem)'), 'Compact responsive hero typography is required');
 const home = read('index.html');
 assert.match(home, /id="showcase"/, 'Interactive showcase section required');
 assert.match(home, /SAMPLE DATA/, 'Showcase must label sample data');
