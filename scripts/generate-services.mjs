@@ -37,7 +37,7 @@ function siteShell({title,description,canonical,depth,body,active}){
   <a class="ma-skip" href="#main">Skip to content</a>
   <header class="ma-header">
     <div class="ma-container ma-header-inner">
-      <a class="ma-logo" href="${p}index.html" aria-label="Marvelous Ascent home"><span class="ma-monogram">[MA]</span> Marvelous Ascent</a>
+      <a class="ma-logo brand-lockup" href="${p}index.html" aria-label="Marvelous Ascent home"><span class="brand-lockup__mark" aria-hidden="true">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span></a>
       <nav class="ma-main-nav" aria-label="Primary navigation">${navHtml}</nav>
       <button class="ma-theme" type="button" aria-label="Switch colour theme" aria-pressed="false">◐ <span>Theme</span></button>
     </div>
@@ -45,7 +45,7 @@ function siteShell({title,description,canonical,depth,body,active}){
   <main id="main">${body}</main>
   <footer class="ma-footer">
     <div class="ma-container ma-footer-content">
-      <div><a class="ma-logo" href="${p}index.html"><span class="ma-monogram">[MA]</span> Marvelous Ascent</a><p>Data, automation and digital infrastructure built around real business needs.</p></div>
+      <div><a class="ma-logo brand-lockup" href="${p}index.html"><span class="brand-lockup__mark" aria-hidden="true">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span></a><p>Data, automation and digital infrastructure built around real business needs.</p></div>
       <div class="ma-footer-links"><a href="${p}services.html">Explore services</a><a href="${p}work.html">View our work</a><a href="${p}project-brief.html">Get in touch</a></div>
     </div><div class="ma-container ma-copyright">© 2026 Marvelous Ascent · Client portal and account login are not yet available.</div>
   </footer>

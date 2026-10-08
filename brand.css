@@ -45,3 +45,34 @@ body {background-image:radial-gradient(ellipse at 10% 0%,rgba(124,22,206,.07),tr
 :focus-visible {outline:3px solid var(--green);outline-offset:5px;}
 @media(max-width:400px){.site-header .logo{font-size:11px;}.logo-wordmark{margin-left:6px;}.btn{white-space:normal;}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}.reveal-up{opacity:1!important;transform:none!important;}}
+
+/* Single agency logo treatment shared across all routes, headers and footers.
+   Standard markup: brand-lockup > brand-lockup__mark + brand-lockup__name. */
+.logo.brand-lockup,.ma-logo.brand-lockup,.brand-lockup{
+ display:inline-flex;align-items:center;gap:10px;flex-shrink:0;
+ color:var(--text);white-space:nowrap;text-decoration:none;
+ font-family:var(--f-display);font-size:14px;font-weight:800;
+ letter-spacing:-.02em;line-height:1.1
+}
+.brand-lockup__mark{
+ display:inline-grid;place-items:center;flex:none;
+ min-width:47px;height:34px;padding:0 6px;
+ background:var(--green-10);border:1px solid var(--border);
+ border-radius:9px;color:var(--green);
+ font:700 12px/1 var(--f-mono);letter-spacing:0;
+ transform:none!important;animation:none!important
+}
+.brand-lockup__name{
+ display:inline-block;color:var(--text);
+ font:800 14px/1.15 var(--f-display);
+ letter-spacing:-.025em
+}
+.brand-lockup:hover .brand-lockup__name{color:var(--green)}
+.site-header .brand-lockup,.ma-header .brand-lockup,
+.site-footer .brand-lockup,.ma-footer .brand-lockup{
+ gap:10px!important;
+}
+@media(max-width:410px){
+ .brand-lockup__mark{min-width:42px;height:32px;font-size:11px}
+ .brand-lockup__name{font-size:12px}
+}

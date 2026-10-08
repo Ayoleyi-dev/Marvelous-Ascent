@@ -23,6 +23,7 @@ jobs:
           node --check site-navigation.js
           node --check project-brief.js
           node --check showcase.js
+          node --check scripts/check-layout.mjs
           node --check scripts/generate-services.mjs
       - name: Verify generated service pages
         run: node scripts/generate-services.mjs --check
