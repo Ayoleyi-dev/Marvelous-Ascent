@@ -50,9 +50,9 @@ try {
    assert.ok(data.title.right<=data.viewport+2,label+' headline overflows viewport');
    assert.ok(data.card.right<=data.viewport+2,label+' welcome card overflows viewport');
    if(width>=1100){
-     assert.ok(data.titleFont<=56,label+' headline font is oversized: '+data.titleFont);
-     assert.ok(data.title.height<=345,label+' headline wraps into too many lines: '+data.title.height);
-     assert.ok(data.hero.height<=760,label+' hero too tall for desktop: '+data.hero.height);
+     assert.ok(data.titleFont<=46,label+' headline font is oversized: '+data.titleFont);
+     assert.ok(data.title.height<=250,label+' headline wraps into too many lines: '+data.title.height);
+     assert.ok(data.hero.height<=700,label+' hero too tall for desktop: '+data.hero.height);
      assert.ok(data.copy.right<=data.card.left+2,label+' copy and welcome card overlap');
    }
    await page.screenshot({path:path.join(outputDir,'home-'+label+'.png'),fullPage:false});
