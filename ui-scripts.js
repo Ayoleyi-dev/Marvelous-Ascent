@@ -195,7 +195,8 @@
       toastTimer = setTimeout(function(){ toastEl.classList.remove('is-visible'); }, dur || 5000);
     }
   };
-  document.getElementById('toast-close').addEventListener('click', function() { toastEl.classList.remove('is-visible'); });
+  var toastClose = document.getElementById('toast-close');
+  if (toastClose && toastEl) toastClose.addEventListener('click', function() { toastEl.classList.remove('is-visible'); });
 
   /* ═══════════════════════════════════════════════════════════
      SESSION MANAGER & AUTH MODAL
