@@ -50,10 +50,23 @@ assert.match(showcaseJs, /web:|web :/, 'Website scenario required');
 assert.doesNotMatch(showcaseJs, /fetch\(/, 'Showcase must work without a network');
 const showcaseCss = read('showcase.css');
 assert.match(showcaseCss, /\[data-theme="light"\]/, 'Light mode contrast styling required');
+/* Prevent regressions in logo consistency and above-the-fold hero sizing. */
+const mark = '<span class="brand-lockup__mark" aria-hidden="true">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span>';
+for (const page of pages) {
+  const html = read(page);
+  const lockups = html.match(/class="(?:logo|ma-logo) brand-lockup"/g) || [];
+  assert.equal(lockups.length, 2, 'Header and footer need matching logos: '+page);
+  assert.equal(html.split(mark).length-1, 2, 'Logo markup must match on '+page);
+  assert.doesNotMatch(html, /class="logo-bracket"|class="ma-monogram"/, 'Legacy logo styling remains on '+page);
+}
+assert.match(read('scripts/generate-services.mjs'), /brand-lockup__mark/, 'Generated pages must use the same logo');
+const welcomeCss = read('welcome.css');
+assert.ok(welcomeCss.includes('.warm-home .warm-headline{font-size:clamp(2.15rem,3.1vw,3.45rem)'), 'Compact responsive hero typography is required');
 const home = read('index.html');
 assert.match(home, /id="showcase"/, 'Interactive showcase section required');
 assert.match(home, /SAMPLE DATA/, 'Showcase must label sample data');
 assert.match(home, /Let’s make work feel lighter/, 'Warm welcome headline missing');
+assert.match(home, /class="warm-headline-line"/, "Hero needs separate readable lines");
 assert.match(home, /href="work\/diams\.html"/, 'DIAMS case study missing');
 assert.match(home, /href="work\/sonofiam\.html"/, 'SonofIAM case study missing');
 assert.match(home, /href="project-brief\.html"/, 'Project intake link missing');
