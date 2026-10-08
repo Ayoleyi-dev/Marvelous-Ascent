@@ -697,57 +697,6 @@
   }
 
 
-  /* ═══════════════════════════════════════════════════════════
-     MODULE 7 — POC UPLOAD FORM HANDLER
-     Note: file upload requires a real backend endpoint.
-     This handler collects metadata and shows a toast.
-     Swap the fetch URL for your actual upload API later.
-  ═══════════════════════════════════════════════════════════ */
-  var pocForm   = document.getElementById('poc-upload-form');
-  var pocSubmit = document.getElementById('poc-submit');
-  var pocBtnTxt = document.getElementById('poc-btn-text');
-
-  if (pocForm) {
-    pocForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (pocForm.dataset.submitting) return;
-
-      // Basic client-side validation
-      var name    = pocForm.querySelector('#poc-name');
-      var email   = pocForm.querySelector('#poc-email');
-      var doctype = pocForm.querySelector('#poc-doctype');
-      var file    = pocForm.querySelector('#poc-file');
-
-      if (!name  || !name.value.trim())    { name.focus();    return; }
-      if (!email || !email.value.trim())   { email.focus();   return; }
-      if (!doctype || !doctype.value)      { doctype.focus(); return; }
-      if (!file  || !file.files.length)    {
-        showToast('Please attach a document before submitting.', 'error', 6000);
-        if (dropzone) dropzone.focus();
-        return;
-      }
-
-      pocForm.dataset.submitting = '1';
-      if (pocSubmit) pocSubmit.classList.add('is-loading');
-      if (pocBtnTxt) pocBtnTxt.textContent = 'Uploading securely…';
-
-      /*
-       * TODO: Replace this simulated delay with your actual upload fetch:
-       *
-       * var fd = new FormData(pocForm);
-       * fetch('YOUR_UPLOAD_ENDPOINT', { method: 'POST', body: fd })
-       *   .then(function(res) { ... })
-       *   .catch(function(err) { ... });
-       */
-      setTimeout(function () {
-        showToast('✓ Document received! Check your inbox within 24 hours for your custom Power BI dashboard.', 'success', 8000);
-        pocForm.reset();
-        clearFileSelection();
-        delete pocForm.dataset.submitting;
-        if (pocSubmit) pocSubmit.classList.remove('is-loading');
-        if (pocBtnTxt) pocBtnTxt.textContent = 'Send My Document for Free Extraction →';
-      }, 1800);
-    });
-  }
-
+  // Upload and fabricated acknowledgement logic intentionally removed.
+  // A secure document intake requires an approved backend and data policy.
 })(); // ← end IIFE
