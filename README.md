@@ -86,3 +86,26 @@ Do **not** edit generated `services.html` or files under `services/` directly. S
 The preserved historical demonstration pages are now labelled as simulations. The document-processing demo **does not accept file uploads**: its previous form pretended to upload and acknowledge a document without sending it. A real secure backend, data handling agreement and review are required before accepting documents from customers.
 
 Current route flow: `index.html` → `services.html` → `services/<slug>.html` → `index.html#contact`. Search metadata and crawl routes are in `sitemap.xml` and `robots.txt`. Client authentication, CRM persistence and email integration remain future work.
+
+## Welcoming public experience and case studies
+
+The homepage now begins with what visitors need to accomplish, rather than unverified ROI figures or technical performance claims. It includes four problem-first paths, a real-work preview, transparent delivery steps and a guided project brief. The layout uses `welcome.css` over the existing brand tokens and keeps both colour themes.
+
+- `work.html` — entry point to selected proof-first case studies.
+- `work/sonofiam.html` — delivered website and commerce foundation; public website is the evidence, while outcomes such as conversion or SEO changes remain unmeasured.
+- `work/diams.html` — operational master tracker designed while working as a Data & Analytics Officer. This is founding professional experience, **not** an independently contracted agency case study. No internal contact records or sensitive workbook screenshots are published.
+- `project-brief.html` and `project-brief.js` — three-step intake, browser-side validation, safe text rendering and review. Submission **opens the visitor's own email app** and requires them to press Send. There is no backend, automatic lead record or response-time guarantee.
+
+The previous fictional healthcare, ecommerce and real-estate testimonials, automated ROI figures and fake performance proof have been removed from the homepage. The old concept/demo pages remain secondary and explicitly labelled.
+
+### Manual review before release
+
+1. Check welcome copy, service fit and tone with real prospects.
+2. Preview both themes at 360px, 768px and desktop widths.
+3. Test keyboard focus, mobile menu, reduced motion and screen-reader labels.
+4. Complete project brief with invalid and valid inputs, verify the review screen and email app handoff.
+5. Approve SonofIAM case-study wording and verify that public use of the website as evidence is appropriate.
+6. Confirm the DIAMS description contains no confidential workbook contents.
+7. Verify newsletter integrations separately: no subscriber storage or email automation is established by this phase.
+
+The new pages are included in the generated sitemap. Do not merge the development PR until those checks are reviewed.
