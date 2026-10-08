@@ -137,3 +137,14 @@ node scripts/check-layout.mjs
 ```
 
 Before merging, inspect the uploaded screenshots in GitHub Actions and double-check the actual Chrome/Edge presentation in both light and dark modes.
+
+## Phase 1 service navigation polish
+
+The service catalogue and all seven generated service pages now share a compact responsive navigation menu for mobile screens, readable service headings, a clearer path into the project brief, and stronger cards and FAQ styling. Each service detail page includes anchored shortcuts to its challenge, deliverables, approach, evidence and FAQs. The proof pages and project brief use the same mobile menu.
+
+- Template: `scripts/generate-services.mjs`; generated pages must stay in sync.
+- Styles: `services.css`, respecting `brand.css` tokens and both colour themes.
+- Interaction: `site-navigation.js` enhances the native `<details>` menu with Escape, outside-click, and navigation-close support; no JavaScript is needed to initially open the menu.
+- Browser check: `node scripts/check-service-layout.mjs`; it checks navigation, anchors, horizontal overflow, and phone/tablet/desktop layouts in dark/light modes.
+
+For the **actual milestone audit and what's left before Phase 2**, see [ROADMAP_STATUS.md](ROADMAP_STATUS.md). A live lead-capture backend, About/legal pages, analytics baseline and further release gates are still outstanding.
