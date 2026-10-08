@@ -68,3 +68,21 @@ We build in small reviewable increments so the public site remains stable while 
 - WhatsApp: https://wa.me/2349061367007
 
 © 2026 Marvelous Ascent.
+
+## Phase 1 — Service catalogue and page architecture
+
+The canonical public catalogue is `services.html`, backed by structured copy in `data/services.json`. Seven static, indexable service detail pages are generated under `services/`.
+
+After changing service descriptions, status, FAQ, scope or evidence links, regenerate the HTML and sitemap:
+
+```bash
+node scripts/generate-services.mjs
+node scripts/generate-services.mjs --check
+node scripts/check-site.mjs
+```
+
+Do **not** edit generated `services.html` or files under `services/` directly. Shared layout lives in `scripts/generate-services.mjs`, styles in `services.css` and theme behaviour in `site-navigation.js`.
+
+The preserved historical demonstration pages are now labelled as simulations. The document-processing demo **does not accept file uploads**: its previous form pretended to upload and acknowledge a document without sending it. A real secure backend, data handling agreement and review are required before accepting documents from customers.
+
+Current route flow: `index.html` → `services.html` → `services/<slug>.html` → `index.html#contact`. Search metadata and crawl routes are in `sitemap.xml` and `robots.txt`. Client authentication, CRM persistence and email integration remain future work.
