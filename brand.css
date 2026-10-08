@@ -1,0 +1,47 @@
+/* Marvelous Ascent brand direction — September 2026.
+   Existing --green/--orange names retained for component compatibility. */
+:root {
+  color-scheme: dark;
+  --bg:#09090B; --bg-card:#121116; --bg-card-alt:#18151E;
+  --bg-glass:rgba(9,9,11,.92);
+  --text:#F5F3F8; --text-dim:#D0CAD9; --text-muted:#ABA2B8;
+  --green:#BC8CFF; --green-10:rgba(168,85,247,.10);
+  --green-18:rgba(168,85,247,.18); --green-glow:rgba(168,85,247,.24);
+  --orange:#7C16CE; --orange-12:rgba(124,22,206,.12);
+  --border:rgba(188,140,255,.30); --border-dim:rgba(245,243,248,.12);
+  --border-glass:rgba(188,140,255,.18); --red-err:#FF8585;
+}
+[data-theme="light"] {
+  color-scheme:light;
+  --bg:#F1F7F8; --bg-card:#FFFFFF; --bg-card-alt:#E8EDF8;
+  --bg-glass:rgba(246,250,252,.94);
+  --text:#172039; --text-dim:#35435B; --text-muted:#536078;
+  --green:#4338CA; --green-10:rgba(67,56,202,.07);
+  --green-18:rgba(67,56,202,.12); --green-glow:rgba(67,56,202,.18);
+  --orange:#4338CA; --orange-12:rgba(67,56,202,.10);
+  --border:rgba(67,56,202,.25); --border-dim:rgba(23,32,57,.15);
+  --border-glass:rgba(67,56,202,.16); --red-err:#B42336;
+}
+body {background-image:radial-gradient(ellipse at 10% 0%,rgba(124,22,206,.07),transparent 48%);}
+[data-theme="light"] body {background-image:radial-gradient(ellipse at 0% 10%,rgba(20,184,166,.16),transparent 55%),radial-gradient(ellipse at 100% 45%,rgba(99,102,241,.15),transparent 60%);}
+.bg-grid,[data-theme="light"] .bg-grid {background-image:none;}
+.bg-orb--tl {background:radial-gradient(circle,rgba(124,22,206,.12),transparent 70%);}
+.bg-orb--br {background:radial-gradient(circle,rgba(99,102,241,.08),transparent 70%);}
+[data-theme="light"] .bg-orb--tl {background:radial-gradient(circle,rgba(20,184,166,.22),transparent 70%);}
+[data-theme="light"] .bg-orb--br {background:radial-gradient(circle,rgba(99,102,241,.20),transparent 70%);}
+.grad-text {background-image:linear-gradient(125deg,#BC8CFF,#D7C2FF);}
+[data-theme="light"] .grad-text {background-image:linear-gradient(125deg,#4338CA,#087F78);}
+.btn--primary:hover {background:#6820AC; box-shadow:0 10px 30px rgba(124,22,206,.22);}
+[data-theme="light"] .btn--primary:hover {background:#3730A3;}
+.logo {gap:0; white-space:nowrap;}
+.logo-wordmark {margin-left:10px;}
+.logo-bracket {color:var(--text-muted);}
+.contact-links {display:grid;gap:12px;margin-top:24px;overflow-wrap:anywhere;}
+.contact-links a {color:var(--green);text-decoration:underline;text-underline-offset:5px;}
+.builder-credit {display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:1px solid var(--border-dim);border-radius:5px;font-family:var(--f-mono);font-size:12px;background:var(--bg-card);}
+.builder-credit strong {color:var(--text-muted);}
+.footer-inner {flex-wrap:wrap;align-items:center;}
+.portfolio-card>div {min-width:0!important;flex-basis:280px!important;}
+:focus-visible {outline:3px solid var(--green);outline-offset:5px;}
+@media(max-width:400px){.site-header .logo{font-size:11px;}.logo-wordmark{margin-left:6px;}.btn{white-space:normal;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}.reveal-up{opacity:1!important;transform:none!important;}}
