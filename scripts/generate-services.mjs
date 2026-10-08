@@ -48,7 +48,9 @@ function siteShell({title,description,canonical,depth,body,active}){
     <div class="ma-container ma-footer-content">
       <div><a class="ma-logo brand-lockup" href="${p}index.html"><span class="brand-lockup__mark" aria-hidden="true">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span></a><p>Data, automation and digital infrastructure built around real business needs.</p></div>
       <div class="ma-footer-links"><a href="${p}services.html">Explore services</a><a href="${p}work.html">View our work</a><a href="${p}project-brief.html">Get in touch</a></div>
-    </div><div class="ma-container ma-copyright">© 2026 Marvelous Ascent · Client portal and account login are not yet available.</div>
+    </div>
+    <nav class="ma-container ma-policy-nav" aria-label="About and policies"><a href="${p}about.html">About</a><a href="${p}privacy.html">Privacy</a><a href="${p}terms.html">Terms</a><a href="${p}accessibility.html">Accessibility</a></nav>
+    <div class="ma-container ma-copyright">© 2026 Marvelous Ascent · Client portal and account login are not yet available.</div>
   </footer>
 </body>
 </html>
@@ -126,7 +128,7 @@ function renderService(s,data){
 
 function renderSitemap(data){
  const base="https://ayoleyi-dev.github.io/Marvelous-Ascent/";
- const pages=["","services.html","work.html","work/sonofiam.html","work/diams.html","project-brief.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
+ const pages=["","about.html","privacy.html","terms.html","accessibility.html","404.html","services.html","work.html","work/sonofiam.html","work/diams.html","project-brief.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(x=>`  <url><loc>${base+x}</loc></url>`).join("\n")}\n</urlset>\n`;
 }
 const output = {'services.html':renderHub(data),'sitemap.xml':renderSitemap(data)};
