@@ -7,8 +7,8 @@
 <meta property="og:description" content="You don't need a technical brief. Tell us the problem and we'll help map a sensible way forward.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="services.css"><link rel="stylesheet" href="welcome.css">
-<script src="site-navigation.js" defer></script><script src="project-brief.js" defer></script>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="services.css"><link rel="stylesheet" href="welcome.css"><link rel="stylesheet" href="trust.css">
+<script src="site-navigation.js" defer></script><script src="lead-config.js" defer></script><script src="project-brief.js" defer></script>
 </head><body class="ma-services warm-intake-page">
 <a href="#main" class="warm-skip">Skip to content</a>
 <header class="ma-header"><div class="ma-container ma-header-inner"><a class="ma-logo brand-lockup" href="index.html" aria-label="Marvelous Ascent home"><span class="brand-lockup__mark" aria-hidden="true">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span></a>
@@ -19,7 +19,7 @@
  <p class="warm-story-kicker">Welcome — we're glad you're here</p>
  <h1 class="warm-story-title">Let’s make this <span class="warm-gradient">a little easier.</span></h1>
  <p class="warm-story-deck">Tell us what your business is working through. You don’t need to know which tool, dashboard or website feature you need. We’ll use your answers to understand the problem before discussing a practical scope.</p>
- <p class="warm-disclosure">This form prepares a draft in your own email app. It does not submit anything to a server or create an account.</p>
+ <p class="warm-disclosure" id="brief-delivery-mode">This form prepares a draft in your email app. We will not receive anything until you press Send there.</p>
 </div></section>
 <section class="ma-section" aria-label="Guided project brief"><div class="ma-container">
  <div class="warm-intake-card">
@@ -28,6 +28,7 @@
     <span class="warm-progress-dot is-active"></span><span class="warm-progress-dot"></span><span class="warm-progress-dot"></span>
   </div>
   <form id="project-brief-form" novalidate>
+   <div class="ma-honeypot" aria-hidden="true"><label for="brief-website">Leave this blank</label><input id="brief-website" name="website" tabindex="-1" autocomplete="off"></div>
    <section class="warm-intake-step" data-step="0" aria-labelledby="brief-about-title">
     <h2 id="brief-about-title">Who are we helping?</h2><p>Just enough to know who we're talking to. Only your name and email are required here.</p>
     <div class="warm-form-grid">
@@ -68,7 +69,10 @@
    <section class="warm-intake-step" data-step="2" aria-labelledby="brief-review-title" hidden>
       <h2 id="brief-review-title">Here’s what we’ve heard.</h2><p>Have a look before you open your email draft. You can go back and edit anything.</p>
       <dl class="warm-intake-review" id="brief-review"></dl>
-      <div class="warm-intake-note"><strong>What happens next?</strong> When you select “Open email draft,” your device will open its email app with these details. Please check the draft and press <strong>Send</strong> there. We'll review the message and follow up to discuss fit and scope; no turnaround time is guaranteed.</div>
+      <div class="warm-intake-note" id="brief-delivery-note"><strong>What happens next?</strong> Your email application opens with your details. Check the draft and press <strong>Send</strong> yourself. Nothing is automatically submitted.</div>
+      <div class="warm-form-field ma-consent-field"><label for="brief-privacy"><input type="checkbox" id="brief-privacy" name="privacyConsent" required> I have read the <a href="privacy.html" target="_blank" rel="noopener noreferrer">privacy notice</a> and agree to be contacted about this project enquiry. *</label></div>
+      <div id="brief-turnstile" hidden aria-label="Anti-spam verification"></div>
+      <p class="warm-form-error" id="brief-captcha-error" role="status" aria-live="polite"></p>
    </section>
    <p class="warm-form-error" id="brief-error" role="status" aria-live="polite"></p>
    <div class="warm-intake-buttons">
@@ -81,4 +85,5 @@
  <p style="text-align:center;font-size:14px;color:var(--text-muted)">Prefer a quick conversation? <a class="warm-text-link" href="mailto:meet.ayoleyi@gmail.com">Email us directly</a> or <a class="warm-text-link" href="https://wa.me/2349061367007" target="_blank" rel="noopener noreferrer">say hello on WhatsApp</a>.</p>
 </div></section></main>
 <footer class="ma-footer"><div class="ma-container ma-footer-content"><div><a href="index.html" class="ma-logo brand-lockup"><span class="brand-lockup__mark" aria-hidden="true">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span></a><p>Less busywork. More clarity. Thoughtful work and practical systems.</p></div><div class="ma-footer-links"><a href="services.html">Services</a><a href="work.html">Our Work</a><a href="mailto:meet.ayoleyi@gmail.com">Email</a></div></div>
-<div class="ma-container ma-copyright">© 2026 Marvelous Ascent · Your form entries remain in your browser unless you choose to send them.</div></footer></body></html>
+<nav class="ma-container ma-policy-nav" aria-label="Policies"><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="accessibility.html">Accessibility</a></nav>
+<div class="ma-container ma-copyright">© 2026 Marvelous Ascent · A project enquiry does not create an agreement.</div></footer></body></html>
