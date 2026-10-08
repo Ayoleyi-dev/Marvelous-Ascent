@@ -7,8 +7,6 @@
 
 (function () {
   'use strict';
-
-  var CONTACT_WEBHOOK   = 'https://hook.eu1.make.com/5f8wrs6km9trssp355wh6xhiu544qnyz';
   var SUBSCRIBE_WEBHOOK = 'https://hook.eu1.make.com/9dwcriyxkyo8e27i8dg9cgzd3a4lfgac';
   var FETCH_TIMEOUT_MS  = 15000;
 
@@ -214,14 +212,17 @@
       var authC = document.getElementById('auth-container');
       var uplC = document.getElementById('uploads');
       if (!authC) return;
-      if (this.user) {
-        authC.innerHTML = '<div class="user-menu"><button class="user-menu__trigger" id="usr-btn"><span class="user-avatar">' + this.user.name.charAt(0) + '</span><span class="user-name">' + this.user.name + '</span> ▾</button><div class="user-menu__dropdown" id="usr-drop" hidden><button class="user-menu__item user-menu__item--danger" id="logout-btn">Sign Out</button></div></div>';
+      if (this.user && typeof this.user.name === 'string' && this.user.name.trim()) {
+        var safeName = this.user.name.slice(0,60).replace(/[&<>"']/g, function(ch) {
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+        });
+        authC.innerHTML = '<div class="user-menu"><button class="user-menu__trigger" id="usr-btn"><span class="user-avatar">' + safeName.charAt(0) + '</span><span class="user-name">' + safeName + '</span> ▾</button><div class="user-menu__dropdown" id="usr-drop" hidden><button class="user-menu__item user-menu__item--danger" id="logout-btn">Clear Preview</button></div></div>';
         document.getElementById('usr-btn').addEventListener('click', function(e){ e.stopPropagation(); var d=document.getElementById('usr-drop'); d.hidden = !d.hidden; });
         document.addEventListener('click', function(){ var d=document.getElementById('usr-drop'); if(d) d.hidden = true; });
         document.getElementById('logout-btn').addEventListener('click', function(){ SessionManager.logout(); });
         if(uplC) uplC.style.display = 'block';
       } else {
-        authC.innerHTML = '<button class="nav-link nav-link--cta" id="login-trigger">Sign In →</button>';
+        authC.innerHTML = '<button class="nav-link nav-link--cta" id="login-trigger">Personalise →</button>';
         document.getElementById('login-trigger').addEventListener('click', function(){ AuthModal.open(); });
         if(uplC) uplC.style.display = 'none';
       }
@@ -243,7 +244,7 @@
     init: function() {
       if(document.getElementById('auth-modal')) return;
       var m = document.createElement('div'); m.id = 'auth-modal'; m.className = 'modal';
-      m.innerHTML = '<div class="modal__overlay" data-close></div><div class="modal__content"><button class="modal__close" data-close>✕</button><div class="auth-tabs"><button class="auth-tab auth-tab--active">Sign In</button></div><form id="auth-form" class="auth-form"><div class="field"><label>Your Name</label><input type="text" id="auth-name" required></div><button type="submit" class="btn btn--primary btn--full">Continue →</button></form></div>';
+      m.innerHTML = '<div class="modal__overlay" data-close></div><div class="modal__content"><button class="modal__close" data-close>✕</button><div class="auth-tabs"><button class="auth-tab auth-tab--active">Personalise this demo</button><p class="footer-copy">Saved in this browser only. This does not create a client account.</p></div><form id="auth-form" class="auth-form"><div class="field"><label>Your Name</label><input type="text" id="auth-name" required></div><button type="submit" class="btn btn--primary btn--full">Continue →</button></form></div>';
       document.body.appendChild(m);
       m.addEventListener('click', function(e){ if(e.target.matches('[data-close]')) m.classList.remove('is-open'); });
       document.getElementById('auth-form').addEventListener('submit', function(e){
@@ -264,7 +265,7 @@
     if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (form.dataset.submitting) return;
+      if (!form.reportValidity() || form.dataset.submitting) return;
       form.dataset.submitting = '1';
       var submitBtn = form.querySelector('[type="submit"]'), origLabel = submitBtn ? submitBtn.textContent : '';
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
@@ -280,29 +281,23 @@
   }
 
   var cForm = document.getElementById('contact-form');
-  if(cForm) {
-    cForm.addEventListener('submit', function(e) {
-      var n = document.getElementById('business-name-input'), nVal = (n && n.value.trim()) ? n.value : 'there';
-      bindForm(cForm, CONTACT_WEBHOOK, "Hey " + nVal + ", thanks! We'll reply within 4 hours.");
-    });
-  }
-  bindForm(document.getElementById('subscribe-form'), SUBSCRIBE_WEBHOOK, '✓ Subscribed!');
+  if (cForm) cForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!cForm.reportValidity()) return;
+    var formData = new FormData(cForm);
+    var emailBody = 'Name: ' + formData.get('name') + '\nEmail: ' + formData.get('email') + '\n\n' + formData.get('message');
+    window.location.href = 'mailto:meet.ayoleyi@gmail.com?subject=' + encodeURIComponent('Marvelous Ascent project enquiry') + '&body=' + encodeURIComponent(emailBody);
+  });
+  bindForm(document.getElementById('subscribe-form'), SUBSCRIBE_WEBHOOK, 'Subscription request received');
 
   /* Initialize Data */
   document.addEventListener('DOMContentLoaded', function() {
     SessionManager.init();
     AuthModal.init();
     
-    // Live Dashboard Mock Data Loop
-    var pEl = document.getElementById('mock-pipeline'), lEl = document.getElementById('mock-leads'), cEl = document.getElementById('mock-conversion'), uEl = document.getElementById('last-updated');
-    if(pEl) {
-      setInterval(function() {
-        pEl.textContent = '$' + (1.24 + (Math.random()-0.5)*0.08).toFixed(2) + 'M';
-        lEl.textContent = 842 + Math.floor((Math.random()-0.5)*20);
-        cEl.textContent = (24.8 + (Math.random()-0.5)*1.5).toFixed(1) + '%';
-        uEl.textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-      }, 5000);
-    }
+    // The on-page dashboard uses synthetic examples, never live client data.
+    var sampleNote = document.getElementById('last-updated');
+    if (sampleNote) sampleNote.textContent = 'Illustrative, not live';
   });
 
 })();
