@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Marvelous Ascent builds practical dashboards, workflow automation and digital experiences for growing businesses. Explore our services, demos and delivered work.">
+  <meta name="description" content="Less busywork, more clarity. Marvelous Ascent helps growing businesses with reporting, workflow automation, websites and practical digital systems.">
   <title>Marvelous Ascent | Data &amp; Automation Agency</title>
   
   <meta property="og:title" content="Marvelous Ascent | Data & Automation Agency">
-  <meta property="og:description" content="Clearer reporting, less manual work and stronger digital foundations — built with data, automation and web technology.">
+  <meta property="og:description" content="You run the business. We help make the work lighter. Discover thoughtful data, automation and web solutions, backed by real projects.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://ayoleyi-dev.github.io/Marvelous-Ascent/">
 
@@ -16,8 +16,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="brand.css">
+  <link rel="stylesheet" href="welcome.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="warm-home">
+  <a class="warm-skip" href="#main-content">Skip to content</a>
 
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-outline" id="cursor-outline"></div>
@@ -36,15 +39,13 @@
 
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="services.html" class="nav-link">Services</a>
-        <a href="#roi" class="nav-link">ROI</a>
-        <a href="#work" class="nav-link">Our Work</a>
-        <a href="#proof" class="nav-link">Proof of Work</a>
+        <a href="#problems" class="nav-link">How we help</a>
+        <a href="work.html" class="nav-link">Our Work</a>
+        <a href="#process" class="nav-link">Our approach</a>
         
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
         
-        <div id="auth-container">
-          <button class="nav-link nav-link--cta" id="login-trigger">Sign In <span aria-hidden="true">→</span></button>
-        </div>
+        <a href="project-brief.html" class="nav-link nav-link--cta">Start a Project →</a>
       </nav>
 
       <div style="display: flex; align-items: center; gap: 15px;">
@@ -57,194 +58,62 @@
 
     <nav class="mobile-nav" id="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
       <a href="services.html" class="mobile-nav__link">Services</a>
-      <a href="#roi" class="mobile-nav__link">ROI Calculator</a>
-      <a href="#work" class="mobile-nav__link">Our Work</a>
-      <a href="#proof" class="mobile-nav__link">Proof of Work</a>
-      <a href="#newsletter" class="mobile-nav__link">Newsletter</a>
-      <a href="#contact" class="mobile-nav__link mobile-nav__link--cta">Contact Us</a>
+      <a href="#problems" class="mobile-nav__link">How we help</a>
+      <a href="work.html" class="mobile-nav__link">Our Work</a>
+      <a href="#process" class="mobile-nav__link">Our approach</a>
+      <a href="services.html" class="mobile-nav__link">All Services</a>
+      <a href="project-brief.html" class="mobile-nav__link mobile-nav__link--cta">Start a Project →</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="hero">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <div class="hero__eyebrow reveal-up">
-            <span class="pulse-dot" aria-hidden="true"></span>
-            B2B Data &amp; Automation Agency
+  <main id="main-content">
+    <section class="hero warm-hero" id="hero">
+      <div class="container warm-hero-grid">
+        <div class="warm-hero-copy">
+          <p class="warm-eyebrow reveal-up"><span class="warm-spark" aria-hidden="true">✦</span> Welcome to Marvelous Ascent</p>
+          <h1 class="warm-headline reveal-up" style="--d:.08s">You have enough on your plate.<br><span class="warm-gradient">Let’s make work feel lighter.</span></h1>
+          <p class="warm-lead reveal-up" style="--d:.16s">The spreadsheets, follow-ups, websites and little tasks that pile up? You don’t have to figure them out alone. We build useful data, automation and digital systems so you can focus on running your business.</p>
+          <div class="warm-hero-actions reveal-up" style="--d:.2s">
+            <a href="project-brief.html" class="btn btn--primary warm-btn">Tell us what you need <span aria-hidden="true">↗</span></a>
+            <a href="#problems" class="btn btn--ghost warm-btn-soft">See how we can help ↓</a>
           </div>
-
-          <h1 class="hero__headline reveal-up" style="--d:.08s">
-            Scale Your Business<br>
-            with <em class="grad-text">Data</em> &amp; <em class="grad-text">Automation.</em>
-          </h1>
-
-          <p class="hero__sub reveal-up" style="--d:.16s">
-            We help <span class="dynamic-name">your business</span> turn scattered data, manual workflows and digital gaps into useful systems that can grow with you.
-          </p>
-
-          <div class="hero-customizer reveal-up" style="--d:.22s">
-            <label class="name-label"><span aria-hidden="true">⚙</span> Personalise this page</label>
-            <div class="customizer-panel">
-              <div class="name-field">
-                <span class="name-field__prefix" aria-hidden="true">$</span>
-                <input type="text" id="business-name-input" class="name-input" placeholder="Enter company name..." autocomplete="organization" spellcheck="false" maxlength="60">
-              </div>
-              <div class="color-controls">
-                <div class="color-wrap" title="Primary Accent">
-                  <input type="color" id="primary-color-input" class="dual-picker" value="#BC8CFF">
-                  <span>Primary</span>
-                </div>
-                <div class="color-wrap" title="Secondary Accent">
-                  <input type="color" id="secondary-color-input" class="dual-picker" value="#7C16CE">
-                  <span>Secondary</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero__ctas reveal-up" style="--d:.30s">
-            <a href="#contact" class="btn btn--primary btn--nudge">Work With Us</a>
-            <a href="#services" class="btn btn--ghost js-smooth">Our Services ↓</a>
-          </div>
-
-          <dl class="hero__stats reveal-up" style="--d:.38s">
-            <div class="stat"><dt class="stat__label">Data</dt><dd class="stat__val">Clear insights</dd></div>
-            <div class="stat__sep" aria-hidden="true"></div>
-            <div class="stat"><dt class="stat__label">Automation</dt><dd class="stat__val">Less manual work</dd></div>
-            <div class="stat__sep" aria-hidden="true"></div>
-            <div class="stat"><dt class="stat__label">Web</dt><dd class="stat__val">Credible presence</dd></div>
-          </dl>
+          <p class="warm-reassurance reveal-up" style="--d:.28s"><span aria-hidden="true">✓</span> No complicated brief needed. <span aria-hidden="true">✓</span> Clear next steps. <span aria-hidden="true">✓</span> You stay in the loop.</p>
         </div>
-
-        <aside class="hero__terminal reveal-up" style="--d:.44s" aria-hidden="true">
-          <div class="term__bar">
-            <span class="term__dot term__dot--r"></span>
-            <span class="term__dot term__dot--y"></span>
-            <span class="term__dot term__dot--g"></span>
-            <span class="term__bar-title">pipeline_init.sh</span>
+        <aside class="warm-welcome-card reveal-up" style="--d:.16s" aria-label="What working together looks like">
+          <div class="warm-card-overline"><span class="warm-orbit" aria-hidden="true">✳</span> A more manageable workday starts here</div>
+          <h2>Bring us the messy bits.<br>We’ll work through them <em>together.</em></h2>
+          <div class="warm-mini-timeline">
+            <div class="warm-mini-step"><span>01</span><div><strong>We listen first</strong><p>Show us where things get stuck.</p></div></div>
+            <div class="warm-mini-step"><span>02</span><div><strong>We build what fits</strong><p>Practical solutions for your actual workflow.</p></div></div>
+            <div class="warm-mini-step"><span>03</span><div><strong>We hand it over clearly</strong><p>Tested work, explanations and agreed next steps.</p></div></div>
           </div>
-          <div class="term__body">
-            <p><span class="tc-g">$</span> init pipeline --client <span class="tc-o" id="term-name">YOUR_COMPANY</span></p>
-            <p class="tc-d">▸ Scanning lead sources<span class="type-dots"></span></p>
-            <p class="tc-d">▸ Mapping automation nodes<span class="type-dots"></span></p>
-            <p class="tc-d">▸ Enriching CRM records<span class="type-dots"></span></p>
-            <p><span class="tc-g">✓</span> Workflow preview: <span class="tc-o">illustrative demo</span></p>
-            <p class="term__cursor">█</p>
-          </div>
+          <div class="warm-card-bottom"><span class="warm-indicator"></span> Thoughtful work. Real follow-through.</div>
         </aside>
       </div>
     </section>
+    <div class="warm-promise-strip" aria-label="Our working commitments">
+      <div class="container warm-promise-items"><span><strong>Human conversations</strong> — not jargon</span><span><strong>Clear scope</strong> — no surprises</span><span><strong>Useful handover</strong> — built for your team</span></div>
+    </div>
 
-    <section class="roi-section" id="roi">
+    <section class="warm-problem-section" id="problems">
       <div class="container">
-        <div class="section-kicker reveal-up"><span class="pulse-dot" aria-hidden="true"></span>The Business Case</div>
-        <h2 class="section-heading reveal-up" style="--d:.08s">
-          Where Better Systems Can Help<br><span class="dynamic-name grad-text">your business</span>.
-        </h2>
-        <p class="section-sub reveal-up" style="--d:.14s">Explore fictional business scenarios and potential workflow improvements. The figures are illustrative, not measured client results or a personalised financial projection.</p>
-
-        <div class="roi-tabs reveal-up" style="--d:.2s" role="tablist">
-          <button class="roi-tab roi-tab--active" role="tab" aria-selected="true" aria-controls="roi-panel" data-industry="healthcare"><span aria-hidden="true">🏥</span> Healthcare</button>
-          <button class="roi-tab" role="tab" aria-selected="false" aria-controls="roi-panel" data-industry="ecommerce"><span aria-hidden="true">🛒</span> E-commerce</button>
-          <button class="roi-tab" role="tab" aria-selected="false" aria-controls="roi-panel" data-industry="realestate"><span aria-hidden="true">🏢</span> Real Estate</button>
-        </div>
-
-        <div class="roi-panel" id="roi-panel" role="tabpanel" aria-live="polite">
-          <div class="roi-card" data-industry="healthcare" data-active>
-            <div class="roi-card__grid">
-              <div class="roi-col roi-col--pain">
-                <h3 class="roi-col__title"><span aria-hidden="true">⚠</span> Pain Points</h3>
-                <ul class="roi-list">
-                  <li>Manual patient intake averaging <strong>45 min/patient</strong></li>
-                  <li>Insurance claim rejection rate of <strong>32%</strong> due to errors</li>
-                  <li>No-shows costing mid-size clinics <strong>$150K+/year</strong></li>
-                  <li>Staff spending <strong>60% of their shift</strong> on admin</li>
-                </ul>
-              </div>
-              <div class="roi-col roi-col--solved">
-                <h3 class="roi-col__title"><span aria-hidden="true">💡</span> What We Automate</h3>
-                <ul class="roi-list">
-                  <li>Digital intake + EHR sync cuts admin time by <strong>78%</strong></li>
-                  <li>AI claim scrubbing reduces rejection rate to <strong>under 3.8%</strong></li>
-                  <li>SMS &amp; email reminders reduce no-shows by <strong>67%</strong></li>
-                  <li>Staff fully reallocated to billable care</li>
-                </ul>
-              </div>
-              <div class="roi-col roi-col--metric">
-                <h3 class="roi-col__title"><span aria-hidden="true">📈</span> Your ROI</h3>
-                <div class="roi-big"><span class="roi-big__fig">8.4×</span><span class="roi-big__label">ROI in Year 1</span></div>
-                <p class="roi-big__detail">Avg. <strong>$280,000</strong> saved annually</p>
-                <a href="#contact" class="btn btn--primary btn--sm">Discuss My Workflow →</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="roi-card" data-industry="ecommerce">
-            <div class="roi-card__grid">
-              <div class="roi-col roi-col--pain">
-                <h3 class="roi-col__title"><span aria-hidden="true">⚠</span> Pain Points</h3>
-                <ul class="roi-list">
-                  <li>Manual order reconciliation consuming <strong>6+ hours daily</strong></li>
-                  <li><strong>74% cart abandonment</strong> with zero recovery</li>
-                  <li>Inventory sync errors causing <strong>1-star reviews</strong></li>
-                  <li>Ad spend wasted on unsegmented audiences</li>
-                </ul>
-              </div>
-              <div class="roi-col roi-col--solved">
-                <h3 class="roi-col__title"><span aria-hidden="true">💡</span> What We Automate</h3>
-                <ul class="roi-list">
-                  <li>Order pipeline with auto-reconciliation</li>
-                  <li>Abandoned cart flows recover <strong>15–22%</strong></li>
-                  <li>Real-time cross-platform inventory sync</li>
-                  <li>Behavioural segmentation cuts wasted ad spend</li>
-                </ul>
-              </div>
-              <div class="roi-col roi-col--metric">
-                <h3 class="roi-col__title"><span aria-hidden="true">📈</span> Your ROI</h3>
-                <div class="roi-big"><span class="roi-big__fig">11×</span><span class="roi-big__label">ROI in Year 1</span></div>
-                <p class="roi-big__detail">Avg. <strong>$190,000</strong> recovered annually</p>
-                <a href="#contact" class="btn btn--primary btn--sm">Discuss My Workflow →</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="roi-card" data-industry="realestate">
-            <div class="roi-card__grid">
-              <div class="roi-col roi-col--pain">
-                <h3 class="roi-col__title"><span aria-hidden="true">⚠</span> Pain Points</h3>
-                <ul class="roi-list">
-                  <li>Average <strong>47-hour lag</strong> before lead follow-up</li>
-                  <li>Manual CMA reports taking <strong>3+ hours each</strong></li>
-                  <li>Listing data manually duplicated across portals</li>
-                  <li>No nurture system — cold leads go to competitors</li>
-                </ul>
-              </div>
-              <div class="roi-col roi-col--solved">
-                <h3 class="roi-col__title"><span aria-hidden="true">💡</span> What We Automate</h3>
-                <ul class="roi-list">
-                  <li>Lead response sequences fire in <strong>under 90 seconds</strong></li>
-                  <li>Automated CMA data pulls take <strong>12 minutes</strong></li>
-                  <li>Single-source listing syndication</li>
-                  <li>12-month drip nurture converts <strong>3× more leads</strong></li>
-                </ul>
-              </div>
-              <div class="roi-col roi-col--metric">
-                <h3 class="roi-col__title"><span aria-hidden="true">📈</span> Your ROI</h3>
-                <div class="roi-big"><span class="roi-big__fig">9.2×</span><span class="roi-big__label">ROI in Year 1</span></div>
-                <p class="roi-big__detail">Avg. <strong>$240,000</strong> recovered annually</p>
-                <a href="#contact" class="btn btn--primary btn--sm">Discuss My Workflow →</a>
-              </div>
-            </div>
-          </div>
+        <p class="warm-eyebrow">Sound familiar?</p>
+        <div class="warm-section-lead"><h2>Your day is busy enough.<br><span class="warm-gradient">Where can we make it easier?</span></h2>
+        <p>You don’t have to know the technical solution. Start with what feels difficult — we’ll help you find the right place to begin.</p></div>
+        <div class="warm-problem-grid">
+          <a href="services/data-analytics.html" class="warm-problem-card"><span class="warm-problem-icon" aria-hidden="true">▦</span><h3>“My reports are all over the place.”</h3><p>Bring scattered spreadsheets, numbers and KPIs into a picture you can trust.</p><span class="warm-card-arrow">Explore data &amp; reporting ↗</span></a>
+          <a href="services/workflow-automation.html" class="warm-problem-card"><span class="warm-problem-icon" aria-hidden="true">↻</span><h3>“We keep doing the same tasks.”</h3><p>Make routine handoffs, reminders and updates easier to manage.</p><span class="warm-card-arrow">Explore automation ↗</span></a>
+          <a href="services/web-presence.html" class="warm-problem-card"><span class="warm-problem-icon" aria-hidden="true">◇</span><h3>“Our online presence needs work.”</h3><p>Give customers a welcoming place to understand your business and reach you.</p><span class="warm-card-arrow">Explore websites ↗</span></a>
+          <a href="services/market-research.html" class="warm-problem-card"><span class="warm-problem-icon" aria-hidden="true">⌕</span><h3>“We need better answers before deciding.”</h3><p>Use careful research and real evidence instead of making expensive guesses.</p><span class="warm-card-arrow">Explore research ↗</span></a>
         </div>
       </div>
     </section>
 
     <section class="services-section" id="services">
       <div class="container">
-        <div class="section-kicker reveal-up"><span class="pulse-dot" aria-hidden="true"></span>What We Build</div>
-        <h2 class="section-heading reveal-up" style="--d:.08s">Engineered for <span class="grad-text">Growth</span></h2>
+        <div class="section-kicker reveal-up"><span class="pulse-dot" aria-hidden="true"></span>Ways we lighten the load</div>
+        <h2 class="section-heading reveal-up" style="--d:.08s">Support for the work <span class="grad-text">behind your business.</span></h2>
+        <p class="warm-service-intro">From clearer reporting to smoother workflows, here are some of the ways we can help. Every engagement begins with understanding your needs.</p>
 
         <div class="svc-grid">
           
@@ -286,136 +155,43 @@
       </div>
     </section>
 
-    <section class="demo-section" id="work">
-      <div class="container">
-        <div class="section-kicker reveal-up"><span class="pulse-dot" aria-hidden="true"></span>Interactive Sample</div>
-        <h2 class="section-heading reveal-up" style="--d:.08s">Interact With <span class="grad-text">Our Work.</span></h2>
-        
-        <div class="bi-glass reveal-up" style="--d:.22s">
-          <div class="bi-toolbar">
-            <div class="bi-toolbar__dots">
-              <span class="bi-dot bi-dot--r" aria-hidden="true"></span>
-              <span class="bi-dot bi-dot--y" aria-hidden="true"></span>
-              <span class="bi-dot bi-dot--g" aria-hidden="true"></span>
-            </div>
-            <div class="bi-toolbar__title"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span>Marvelous Ascent — Analytics</div>
-            <span class="bi-live-badge">● SAMPLE DATA</span>
-          </div>
-
-          <div class="bi-embed-wrap">
-            <iframe id="power-bi-embed" title="Analytics Dashboard" src="" frameborder="0" allowfullscreen="true" loading="lazy"></iframe>
-            <div class="bi-placeholder" id="bi-placeholder">
-              <div class="mock-chart-container">
-                <div class="mock-chart-header">
-                  <div class="mock-stat"><span class="mock-stat-label">Total Pipeline</span><span class="mock-stat-value" id="mock-pipeline">$1.24M</span></div>
-                  <div class="mock-stat"><span class="mock-stat-label">Active Leads</span><span class="mock-stat-value tc-g" id="mock-leads">842</span></div>
-                  <div class="mock-stat"><span class="mock-stat-label">Conversion Rate</span><span class="mock-stat-value tc-o" id="mock-conversion">24.8%</span></div>
-                </div>
-                <div class="mock-bars">
-                  <div class="mock-bar-wrap"><div class="mock-bar" style="height: 40%; animation-delay: 0.1s"></div></div>
-                  <div class="mock-bar-wrap"><div class="mock-bar" style="height: 65%; animation-delay: 0.2s"></div></div>
-                  <div class="mock-bar-wrap"><div class="mock-bar" style="height: 30%; animation-delay: 0.3s"></div></div>
-                  <div class="mock-bar-wrap"><div class="mock-bar" style="height: 85%; animation-delay: 0.4s"></div></div>
-                  <div class="mock-bar-wrap"><div class="mock-bar" style="height: 55%; animation-delay: 0.5s"></div></div>
-                  <div class="mock-bar-wrap"><div class="mock-bar" style="height: 95%; animation-delay: 0.6s"></div></div>
-                </div>
-                <div class="mock-chart-overlay"><span class="pulse-dot"></span> Example visualisation</div>
-              </div>
-            </div>
-          </div>
-          <div class="bi-footer">
-            <span>📊 Revenue · Leads · Conversions · Pipeline</span>
-            <span>Data source: <span id="last-updated">Illustrative, not live</span></span>
-          </div>
-        </div>
-
-        <div class="portfolio-card reveal-up" style="margin-top: 60px; border: 1px solid var(--border); border-radius: var(--r-xl); background: var(--bg-card-alt); padding: clamp(24px, 4vw, 40px); display: flex; gap: 40px; align-items: center; flex-wrap: wrap; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-          <div style="flex: 1; min-width: 300px;">
-            <div class="section-kicker">Web Design & Infrastructure</div>
-            <h3 style="font-family: var(--f-display); font-size: 28px; font-weight: 700; margin-bottom: 16px; color: var(--text);">SonofIAM — Website, Presence &amp; Analytics</h3>
-            <p style="color: var(--text-dim); margin-bottom: 24px; font-size: 14.5px; line-height: 1.7;">
-              Built the SonofIAM website and supported its digital presence. Connected site and social touchpoints and created an analytics foundation for understanding tracked site activity. No commercial uplift is claimed.
-            </p>
-            <a href="https://www.sonofiam.com/" target="_blank" class="btn btn--ghost" style="border-color: var(--green); color: var(--green);">View Live Site ↗</a>
-            <p style="margin-top:20px"><a class="builder-credit" href="https://ayoleyi-dev.github.io/Marvelous-Ascent/"><strong>[MA]</strong> Site built by Marvelous Ascent</a></p>
-          </div>
-          <div style="flex: 1; min-width: 300px; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border-dim); position: relative;">
-            <div style="position: absolute; inset: 0; background: radial-gradient(circle, rgba(114, 5, 205, 0.2) 0%, transparent 70%); pointer-events: none;"></div>
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="Abstract illustration, not a screenshot of the SonofIAM website" style="width: 100%; height: auto; display: block; position: relative; z-index: 1; opacity: 0.8;">
-          </div>
-        </div>
+    <section class="warm-proof-section" id="work">
+    <div class="container">
+      <p class="warm-eyebrow">Good work has something to show</p>
+      <div class="warm-section-lead"><h2>Not just what we say.<br><span class="warm-gradient">What we’ve helped build.</span></h2><p>Our work is the foundation of our confidence. These examples show the actual systems and experiences behind Marvelous Ascent — without made-up metrics.</p></div>
+      <div class="warm-proof-grid">
+        <article class="warm-proof-card warm-proof-card--web">
+          <div class="warm-proof-art" aria-hidden="true"><span class="warm-art-eyebrow">DIGITAL PRESENCE / SONOFIAM</span><div class="warm-art-frame"><span class="warm-art-sun"></span><span>SO<br>FIAM</span><i></i></div></div>
+          <div class="warm-proof-content"><p class="warm-proof-type">Delivered website and commerce foundation</p><h3>SonofIAM — giving creative work a home online.</h3><p>A visual-artist website designed around the work, the identity and clear routes for visitors to explore and enquire.</p><a class="warm-text-link" href="work/sonofiam.html">Read the story <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="warm-proof-card warm-proof-card--data">
+          <div class="warm-proof-art" aria-hidden="true"><span class="warm-art-eyebrow">OPERATIONS / DIAMS</span><div class="warm-mini-dashboard"><div><b></b><b></b><b></b></div><div><i></i><i></i><i></i><i></i></div><div><span></span><span></span><span></span></div></div></div>
+          <div class="warm-proof-content"><p class="warm-proof-type">Operational data infrastructure</p><h3>DIAMS — putting everyday operations in one place.</h3><p>A structured 12-sheet tracker built in a Data &amp; Analytics Officer role, bringing team activity, pipelines and KPI reviews together.</p><a class="warm-text-link" href="work/diams.html">See the system approach <span aria-hidden="true">↗</span></a></div>
+        </article>
       </div>
-    </section>
+      <p class="warm-proof-note">The visuals above are illustrations, not client screenshots. Individual roles, evidence and what remains unmeasured are explained in each case study.</p>
+      <div class="warm-inline-actions"><a href="work.html" class="btn btn--ghost">Explore our work ↗</a><a href="custom-bi-dashboards.html" class="warm-text-link">View an analytics SAMPLE DATA demo ↗</a></div>
+    </div>
+  </section>
 
-    <section class="pow-section" id="proof">
-      <div class="container">
-        <div class="section-kicker reveal-up"><span class="pulse-dot" aria-hidden="true"></span>Proof of Work</div>
-        <h2 class="section-heading reveal-up" style="--d:.08s">Illustrative <span class="grad-text">Use Cases.</span></h2>
-        
-        <p class="section-sub">The following fictional scenarios use sample figures and fictional quotations to demonstrate possible workflows; they are not verified client projects, testimonials or outcomes. See SonofIAM above for delivered work.</p>
-        <div class="pow-grid">
-          <div class="pow-card reveal-up" style="--d:0s">
-            <div class="pow-card__content">
-              <span class="pow-card__client">Metro Health Clinic</span>
-              <h3 class="pow-card__title">Patient Intake Automation</h3>
-              <div class="pow-card__metrics">
-                <div class="pow-metric"><span class="pow-metric__val">78%</span><span class="pow-metric__label">Time Saved</span></div>
-                <div class="pow-metric"><span class="pow-metric__val">3.8%</span><span class="pow-metric__label">Claim Errors</span></div>
-              </div>
-              <p class="pow-card__quote">"Marvelous Ascent eliminated our intake backlog in 3 weeks. Our staff finally focuses on patients, not paperwork."</p>
-              <div class="pow-card__tags">
-                <span class="pow-tag">Healthcare</span><span class="pow-tag">OCR</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pow-card reveal-up" style="--d:.1s">
-            <div class="pow-card__content">
-              <span class="pow-card__client">Nordic Retail Co.</span>
-              <h3 class="pow-card__title">Cart Recovery &amp; Inventory Sync</h3>
-              <div class="pow-card__metrics">
-                <div class="pow-metric"><span class="pow-metric__val">22%</span><span class="pow-metric__label">Cart Recovery</span></div>
-                <div class="pow-metric"><span class="pow-metric__val">Zero</span><span class="pow-metric__label">Oversells</span></div>
-              </div>
-              <p class="pow-card__quote">"The abandoned cart flow pays for itself every week. And zero oversells means zero angry customers."</p>
-              <div class="pow-card__tags">
-                <span class="pow-tag">E-commerce</span><span class="pow-tag">Automation</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pow-card reveal-up" style="--d:.2s">
-            <div class="pow-card__content">
-              <span class="pow-card__client">Premier Properties</span>
-              <h3 class="pow-card__title">Lead Response Automation</h3>
-              <div class="pow-card__metrics">
-                <div class="pow-metric"><span class="pow-metric__val">90s</span><span class="pow-metric__label">Response Time</span></div>
-                <div class="pow-metric"><span class="pow-metric__val">3×</span><span class="pow-metric__label">Conversion</span></div>
-              </div>
-              <p class="pow-card__quote">"We went from 47-hour response times to under 90 seconds. Our close rate tripled in 60 days."</p>
-              <div class="pow-card__tags">
-                <span class="pow-tag">Real Estate</span><span class="pow-tag">CRM</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="upload-history-section" id="uploads" style="display:none;">
-      <div class="container">
-        <div class="section-kicker reveal-up"><span class="pulse-dot" aria-hidden="true"></span>Your Activity</div>
-        <h2 class="section-heading reveal-up" style="--d:.08s">Document <span class="grad-text">History.</span></h2>
-        <div id="upload-history" class="reveal-up" style="--d:.2s"></div>
-      </div>
-    </section>
+    <section class="warm-process-section" id="process">
+  <div class="container warm-process-layout">
+    <div><p class="warm-eyebrow">The way we work</p><h2>Clear from the first conversation.<br><span class="warm-gradient">Supportive all the way through.</span></h2><p>We believe good work means knowing what happens next. We agree the scope, build in understandable steps, test the outcome and hand over what you need to use it.</p><a href="project-brief.html" class="btn btn--primary warm-btn">Let’s talk about your project ↗</a></div>
+    <ol class="warm-process-list">
+      <li><span>01</span><div><h3>Tell us what’s taking too much time</h3><p>Start wherever you are — a challenge, a spreadsheet, an idea or a website.</p></div></li>
+      <li><span>02</span><div><h3>We map a sensible way forward</h3><p>We review fit, agree deliverables, timing, responsibilities and cost before building.</p></div></li>
+      <li><span>03</span><div><h3>We build, show progress and test</h3><p>There are checkpoints for feedback, revisions and verification of the agreed result.</p></div></li>
+      <li><span>04</span><div><h3>You receive the work and know how to use it</h3><p>Clear handover, relevant documentation and support options defined in the project agreement.</p></div></li>
+    </ol>
+  </div>
+</section>
 
     <section class="newsletter-section" id="newsletter">
       <div class="container">
         <div class="newsletter-card reveal-up">
           <div class="newsletter-card__content">
             <div class="section-kicker"><span class="pulse-dot" aria-hidden="true"></span>Practical Insights</div>
-            <h2 class="section-heading" style="margin-bottom:10px">Get Practical Data &amp; Automation<br><span class="grad-text">Insights.</span></h2>
+            <h2 class="section-heading" style="margin-bottom:10px">Useful ideas for <span class="grad-text">easier workdays.</span></h2>
             <p class="newsletter-card__sub">Occasional practical notes on reporting, automation and web systems. Subscribe to receive updates; you can opt out by contacting us.</p>
           </div>
           <div class="newsletter-card__form">
@@ -435,8 +211,9 @@
       <div class="container contact-grid">
         <div class="contact-left reveal-up">
           <div class="section-kicker"><span class="pulse-dot" aria-hidden="true"></span>Let's Talk</div>
-          <h2 class="section-heading" style="--d:.06s">Ready to Build<br><span class="dynamic-name grad-text">Your</span> Growth Engine?</h2>
-          <p class="contact-left__sub">Tell us what your business needs: a website, clearer reporting, connected systems or less manual work.</p>
+          <h2 class="section-heading" style="--d:.06s">You can start with <span class="grad-text">a simple hello.</span></h2>
+          <p class="contact-left__sub">Tell us what has been on your mind. No jargon, no perfect brief required. We can talk through the next step together.</p>
+          <p class="warm-contact-prompt"><a href="project-brief.html" class="warm-text-link">Want to tell us a little more? Use the guided project brief ↗</a></p>
           <div class="contact-links"><a href="mailto:meet.ayoleyi@gmail.com">meet.ayoleyi@gmail.com</a><a href="https://wa.me/2349061367007">WhatsApp: +234 906 136 7007</a><a href="tel:+2349061367007">Call +234 906 136 7007</a></div>
         </div>
         <div class="contact-right reveal-up" style="--d:.12s">
@@ -445,7 +222,7 @@
             <div class="field"><label for="c-email">Business Email</label><input type="email" id="c-email" name="email" placeholder="you@company.com" required></div>
             <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" rows="5" placeholder="Tell us about your goals..." required></textarea></div>
             <p class="footer-copy">This opens your email app. Review the draft and press Send there; this site does not send the message automatically.</p>
-            <button type="submit" class="btn btn--primary btn--full">Open Email Draft →</button>
+            <button type="submit" class="btn btn--primary btn--full">Prepare My Message →</button>
           </form>
         </div>
       </div>
@@ -458,7 +235,7 @@
         <span class="logo-bracket">[</span>MA<span class="logo-bracket">]</span>
         <span class="logo-wordmark">Marvelous Ascent</span>
       </a>
-      <p class="footer-copy"><a href="services.html">Services</a> · <a href="services/seo-visibility.html">SEO &amp; Visibility</a> · © 2026 Marvelous Ascent</p>
+      <p class="footer-copy"><a href="services.html">Services</a> · <a href="work.html">Our Work</a> · <a href="project-brief.html">Start a Project</a> · © 2026 Marvelous Ascent</p>
     </div>
   </footer>
 
