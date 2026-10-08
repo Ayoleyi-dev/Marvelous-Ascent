@@ -10,7 +10,7 @@ function esc(v){return String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").
 
 function siteShell({title,description,canonical,depth,body,active}){
   const p=depth?"../":"";
-  const nav=[["Home",p+"index.html","home"],["Services",p+"services.html","services"],["Our Work",p+"index.html#work","work"],["Contact",p+"index.html#contact","contact"]];
+  const nav=[["Home",p+"index.html","home"],["Services",p+"services.html","services"],["Our Work",p+"work.html","work"],["Start a Project",p+"project-brief.html","contact"]];
   const navHtml=nav.map(([label,url,key])=>`<a href="${url}"${active===key?' aria-current="page"':''}>${label}</a>`).join("");
   return `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -45,7 +45,7 @@ function siteShell({title,description,canonical,depth,body,active}){
   <footer class="ma-footer">
     <div class="ma-container ma-footer-content">
       <div><a class="ma-logo" href="${p}index.html"><span class="ma-monogram">[MA]</span> Marvelous Ascent</a><p>Data, automation and digital infrastructure built around real business needs.</p></div>
-      <div class="ma-footer-links"><a href="${p}services.html">Explore services</a><a href="${p}index.html#work">View our work</a><a href="${p}index.html#contact">Get in touch</a></div>
+      <div class="ma-footer-links"><a href="${p}services.html">Explore services</a><a href="${p}work.html">View our work</a><a href="${p}project-brief.html">Get in touch</a></div>
     </div><div class="ma-container ma-copyright">© 2026 Marvelous Ascent · Client portal and account login are not yet available.</div>
   </footer>
 </body>
@@ -67,7 +67,7 @@ function renderHub(data){
   <p class="ma-eyebrow">Marvelous Ascent / What we build</p>
   <h1>Business problems first.<br><span class="ma-accent">The right systems second.</span></h1>
   <p class="ma-lead">Choose the challenge you need to solve. Each service explains its practical scope, outputs, approach and evidence status — no invented performance promises.</p>
-  <div class="ma-actions"><a class="ma-button" href="project-brief.html">Discuss a project <span aria-hidden="true">→</span></a><a class="ma-button ma-button--outline" href="index.html#work">See delivered work</a></div>
+  <div class="ma-actions"><a class="ma-button" href="project-brief.html">Discuss a project <span aria-hidden="true">→</span></a><a class="ma-button ma-button--outline" href="work.html">See delivered work</a></div>
 </div></section>
 <section class="ma-section" aria-labelledby="catalogue-title"><div class="ma-container">
   <div class="ma-section-intro"><p class="ma-eyebrow">Service catalogue</p><h2 id="catalogue-title">Find your starting point.</h2><p>Available to scope means we can discuss a defined project; exploratory services require a pilot or feasibility check. Neither status guarantees an outcome.</p></div>
