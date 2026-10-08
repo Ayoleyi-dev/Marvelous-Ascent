@@ -67,7 +67,7 @@ function renderHub(data){
   <p class="ma-eyebrow">Marvelous Ascent / What we build</p>
   <h1>Business problems first.<br><span class="ma-accent">The right systems second.</span></h1>
   <p class="ma-lead">Choose the challenge you need to solve. Each service explains its practical scope, outputs, approach and evidence status — no invented performance promises.</p>
-  <div class="ma-actions"><a class="ma-button" href="index.html#contact">Discuss a project <span aria-hidden="true">→</span></a><a class="ma-button ma-button--outline" href="index.html#work">See delivered work</a></div>
+  <div class="ma-actions"><a class="ma-button" href="project-brief.html">Discuss a project <span aria-hidden="true">→</span></a><a class="ma-button ma-button--outline" href="index.html#work">See delivered work</a></div>
 </div></section>
 <section class="ma-section" aria-labelledby="catalogue-title"><div class="ma-container">
   <div class="ma-section-intro"><p class="ma-eyebrow">Service catalogue</p><h2 id="catalogue-title">Find your starting point.</h2><p>Available to scope means we can discuss a defined project; exploratory services require a pilot or feasibility check. Neither status guarantees an outcome.</p></div>
@@ -77,7 +77,7 @@ function renderHub(data){
  <div><p class="ma-eyebrow">How projects begin</p><h2>Clarity before complexity.</h2></div>
  <ol class="ma-numbered"><li><strong>Discovery</strong><p>Tell us the problem, current tools, timeline and constraints.</p></li><li><strong>Proposal</strong><p>We agree scope, responsibilities, deliverables and acceptance criteria.</p></li><li><strong>Delivery</strong><p>We build, test, hand over and measure what is actually observable.</p></li></ol>
  </div></section>
-<section class="ma-cta"><div class="ma-container"><h2>Not sure which service you need?</h2><p>Describe the bottleneck. We'll help identify a manageable next step.</p><a class="ma-button" href="index.html#contact">Start with the problem →</a></div></section>`});
+<section class="ma-cta"><div class="ma-container"><h2>Not sure which service you need?</h2><p>Describe the bottleneck. We'll help identify a manageable next step.</p><a class="ma-button" href="project-brief.html">Start with the problem →</a></div></section>`});
 }
 
 function renderService(s,data){
@@ -92,7 +92,7 @@ function renderService(s,data){
   <div class="ma-eyebrow">${esc(s.label)} <span class="ma-bullet" aria-hidden="true">•</span> <span class="ma-status">${esc(s.status)}</span></div>
   <h1>${esc(s.title)}<span class="ma-accent">, built for practical decisions.</span></h1>
   <p class="ma-lead">${esc(s.summary)}</p><p class="ma-for"><strong>Best fit:</strong> ${esc(s.audience)}</p>
-  <div class="ma-actions"><a class="ma-button" href="../index.html#contact">Discuss this service →</a><a class="ma-button ma-button--outline" href="../services.html">All services</a></div>
+  <div class="ma-actions"><a class="ma-button" href="../project-brief.html">Discuss this service →</a><a class="ma-button ma-button--outline" href="../services.html">All services</a></div>
 </div></section>
 <section class="ma-section"><div class="ma-container ma-split">
  <div><p class="ma-eyebrow">The problem</p><h2>Does this sound familiar?</h2><p>These are common symptoms, not claims about your business.</p></div>
@@ -116,12 +116,12 @@ function renderService(s,data){
  <div>${faqs}</div>
 </div></section>
 <section class="ma-section ma-section--soft"><div class="ma-container"><p class="ma-eyebrow">Also explore</p><div class="ma-related">${related}</div></div></section>
-<section class="ma-cta"><div class="ma-container"><h2>Have a specific challenge?</h2><p>Tell us your current tools, what is not working and the outcome you need. We can discuss a realistic scope.</p><a class="ma-button" href="../index.html#contact">Start a project enquiry →</a></div></section>`});
+<section class="ma-cta"><div class="ma-container"><h2>Have a specific challenge?</h2><p>Tell us your current tools, what is not working and the outcome you need. We can discuss a realistic scope.</p><a class="ma-button" href="../project-brief.html">Start a project enquiry →</a></div></section>`});
 }
 
 function renderSitemap(data){
  const base="https://ayoleyi-dev.github.io/Marvelous-Ascent/";
- const pages=["","services.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
+ const pages=["","services.html","work.html","work/sonofiam.html","work/diams.html","project-brief.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(x=>`  <url><loc>${base+x}</loc></url>`).join("\n")}\n</urlset>\n`;
 }
 const output = {'services.html':renderHub(data),'sitemap.xml':renderSitemap(data)};
