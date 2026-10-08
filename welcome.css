@@ -149,7 +149,7 @@
 .warm-home .warm-hero{padding:clamp(42px,4vw,64px) 0 clamp(43px,4.3vw,66px)}
 .warm-home .warm-hero-grid{grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:clamp(24px,3.2vw,54px)}
 .warm-home .warm-hero-copy{min-width:0}
-.warm-home .warm-headline{font-size:clamp(2.15rem,2.9vw,3rem)!important;line-height:1.09!important;letter-spacing:-.045em!important;max-width:700px;margin:0;overflow-wrap:normal;word-break:normal}
+.warm-home .warm-headline{font-size:clamp(2.15rem,2.9vw,2.75rem)!important;line-height:1.09!important;letter-spacing:-.045em!important;max-width:700px;margin:0;overflow-wrap:normal;word-break:normal}
 .warm-home .warm-headline-line{display:block}
 .warm-home .warm-lead{max-width:580px;font-size:clamp(15px,1.15vw,17px);line-height:1.65;margin:19px 0 23px}
 .warm-home .warm-reassurance{margin-top:19px!important}
