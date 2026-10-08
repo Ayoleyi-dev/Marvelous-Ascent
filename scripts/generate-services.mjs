@@ -10,7 +10,7 @@ function esc(v){return String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").
 
 function siteShell({title,description,canonical,depth,body,active}){
   const p=depth?"../":"";
-  const nav=[["Home",p+"index.html","home"],["Services",p+"services.html","services"],["Our Work",p+"index.html#work","work"],["Contact",p+"index.html#contact","contact"]];
+  const nav=[["Home",p+"index.html","home"],["Services",p+"services.html","services"],["Our Work",p+"work.html","work"],["Start a Project",p+"project-brief.html","contact"]];
   const navHtml=nav.map(([label,url,key])=>`<a href="${url}"${active===key?' aria-current="page"':''}>${label}</a>`).join("");
   return `<!doctype html>
 <html lang="en" data-theme="dark">
@@ -26,13 +26,14 @@ function siteShell({title,description,canonical,depth,body,active}){
   <meta property="og:url" content="${canonical}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${p}style.css">
   <link rel="stylesheet" href="${p}brand.css">
   <link rel="stylesheet" href="${p}services.css">
+  <link rel="stylesheet" href="${p}welcome.css">
   <script src="${p}site-navigation.js" defer></script>
 </head>
-<body class="ma-services">
+<body class="ma-services warm-story-page">
   <a class="ma-skip" href="#main">Skip to content</a>
   <header class="ma-header">
     <div class="ma-container ma-header-inner">
@@ -45,7 +46,7 @@ function siteShell({title,description,canonical,depth,body,active}){
   <footer class="ma-footer">
     <div class="ma-container ma-footer-content">
       <div><a class="ma-logo" href="${p}index.html"><span class="ma-monogram">[MA]</span> Marvelous Ascent</a><p>Data, automation and digital infrastructure built around real business needs.</p></div>
-      <div class="ma-footer-links"><a href="${p}services.html">Explore services</a><a href="${p}index.html#work">View our work</a><a href="${p}index.html#contact">Get in touch</a></div>
+      <div class="ma-footer-links"><a href="${p}services.html">Explore services</a><a href="${p}work.html">View our work</a><a href="${p}project-brief.html">Get in touch</a></div>
     </div><div class="ma-container ma-copyright">© 2026 Marvelous Ascent · Client portal and account login are not yet available.</div>
   </footer>
 </body>
@@ -66,8 +67,8 @@ function renderHub(data){
 <section class="ma-hero"><div class="ma-container">
   <p class="ma-eyebrow">Marvelous Ascent / What we build</p>
   <h1>Business problems first.<br><span class="ma-accent">The right systems second.</span></h1>
-  <p class="ma-lead">Choose the challenge you need to solve. Each service explains its practical scope, outputs, approach and evidence status — no invented performance promises.</p>
-  <div class="ma-actions"><a class="ma-button" href="index.html#contact">Discuss a project <span aria-hidden="true">→</span></a><a class="ma-button ma-button--outline" href="index.html#work">See delivered work</a></div>
+  <p class="ma-lead">Tell us what is making the work harder than it needs to be. We'll listen, agree a sensible scope and help you take the next step with clarity — no invented performance promises.</p>
+  <div class="ma-actions"><a class="ma-button" href="project-brief.html">Discuss a project <span aria-hidden="true">→</span></a><a class="ma-button ma-button--outline" href="work.html">See delivered work</a></div>
 </div></section>
 <section class="ma-section" aria-labelledby="catalogue-title"><div class="ma-container">
   <div class="ma-section-intro"><p class="ma-eyebrow">Service catalogue</p><h2 id="catalogue-title">Find your starting point.</h2><p>Available to scope means we can discuss a defined project; exploratory services require a pilot or feasibility check. Neither status guarantees an outcome.</p></div>
@@ -77,7 +78,7 @@ function renderHub(data){
  <div><p class="ma-eyebrow">How projects begin</p><h2>Clarity before complexity.</h2></div>
  <ol class="ma-numbered"><li><strong>Discovery</strong><p>Tell us the problem, current tools, timeline and constraints.</p></li><li><strong>Proposal</strong><p>We agree scope, responsibilities, deliverables and acceptance criteria.</p></li><li><strong>Delivery</strong><p>We build, test, hand over and measure what is actually observable.</p></li></ol>
  </div></section>
-<section class="ma-cta"><div class="ma-container"><h2>Not sure which service you need?</h2><p>Describe the bottleneck. We'll help identify a manageable next step.</p><a class="ma-button" href="index.html#contact">Start with the problem →</a></div></section>`});
+<section class="ma-cta"><div class="ma-container"><h2>Not sure which service you need?</h2><p>Describe the bottleneck. We'll help identify a manageable next step.</p><a class="ma-button" href="project-brief.html">Start with the problem →</a></div></section>`});
 }
 
 function renderService(s,data){
@@ -92,7 +93,7 @@ function renderService(s,data){
   <div class="ma-eyebrow">${esc(s.label)} <span class="ma-bullet" aria-hidden="true">•</span> <span class="ma-status">${esc(s.status)}</span></div>
   <h1>${esc(s.title)}<span class="ma-accent">, built for practical decisions.</span></h1>
   <p class="ma-lead">${esc(s.summary)}</p><p class="ma-for"><strong>Best fit:</strong> ${esc(s.audience)}</p>
-  <div class="ma-actions"><a class="ma-button" href="../index.html#contact">Discuss this service →</a><a class="ma-button ma-button--outline" href="../services.html">All services</a></div>
+  <div class="ma-actions"><a class="ma-button" href="../project-brief.html">Discuss this service →</a><a class="ma-button ma-button--outline" href="../services.html">All services</a></div>
 </div></section>
 <section class="ma-section"><div class="ma-container ma-split">
  <div><p class="ma-eyebrow">The problem</p><h2>Does this sound familiar?</h2><p>These are common symptoms, not claims about your business.</p></div>
@@ -116,12 +117,12 @@ function renderService(s,data){
  <div>${faqs}</div>
 </div></section>
 <section class="ma-section ma-section--soft"><div class="ma-container"><p class="ma-eyebrow">Also explore</p><div class="ma-related">${related}</div></div></section>
-<section class="ma-cta"><div class="ma-container"><h2>Have a specific challenge?</h2><p>Tell us your current tools, what is not working and the outcome you need. We can discuss a realistic scope.</p><a class="ma-button" href="../index.html#contact">Start a project enquiry →</a></div></section>`});
+<section class="ma-cta"><div class="ma-container"><h2>Have a specific challenge?</h2><p>Tell us your current tools, what is not working and the outcome you need. We can discuss a realistic scope.</p><a class="ma-button" href="../project-brief.html">Start a project enquiry →</a></div></section>`});
 }
 
 function renderSitemap(data){
  const base="https://ayoleyi-dev.github.io/Marvelous-Ascent/";
- const pages=["","services.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
+ const pages=["","services.html","work.html","work/sonofiam.html","work/diams.html","project-brief.html","automated-lead-gen.html","custom-bi-dashboards.html","web-social-automation.html","automated-document-processing.html",...data.map(s=>"services/"+s.slug+".html")];
  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(x=>`  <url><loc>${base+x}</loc></url>`).join("\n")}\n</urlset>\n`;
 }
 const output = {'services.html':renderHub(data),'sitemap.xml':renderSitemap(data)};

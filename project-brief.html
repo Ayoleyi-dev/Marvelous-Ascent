@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start a Project | Marvelous Ascent</title>
+<meta name="description" content="Tell Marvelous Ascent what is slowing your business down. A friendly, guided project brief for data, automation, websites and more.">
+<link rel="canonical" href="https://ayoleyi-dev.github.io/Marvelous-Ascent/project-brief.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Start a Project | Marvelous Ascent">
+<meta property="og:description" content="You don't need a technical brief. Tell us the problem and we'll help map a sensible way forward.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Fira+Code:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="services.css"><link rel="stylesheet" href="welcome.css">
+<script src="site-navigation.js" defer></script><script src="project-brief.js" defer></script>
+</head><body class="ma-services warm-intake-page">
+<a href="#main" class="warm-skip">Skip to content</a>
+<header class="ma-header"><div class="ma-container ma-header-inner"><a class="ma-logo" href="index.html" aria-label="Marvelous Ascent home"><span class="ma-monogram">[MA]</span> Marvelous Ascent</a>
+<nav class="ma-main-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Our Work</a><a href="project-brief.html" aria-current="page">Start a Project</a></nav>
+<button type="button" class="ma-theme" aria-label="Switch colour theme" aria-pressed="false">◐ <span>Theme</span></button>
+</div></header><main id="main"><section class="warm-story-hero"><div class="ma-container">
+ <p class="warm-story-kicker">Welcome — we're glad you're here</p>
+ <h1 class="warm-story-title">Let’s make this <span class="warm-gradient">a little easier.</span></h1>
+ <p class="warm-story-deck">Tell us what your business is working through. You don’t need to know which tool, dashboard or website feature you need. We’ll use your answers to understand the problem before discussing a practical scope.</p>
+ <p class="warm-disclosure">This form prepares a draft in your own email app. It does not submit anything to a server or create an account.</p>
+</div></section>
+<section class="ma-section" aria-label="Guided project brief"><div class="ma-container">
+ <div class="warm-intake-card">
+  <p class="warm-story-kicker" id="brief-step-label">Step 1 of 3 · A little about you</p>
+  <div class="warm-intake-progress" role="progressbar" aria-label="Project brief progress" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" id="brief-progress">
+    <span class="warm-progress-dot is-active"></span><span class="warm-progress-dot"></span><span class="warm-progress-dot"></span>
+  </div>
+  <form id="project-brief-form" novalidate>
+   <section class="warm-intake-step" data-step="0" aria-labelledby="brief-about-title">
+    <h2 id="brief-about-title">Who are we helping?</h2><p>Just enough to know who we're talking to. Only your name and email are required here.</p>
+    <div class="warm-form-grid">
+      <div class="warm-form-field"><label for="brief-name">Your name *</label><input id="brief-name" name="name" autocomplete="name" maxlength="80" required placeholder="What should we call you?"></div>
+      <div class="warm-form-field"><label for="brief-email">Your email *</label><input id="brief-email" name="email" type="email" autocomplete="email" maxlength="150" required placeholder="you@company.com"></div>
+      <div class="warm-form-field"><label for="brief-company">Business / organisation</label><input id="brief-company" name="company" autocomplete="organization" maxlength="120" placeholder="Your business name (optional)"></div>
+      <div class="warm-form-field"><label for="brief-country">Where are you based?</label><input id="brief-country" name="country" autocomplete="country-name" maxlength="90" placeholder="Country or city (optional)"></div>
+    </div>
+   </section>
+   <section class="warm-intake-step" data-step="1" aria-labelledby="brief-challenge-title" hidden>
+    <h2 id="brief-challenge-title">What would make your workday better?</h2><p>A few sentences are plenty. Tell us what is taking too long, creating confusion or stopping progress.</p>
+    <div class="warm-form-field"><label for="brief-service">What kind of help sounds closest? *</label>
+      <select name="service" id="brief-service" required>
+       <option value="">Choose an area</option>
+       <option>Not sure yet — help me figure it out</option>
+       <option>Data, dashboards and reporting</option>
+       <option>Automation and smoother operations</option>
+       <option>Website and digital presence</option>
+       <option>Commerce and conversion</option>
+       <option>SEO and discoverability</option>
+       <option>Campaign measurement and advertising</option>
+       <option>Market research and surveys</option>
+      </select>
+    </div>
+    <div class="warm-form-field"><label for="brief-challenge">What’s going on today, and what would you like to change? *</label>
+      <textarea name="challenge" id="brief-challenge" required minlength="15" maxlength="1200" placeholder="For example: We spend hours combining sheets every Friday and I’d love a simpler reporting process."></textarea><small>Please don't include private customer data, account passwords or payment information.</small>
+    </div>
+    <div class="warm-form-field"><label for="brief-tools">What tools are you using now?</label><input id="brief-tools" name="tools" maxlength="300" placeholder="Excel, Google Sheets, Shopify, etc. (optional)"></div>
+    <div class="warm-form-grid">
+      <div class="warm-form-field"><label for="brief-timing">When would you like to begin? *</label><select id="brief-timing" name="timing" required>
+        <option value="">Choose a timeframe</option><option>As soon as practical</option><option>Within the next month</option><option>In 1–3 months</option><option>Just exploring for now</option>
+      </select></div>
+      <div class="warm-form-field"><label for="brief-budget">Budget range (optional)</label><select id="brief-budget" name="budget">
+        <option value="">I'd rather discuss this</option><option>Under ₦100,000</option><option>₦100,000–₦300,000</option><option>₦300,000–₦750,000</option><option>Above ₦750,000</option><option>International / different currency</option></select>
+      </div>
+    </div>
+   </section>
+   <section class="warm-intake-step" data-step="2" aria-labelledby="brief-review-title" hidden>
+      <h2 id="brief-review-title">Here’s what we’ve heard.</h2><p>Have a look before you open your email draft. You can go back and edit anything.</p>
+      <dl class="warm-intake-review" id="brief-review"></dl>
+      <div class="warm-intake-note"><strong>What happens next?</strong> When you select “Open email draft,” your device will open its email app with these details. Please check the draft and press <strong>Send</strong> there. We'll review the message and follow up to discuss fit and scope; no turnaround time is guaranteed.</div>
+   </section>
+   <p class="warm-form-error" id="brief-error" role="status" aria-live="polite"></p>
+   <div class="warm-intake-buttons">
+      <button type="button" id="brief-back" hidden>← Go back</button>
+      <button type="button" class="warm-next" id="brief-next">Continue →</button>
+      <button type="submit" class="warm-send" id="brief-send" hidden>Open email draft ↗</button>
+   </div>
+  </form>
+ </div>
+ <p style="text-align:center;font-size:14px;color:var(--text-muted)">Prefer a quick conversation? <a class="warm-text-link" href="mailto:meet.ayoleyi@gmail.com">Email us directly</a> or <a class="warm-text-link" href="https://wa.me/2349061367007" target="_blank" rel="noopener noreferrer">say hello on WhatsApp</a>.</p>
+</div></section></main>
+<footer class="ma-footer"><div class="ma-container ma-footer-content"><div><a href="index.html" class="ma-logo"><span class="ma-monogram">[MA]</span> Marvelous Ascent</a><p>Less busywork. More clarity. Thoughtful work and practical systems.</p></div><div class="ma-footer-links"><a href="services.html">Services</a><a href="work.html">Our Work</a><a href="mailto:meet.ayoleyi@gmail.com">Email</a></div></div>
+<div class="ma-container ma-copyright">© 2026 Marvelous Ascent · Your form entries remain in your browser unless you choose to send them.</div></footer></body></html>
