@@ -1,0 +1,33 @@
+name: Browser layout review
+
+on:
+  push:
+    branches: ['build/**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  visual-layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies
+        run: npm install --no-save playwright@1.56.1
+      - name: Install Chromium for layout checks
+        run: npx playwright install --with-deps chromium
+      - name: Check responsive layout and shared logos
+        run: node scripts/check-layout.mjs
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-home-screenshots
+          path: artifacts/layout-check/*.png
+          if-no-files-found: ignore
+          retention-days: 7

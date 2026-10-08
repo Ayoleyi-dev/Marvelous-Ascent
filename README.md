@@ -120,3 +120,20 @@ The homepage `#showcase` section provides three keyboard-accessible examples: re
 - On desktop and mobile, check that the three tabs work by mouse, touch and keyboard (arrow keys, Home/End), and that each preview stays legible in both themes.
 
 Do not introduce mock conversion improvements, anonymous partner logos or live-looking client metrics into the showcase.
+
+## Hero layout and brand consistency QA
+
+The welcome headline uses a compact responsive scale and balanced two-column layout, rather than an oversized 5rem desktop title. On screens below 900px, the welcome card stacks under the introduction; phone widths use another smaller headline scale.
+
+One shared lockup now appears in every public header and footer:
+`<span class="brand-lockup__mark">[MA]</span><span class="brand-lockup__name">Marvelous Ascent</span>` inside a `brand-lockup` anchor. The mark/name styling lives in `brand.css`, and the generated service-page version lives in `scripts/generate-services.mjs`. Do not re-introduce a different mark on individual pages.
+
+The static test checks the markup and generated service-page parity. A separate browser layout workflow checks 390px, 768px, 1440px and 1650px viewports, verifies the headline and card do not overflow or overlap, and uploads screenshot artifacts for human review. Run locally after installing `playwright@1.56.1` and the Chromium browser:
+
+```bash
+node scripts/check-site.mjs
+node scripts/generate-services.mjs --check
+node scripts/check-layout.mjs
+```
+
+Before merging, inspect the uploaded screenshots in GitHub Actions and double-check the actual Chrome/Edge presentation in both light and dark modes.
